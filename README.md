@@ -103,9 +103,10 @@ templates (playbook and handoff-spec), one worked example — a
 structure-faithful abstraction of the real, in-use playbook this method was
 extracted from (the source project is private and pre-release, so its
 specifics are generalized) — this repo's own dogfooded playbook, and the
-spend-ledger convention: a minimal per-session record of lane used and
-rough scale of work, so the method's savings claims become falsifiable
-against its own history. This is a practice report from one real project,
+spend-ledger convention: a minimal per-session record of how the session
+entered (playbook pointer or ad hoc), lane used, and rough scale of work,
+so the method's savings claims become falsifiable against its own
+history. This is a practice report from one real project,
 not a benchmark: no controlled comparison against alternative approaches
 exists yet. Planned, not shipped: a session-start hook that injects a
 pointer to the project's playbook automatically, queued in this repo's own
