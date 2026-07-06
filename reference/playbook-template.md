@@ -17,8 +17,15 @@ At the start of a session, point the model here:
 > work queue that matches your lane.
 
 At the end of a session, the model updates **only**: the status column of the
-work queue, the gap register if a gap was closed or reframed, and the
-"Last updated" line. This document is a ledger, not an essay.
+work queue, the gap register if a gap was closed or reframed, the
+"Last updated" line, and the spend line:
+
+```
+spend: lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
+```
+
+This document is a ledger, not an essay; the spend line is records, not claims
+— it never asserts savings.
 
 ## Strategic frame
 

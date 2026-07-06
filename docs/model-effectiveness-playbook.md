@@ -10,14 +10,15 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-06 (second update) — **repo protocols live**: branch +
-PR flow with protected `main`, gates enforced in CI
-(`.github/workflows/gates.yml`), CONTRIBUTING.md added; session protocol
-rules 5–6 now carry the flow. Prior update same day: **v0.2 shipped** — the
-cycle section (macro / meso / micro nesting, context-compression thesis,
-up-channel rule) added to the method doc; handoff-spec template made
-scale-invariant; handoff skill and README updated to match. W1 (spend
-ledger) queued as the v0.3 headline.
+Last updated: 2026-07-06 (third update) — **spend ledger shipped, v0.3.0**:
+the spend line is live in the playbook template, the handoff skill's Mode B,
+and the method doc's Layer 2 and cycle section; W1 done. Prior update same
+day: **repo protocols live**: branch + PR flow with protected `main`, gates
+enforced in CI (`.github/workflows/gates.yml`), CONTRIBUTING.md added;
+session protocol rules 5–6 now carry the flow. Before that: **v0.2 shipped**
+— the cycle section (macro / meso / micro nesting, context-compression
+thesis, up-channel rule) added to the method doc; handoff-spec template made
+scale-invariant; handoff skill and README updated to match.
 
 ## How to use this document
 
@@ -43,7 +44,7 @@ outranks work that adds surface area.**
 
 | # | Gap | Status | Severity |
 | - | --- | ------ | -------- |
-| G1 | No spend record — the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | open — W1 queued | high (credibility) |
+| G1 | No spend record — the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | design closed + implementation shipped — spend line live in template/skill/method doc | high (credibility) |
 | G2 | Session-start discipline is manual — nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | open — W2 queued | medium |
 | G3 | Single-project validation — the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open — **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable — collect adopter feedback and route findings into W3 | medium (maturity) |
 
@@ -53,7 +54,7 @@ outranks work that adds surface area.**
 
 | ID | Work | Closes | Lane | Size | Status |
 | -- | ---- | ------ | ---- | ---- | ------ |
-| W1 | **Spend-ledger convention (v0.3).** Design the minimal per-session spend line: what a session records (lane used, rough scale of work — turns or dispatches, not exact token counts unless cheaply available — and handoff count), where it lives (a column or sub-line in the playbook's ledger update, not a new file), and what it may never claim (no savings assertions, records only). Then: template gains the field, handoff skill's Mode B writes it, method doc's Layer 2 documents it. Design-heavy first half (what to record without turning the ledger into an essay is the expensive-to-get-wrong part); mechanical second half. | G1 | flagship (design), mid (the template/skill edits from the design) | 1 session | open |
+| W1 | **Spend-ledger convention (v0.3).** Design the minimal per-session spend line: what a session records (lane used, rough scale of work — turns or dispatches, not exact token counts unless cheaply available — and handoff count), where it lives (a column or sub-line in the playbook's ledger update, not a new file), and what it may never claim (no savings assertions, records only). Then: template gains the field, handoff skill's Mode B writes it, method doc's Layer 2 documents it. Design-heavy first half (what to record without turning the ledger into an essay is the expensive-to-get-wrong part); mechanical second half. | G1 | flagship (design), mid (the template/skill edits from the design) | 1 session | done |
 | W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | open — gated on a written spec |
 
 ### Later
@@ -69,6 +70,7 @@ outranks work that adds surface area.**
 | v0.1 | Extraction: method doc, three skills, two templates, worked example, publish | flagship (design + judgment) with mid/small micro cycles for transcription, prose, and review | done — 2026-07-06 |
 | v0.2 | The cycle reframe: macro/meso/micro section, compression thesis, up-channel rule, scale-invariant handoff template | flagship | done — 2026-07-06 |
 | — | Repo protocols: branch + PR flow, CI gates workflow, main ruleset, CONTRIBUTING.md (owner-directed, unqueued) | mid-mechanics, flagship judgment on the gate set | done — 2026-07-06 |
+| W1 | Spend-ledger convention (v0.3): the spend line, the counterfactual-flagship ratio, and the never-claim rules, designed in `docs/design/2026-07-06-spend-ledger-design.md` and wired into the playbook template, the handoff skill's Mode B, and the method doc's Layer 2 and cycle section. First data point recorded in the design spec itself. | flagship (design) + mid (mechanical half) | done — 2026-07-06 |
 
 ## Model routing
 

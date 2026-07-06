@@ -91,19 +91,19 @@ at all.
 
 ## Status
 
-v0.2 ships the three skills, the portable method doc — including the cycle
-section (macro / meso / micro) added in this version — two scale-invariant
+v0.3 ships the three skills, the portable method doc — including the cycle
+section (macro / meso / micro) added in v0.2 — two scale-invariant
 templates (playbook and handoff-spec), one worked example — a
 structure-faithful abstraction of the real, in-use playbook this method was
 extracted from (the source project is private and pre-release, so its
-specifics are generalized) — and this repo's own dogfooded playbook. This is a
-practice report from one real project, not a benchmark: no controlled
-comparison against alternative approaches exists yet. Planned, not
-shipped: a spend-ledger convention (v0.3) — a minimal per-session record of
-lane used and rough scale of work, so the method's savings claims become
-falsifiable against its own history — and a session-start hook that injects
-a pointer to the project's playbook automatically. Both are queued in this
-repo's own [playbook](docs/model-effectiveness-playbook.md).
+specifics are generalized) — this repo's own dogfooded playbook, and the
+spend-ledger convention: a minimal per-session record of lane used and
+rough scale of work, so the method's savings claims become falsifiable
+against its own history. This is a practice report from one real project,
+not a benchmark: no controlled comparison against alternative approaches
+exists yet. Planned, not shipped: a session-start hook that injects a
+pointer to the project's playbook automatically, queued in this repo's own
+[playbook](docs/model-effectiveness-playbook.md).
 
 ## License
 
