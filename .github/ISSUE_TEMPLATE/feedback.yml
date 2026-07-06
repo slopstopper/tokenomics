@@ -1,0 +1,79 @@
+name: Adopter feedback
+description: How did tokenomics work on your project — what routed differently, what stuck, what rotted?
+title: "[feedback]: "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for running tokenomics. **One concrete before/after beats polished prose** — a task that changed lanes, a session that opened on the pointer, a ledger line that saved a re-derivation.
+
+        ⚠️ This creates a public issue — but **you don't need to name or describe your project**. Shape and scale are enough (the method's own worked example follows the same rule). Findings here route into the repo's [gap register](../../docs/model-effectiveness-playbook.md).
+  - type: checkboxes
+    id: parts
+    attributes:
+      label: Which parts did you use?
+      options:
+        - label: portable-method.md (read it, ran it by hand)
+        - label: tokenomics-bootstrap (generated a playbook)
+        - label: tokenomics-handoff (routing / handoff specs / session close)
+        - label: tokenomics-method (taught it to a session)
+        - label: the templates directly, without the skills
+        - label: just the cycle framing (macro/meso/micro), informally
+  - type: dropdown
+    id: tiers
+    attributes:
+      label: What does your tier access look like?
+      options:
+        - Three tiers (flagship / mid / small)
+        - Two tiers
+        - One model, usage-limited
+        - Per-token API billing
+        - Mixed / other
+    validations:
+      required: true
+  - type: dropdown
+    id: shape
+    attributes:
+      label: Project shape
+      options:
+        - Solo, multi-session project
+        - Small team
+        - Research / analysis work
+        - Product / app development
+        - Other
+  - type: input
+    id: scale
+    attributes:
+      label: Rough scale
+      description: 'Order of magnitude — e.g. "~5 sessions/week for a month", "one weekend".'
+  - type: textarea
+    id: routed
+    attributes:
+      label: What did routing change?
+      description: The most useful answer — a task you would have run on the expensive model that went down-tier (or the reverse, where the routing test pushed work up). Before → after if you can.
+  - type: textarea
+    id: rotted
+    attributes:
+      label: What rotted first?
+      description: The honest failure-mode question. Did the ledger stay updated? Did sessions stay one-item? Which part of the discipline did you stop doing, and when?
+  - type: textarea
+    id: friction
+    attributes:
+      label: Friction
+      description: Where did you get stuck — the bootstrap interview, the templates, a skill's instructions, something in the method doc that was wrong or confusing for your setup?
+  - type: textarea
+    id: saved
+    attributes:
+      label: Did it save anything you can point at?
+      description: Rough sense only — limits stretched further, fewer re-derivations, sessions that started faster. "No idea, nothing measured" is a valid and useful answer (a spend-ledger convention is queued as v0.3 for exactly this reason).
+  - type: textarea
+    id: anything_else
+    attributes:
+      label: Anything else?
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Attribution
+      options:
+        - label: You may quote this feedback / name me as an early adopter.
