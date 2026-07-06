@@ -1,5 +1,15 @@
 # Contributing
 
+## Feedback from adopters
+
+Ran the method on your own project? Open an
+[adopter-feedback issue](../../issues/new?template=feedback.yml) — shape and
+scale are enough, you don't need to name your project. What you report
+routes into the playbook's gap register and the W3 adopter-feedback pass:
+the method's own up-channel, applied to itself.
+
+## Changes
+
 This repo runs its own method — the working protocol lives in
 [`docs/model-effectiveness-playbook.md`](docs/model-effectiveness-playbook.md)
 and the method it follows in
