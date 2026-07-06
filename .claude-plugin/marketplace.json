@@ -1,0 +1,11 @@
+{
+  "name": "tokenomics",
+  "owner": { "name": "Aoife Okonedo Martin" },
+  "plugins": [
+    {
+      "name": "tokenomics",
+      "source": "./",
+      "description": "The token economics of model tiering — three skills (method, bootstrap, handoff) that route work to the cheapest capable model tier and carry strategy across sessions in a living playbook."
+    }
+  ]
+}

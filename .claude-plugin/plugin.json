@@ -1,0 +1,16 @@
+{
+  "name": "tokenomics",
+  "description": "Spend model capability like a scarce budget: the expensive model does only the work that is expensive to get wrong, every tier handoff crosses on a written spec, and a living playbook — not re-exploration — carries strategy between sessions.",
+  "version": "0.1.0",
+  "author": { "name": "Aoife Okonedo Martin" },
+  "homepage": "https://github.com/effythealien/tokenomics",
+  "repository": "https://github.com/effythealien/tokenomics",
+  "license": "MIT",
+  "keywords": [
+    "token-economy",
+    "model-routing",
+    "model-tiering",
+    "session-protocol",
+    "claude-code"
+  ]
+}
