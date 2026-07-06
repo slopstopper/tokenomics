@@ -21,7 +21,7 @@ work queue, the gap register if a gap was closed or reframed, the
 "Last updated" line, and the spend line:
 
 ```
-spend: lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
+spend: entry <pointer|ad-hoc> · lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
 ```
 
 This document is a ledger, not an essay; the spend line is records, not claims

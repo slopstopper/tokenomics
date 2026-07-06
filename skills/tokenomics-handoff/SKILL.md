@@ -76,7 +76,12 @@ Use when the builder wants to end a session and update the ledger.
 3. Run the spend-ledger extraction recipe from
    `docs/design/2026-07-06-spend-ledger-design.md` (or accept the builder's
    own numbers if they supply them), then append the spend line to the
-   session's ledger entry. Refuse savings language per the design spec's
+   session's ledger entry. Record the entry field first: `pointer` if the
+   session opened on the playbook pointer or a handoff spec and took a
+   queue item, `ad-hoc` otherwise — it is a record of how the session
+   actually started, not a compliance grade, and it is what makes the
+   protocol-followed-vs-lapsed comparison computable later. Refuse
+   savings language per the design spec's
    never-claim rules: never assert savings against an unmeasured baseline,
    never compare the counterfactual-flagship ratio across projects as a
    quality measure, never fold in a test/throwaway session unlabeled, and

@@ -173,7 +173,8 @@ lane it's in:
    column, the gap register, and the date line. This should take under a
    minute; the playbook is a ledger, not an essay. Don't rewrite the
    strategic frame or restate history that's already recorded — append the
-   delta and stop. The update also carries a spend line — lane planned vs.
+   delta and stop. The update also carries a spend line — how the session
+   entered (playbook pointer or ad hoc), lane planned vs.
    run, dispatch count, output tokens by tier, and the counterfactual-
    flagship ratio where a dated price table makes it computable. It is
    records, not claims — it never asserts savings against an unmeasured

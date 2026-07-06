@@ -10,22 +10,34 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-06 (fifth update) — **W5 shipped (v0.3.2)**: the
+Last updated: 2026-07-06 (sixth update) — **spend line gains the entry
+field (v0.3.3, owner-directed, unqueued)**: `entry <pointer|ad-hoc>`
+records how each session opened, making pre-registered analysis A2
+(protocol-followed vs. lapsed) computable from the ledger alone; wired
+into the design spec, playbook template, handoff skill Mode B, and method
+doc Layer 2; both prior spend lines retro-tagged; first paired
+observation recorded in the done ledger.
+spend: entry pointer · lane flagship→flagship · dispatches 0 ·
+same-session continuation of W5, small diff (5 docs + manifest) ·
+out-tokens not extracted · cf-flagship omitted (no dated price table
+supplied).
+Prior update: 2026-07-06 (fifth update) — **W5 shipped (v0.3.2)**: the
 compression-forward reframe — README opening and method-doc thesis now lead
 with context economics (cycle boundaries as compression points), with tier
 arithmetic presented as the first application of that idea; G5 closed.
-spend: lane flagship→flagship · dispatches 0 · single session, small diff
-(2 docs reframed + ledger) · out-tokens not extracted · cf-flagship omitted
-(no dated price table supplied).
+spend: entry pointer (retro-tagged) · lane flagship→flagship · dispatches 0
+· single session, small diff (2 docs reframed + ledger) · out-tokens not
+extracted · cf-flagship omitted (no dated price table supplied).
 Prior update: 2026-07-06 (fourth update) — **W4 shipped (v0.3.1)**: the
 escalation rule (§The cycle, third property), the verification axis in
 Layer 1 ("route down only as far as your gates reach"), and the standing
 escalation clause in the handoff template; W5–W7 queued from the same
 flagship review (compression-forward reframe; when-it-doesn't-pay; bootstrap
 salvage path).
-spend: lane flagship→flagship · dispatches 15 · out-tokens flagship ≈265k /
-mid ≈9.4k / small ≈1.1k · cf-flagship omitted (no dated price table
-supplied) — whole-session figures spanning v0.1→W4, approximate.
+spend: entry ad-hoc (retro-tagged) · lane flagship→flagship · dispatches 15
+· out-tokens flagship ≈265k / mid ≈9.4k / small ≈1.1k · cf-flagship omitted
+(no dated price table supplied) — whole-session figures spanning v0.1→W4,
+approximate.
 Prior update: **spend ledger shipped, v0.3.0**:
 the spend line is live in the playbook template, the handoff skill's Mode B,
 and the method doc's Layer 2 and cycle section; W1 done. Prior update same
@@ -93,6 +105,7 @@ outranks work that adds surface area.**
 | v0.2 | The cycle reframe: macro/meso/micro section, compression thesis, up-channel rule, scale-invariant handoff template | flagship | done — 2026-07-06 |
 | — | Repo protocols: branch + PR flow, CI gates workflow, main ruleset, CONTRIBUTING.md (owner-directed, unqueued) | mid-mechanics, flagship judgment on the gate set | done — 2026-07-06 |
 | W1 | Spend-ledger convention (v0.3): the spend line, the counterfactual-flagship ratio, and the never-claim rules, designed in `docs/design/2026-07-06-spend-ledger-design.md` and wired into the playbook template, the handoff skill's Mode B, and the method doc's Layer 2 and cycle section. First data point recorded in the design spec itself. | flagship (design) + mid (mechanical half) | done — 2026-07-06 |
+| — | Spend-line entry field (v0.3.3, owner-directed, unqueued): `entry <pointer|ad-hoc>` added to the spend-line convention so A2 (protocol-followed vs. lapsed) is computable from the ledger. **Do-not-re-derive — first paired observation:** the ledger now holds one `entry ad-hoc` line (whole-arc v0.1→W4, 15 dispatches, ≈265k flagship out-tokens) and one `entry pointer` line (W5, 0 dispatches, 4 files read at open, 32-line diff). Not comparable as costs — different scope — but the pointer session's entry overhead was one file read; a record, not a savings claim. | flagship (convention design) | done — 2026-07-06 |
 | W5 | Compression-forward reframe (v0.3.2): README opening and method-doc thesis now lead with context economics — cycle boundaries as compression points, working context dies at the boundary, only the distilled artifact crosses — with tier arithmetic presented as the first application of that idea, not the idea itself. Closes the buried-thesis gap. | flagship (positioning) | done — 2026-07-06 |
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done — 2026-07-06 |
 
