@@ -1,7 +1,17 @@
 # The portable method
 
-Tokenomics treats model capability as a scarce budget, not an amenity. Three
-claims follow from that framing. First, most work in a real project does not
+Tokenomics treats a model's working context as the scarce resource. Model
+prices and tier names churn on a timescale of months; the economics of
+context do not: every session fills a working context that is expensive to
+fill and impossible to keep, and whatever isn't deliberately distilled out
+of it before it dies is paid for again next session. The method's core
+move is to run work in cycles whose boundaries are compression points —
+the working context dies at the boundary, and only a distilled artifact
+crosses.
+
+Tier arithmetic — spending model capability like a scarce budget — is the
+first application of that idea, not the idea itself. Three claims follow
+from the framing. First, most work in a real project does not
 need the best model available — it needs the cheapest model that will do the
 job correctly. Second, the expensive model's output is only durable when it
 leaves a written spec behind; a brilliant decision that lives only in one
