@@ -54,7 +54,10 @@ handoff spec at meso, a brief or report at micro. Tokenomics is
 tier-matching *within* cycles plus deliberate context-shedding *between*
 them; a boundary that lets raw context leak across (pasting a session's
 history into the next dispatch, re-deriving a decision the ledger already
-records) is paying twice for the same tokens.
+records) is paying twice for the same tokens. The spend line appended at
+each meso-cycle close is what makes this compression claim checkable rather
+than asserted — it records what actually ran instead of what the loop
+assumes should have run.
 
 **Findings escalate one cycle level, at cycle close.** Information flows
 down the cycles as briefs and specs; it flows back up through the exit
@@ -136,7 +139,12 @@ lane it's in:
    column, the gap register, and the date line. This should take under a
    minute; the playbook is a ledger, not an essay. Don't rewrite the
    strategic frame or restate history that's already recorded — append the
-   delta and stop.
+   delta and stop. The update also carries a spend line — lane planned vs.
+   run, dispatch count, output tokens by tier, and the counterfactual-
+   flagship ratio where a dated price table makes it computable. It is
+   records, not claims — it never asserts savings against an unmeasured
+   baseline. See `docs/design/2026-07-06-spend-ledger-design.md` for the
+   field format and the extraction recipe.
 5. **Existing project gates always apply.** The method adds no exceptions
    for build, test, lint, or review requirements a project already has.
    Tokenomics is a routing and handoff discipline, not a license to skip

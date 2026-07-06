@@ -71,14 +71,23 @@ Use when the builder wants to end a session and update the ledger.
      subagent report — that outlives the session; this is the up-channel,
      and findings climb one cycle level at a time),
    - the "Last updated" line.
-3. Refuse wholesale rewrites. If asked to restructure the strategic frame,
+3. Run the spend-ledger extraction recipe from
+   `docs/design/2026-07-06-spend-ledger-design.md` (or accept the builder's
+   own numbers if they supply them), then append the spend line to the
+   session's ledger entry. Refuse savings language per the design spec's
+   never-claim rules: never assert savings against an unmeasured baseline,
+   never compare the counterfactual-flagship ratio across projects as a
+   quality measure, never fold in a test/throwaway session unlabeled, and
+   never quote the ratio without its price-table date and token-volume
+   assumption.
+4. Refuse wholesale rewrites. If asked to restructure the strategic frame,
    re-order the queue wholesale, or otherwise rewrite substantial sections
    mid-close, don't do it — note it instead as a re-assessment candidate
    (a line in the Gap register or your reply saying the frame may need a
    full re-assessment pass, per the method's rule that re-assessment is
    reserved for an empty queue or a wrong-feeling frame, not folded into a
    routine close).
-4. Leave the strategic frame, standing constraints, model routing section,
+5. Leave the strategic frame, standing constraints, model routing section,
    and session protocol untouched — those are not close-time edits.
 
 Read-only toward everything except the playbook itself in this mode. Do
