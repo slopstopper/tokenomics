@@ -45,7 +45,7 @@ outranks work that adds surface area.**
 | - | --- | ------ | -------- |
 | G1 | No spend record — the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | open — W1 queued | high (credibility) |
 | G2 | Session-start discipline is manual — nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | open — W2 queued | medium |
-| G3 | Single-project validation — the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open — not actionable from inside this repo; revisit when there is an external adopter | medium (maturity) |
+| G3 | Single-project validation — the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open — **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable — collect adopter feedback and route findings into W3 | medium (maturity) |
 
 ## Work queue
 
@@ -60,7 +60,7 @@ outranks work that adds surface area.**
 
 | ID | Work | Lane | Gate | Status |
 | -- | ---- | ---- | ---- | ------ |
-| W3 | Second-adopter feedback pass — revisit lane boundaries and playbook components against a real external adoption | flagship | an external project actually adopting the method | gated |
+| W3 | Adopter feedback pass — revisit lane boundaries and playbook components against real external adoptions (repo shared 2026-07-06; adopters expected) | flagship | first substantive adopter feedback arriving | gated — gate now expected to open |
 
 ### Done (shipped queue items — ledger)
 
