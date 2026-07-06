@@ -1,9 +1,15 @@
 ---
 name: tokenomics-handoff
-description: Use at the two moments tokens are saved — when routing a task to a lane and writing the down-tier handoff spec, and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation.
+description: Use at the two moments tokens are saved — when routing a task to a lane and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation.
 ---
 
 # Route, hand off, or close a tokenomics session
+
+This skill operates at cycle boundaries (see `reference/portable-method.md`
+§The cycle): Mode A is the downward boundary — macro→meso (a queue item
+into a session) or meso→micro (a controller dispatching a subagent); Mode B
+is the upward one — the meso cycle closing into the ledger. The handoff
+contract is the same at either scale, sized to the cycle.
 
 Two modes. Pick the one the builder is actually asking for — don't run
 both, and don't guess which one is wanted if the request is ambiguous, ask.
@@ -60,7 +66,10 @@ Use when the builder wants to end a session and update the ledger.
 2. Update **only**:
    - the Status column of the work queue,
    - the Gap register (mark gaps closed with their PR number, or reframed
-     with a stated reason if deprioritized rather than fixed),
+     with a stated reason if deprioritized rather than fixed; also promote
+     here any finding from this session's micro cycles — a reviewer or
+     subagent report — that outlives the session; this is the up-channel,
+     and findings climb one cycle level at a time),
    - the "Last updated" line.
 3. Refuse wholesale rewrites. If asked to restructure the strategic frame,
    re-order the queue wholesale, or otherwise rewrite substantial sections

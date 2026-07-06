@@ -2,6 +2,13 @@
 
 *A handoff spec is complete when the receiving tier can execute without asking the sending tier anything and without re-deriving any decision.*
 
+The contract is scale-invariant: the same sections serve a session-to-session
+handoff (meso — a spec file in the project's spec directory) and a
+controller-to-subagent dispatch (micro — a task brief, each section a
+sentence or two). Size the sections to the cycle; never drop one. An empty
+"Decisions already made" means the handoff is not ready — at any scale.
+
+- Scale: <meso (session→session) / micro (controller→subagent)>
 - From lane: <flagship/mid> → To lane: <mid/small>
 - Date: <date>  ·  Playbook item: <ID>
 

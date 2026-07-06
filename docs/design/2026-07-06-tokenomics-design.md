@@ -210,6 +210,22 @@ presented as the verbatim artifact.
   `/plugin install tokenomics@tokenomics`).
 - License: MIT.
 
+## Amendment: v0.2 (2026-07-06, owner-approved)
+
+The four layers are components; at runtime they compose into one loop —
+enter on a written brief, run at the cheapest capable tier, exit on a
+verified artifact plus a ledger line — nested at three timescales: macro
+(the project arc), meso (one session), micro (one subagent task). This
+periodization view (owner's framing) was added to `portable-method.md` as
+§The cycle, stating the two load-bearing properties explicitly: every cycle
+boundary is a context-compression point, and findings escalate one cycle
+level at cycle close (the up-channel). The handoff-spec template became
+scale-invariant (same sections at meso and micro, sized to the cycle, with
+a Scale line); the handoff skill's description and Mode B pick up the
+boundary framing and the up-channel promotion rule. The repo also gained
+its own `docs/model-effectiveness-playbook.md` (dogfooding), which queues
+the v0.3 spend-ledger convention as W1.
+
 ## Acceptance
 
 v0.1 is done when: the three skills (method, bootstrap, handoff) load and

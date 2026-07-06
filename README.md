@@ -34,7 +34,14 @@ append-mostly document rather than rewritten each session. **Tiered
 orchestration** describes the cycle across sessions and tiers: the
 expensive model plans and hands off, cheaper tiers execute and can spawn
 further subagent teams, and results return only at verification gates.
-Full detail, including the negative list and the lane-scarcity rule, is in
+
+At runtime the four layers compose into one loop — *enter on a written
+brief, run at the cheapest capable tier, exit on a verified artifact plus a
+ledger line* — nested at three timescales: macro (the project arc), meso
+(one session), micro (one subagent task). Every cycle boundary is a
+context-compression point: working context dies there, and only the
+distilled artifact crosses. Full detail, including the cycle table, the
+negative list, and the lane-scarcity rule, is in
 [`reference/portable-method.md`](reference/portable-method.md).
 
 ## The skills
@@ -91,8 +98,11 @@ abstraction of the real, in-use playbook this method was extracted from
 private and pre-release, so its specifics are generalized). This is a
 practice report from one real project, not a benchmark: no controlled
 comparison against alternative approaches exists yet. Planned, not
-shipped: a session-start hook that injects a pointer to the project's
-playbook automatically.
+shipped: a spend-ledger convention (v0.3) — a minimal per-session record of
+lane used and rough scale of work, so the method's savings claims become
+falsifiable against its own history — and a session-start hook that injects
+a pointer to the project's playbook automatically. Both are queued in this
+repo's own [playbook](docs/model-effectiveness-playbook.md).
 
 ## License
 

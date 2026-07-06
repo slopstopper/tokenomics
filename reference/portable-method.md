@@ -29,6 +29,45 @@ It does not assume a specific tool, language, or project type. It assumes
 only that "some model calls are more expensive than others" is true for your
 setup, and that your project outlives a single session.
 
+## The cycle
+
+The four layers below are the components of the method. At runtime they
+compose into a single loop, and the loop is the same at every timescale:
+
+> **Enter on a written brief. Run at the cheapest capable tier. Exit on a
+> verified artifact plus a ledger line.**
+
+The method runs that loop at three nested scales:
+
+| Cycle | Timescale | Entry artifact | Exit artifact | Who runs it |
+| ----- | --------- | -------------- | ------------- | ----------- |
+| **Macro** | weeks — the project arc | strategic frame + work queue (the playbook) | re-assessment; an updated frame and queue | flagship |
+| **Meso** | hours — one session | the playbook pointer + one queue item, or a handoff spec | verified deliverable + the end-of-session ledger update | the lane the queue item names |
+| **Micro** | minutes — one subagent task | a task brief | a report and a reviewed diff | the cheapest capable tier |
+
+Two properties of this nesting do the actual token saving.
+
+**Every cycle boundary is a context-compression point.** A cycle's full
+working context — the exploration, the dead ends, the reasoning — dies at
+its boundary. Only the distilled artifact crosses: a queue line at macro, a
+handoff spec at meso, a brief or report at micro. Tokenomics is
+tier-matching *within* cycles plus deliberate context-shedding *between*
+them; a boundary that lets raw context leak across (pasting a session's
+history into the next dispatch, re-deriving a decision the ledger already
+records) is paying twice for the same tokens.
+
+**Findings escalate one cycle level, at cycle close.** Information flows
+down the cycles as briefs and specs; it flows back up through the exit
+artifacts, one level at a time. A micro-cycle reviewer's structural finding
+lands in its report; the meso cycle's close promotes it to the gap register
+if it outlives the session; the macro re-assessment reorders the queue
+around it. Nothing skips a level, and nothing escalates mid-cycle except a
+blocker.
+
+The handoff contract is scale-invariant: the same sections serve a
+session-to-session handoff and a controller-to-subagent dispatch, sized to
+the cycle — see `handoff-spec-template.md`.
+
 ## Layer 1 — Routing
 
 Work is routed to one of three lanes, defined by the *nature of the work*,
