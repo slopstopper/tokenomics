@@ -10,10 +10,14 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-06 — **v0.2 shipped**: the cycle section (macro /
-meso / micro nesting, context-compression thesis, up-channel rule) added to
-the method doc; handoff-spec template made scale-invariant; handoff skill
-and README updated to match. W1 (spend ledger) queued as the v0.3 headline.
+Last updated: 2026-07-06 (second update) — **repo protocols live**: branch +
+PR flow with protected `main`, gates enforced in CI
+(`.github/workflows/gates.yml`), CONTRIBUTING.md added; session protocol
+rules 5–6 now carry the flow. Prior update same day: **v0.2 shipped** — the
+cycle section (macro / meso / micro nesting, context-compression thesis,
+up-channel rule) added to the method doc; handoff-spec template made
+scale-invariant; handoff skill and README updated to match. W1 (spend
+ledger) queued as the v0.3 headline.
 
 ## How to use this document
 
@@ -64,6 +68,7 @@ outranks work that adds surface area.**
 | -- | ---- | ---- | ------ |
 | v0.1 | Extraction: method doc, three skills, two templates, worked example, publish | flagship (design + judgment) with mid/small micro cycles for transcription, prose, and review | done — 2026-07-06 |
 | v0.2 | The cycle reframe: macro/meso/micro section, compression thesis, up-channel rule, scale-invariant handoff template | flagship | done — 2026-07-06 |
+| — | Repo protocols: branch + PR flow, CI gates workflow, main ruleset, CONTRIBUTING.md (owner-directed, unqueued) | mid-mechanics, flagship judgment on the gate set | done — 2026-07-06 |
 
 ## Model routing
 
@@ -82,10 +87,14 @@ Clear contract with tests → mid. Mechanical with automated verification → sm
 3. Spec-first for anything designed in one lane and executed in another
    (specs live in `docs/design/`).
 4. End-of-session ledger update: status column, gap register, date line.
-5. Gates for this repo: relative links resolve; `jq`-valid manifests; skill
-   frontmatter names match directories; no concrete model names outside the
-   method doc's one dated mapping table.
-6. Re-assess only when the Now queue is empty or the strategic frame feels
+5. Branch before any change (`method/`, `skills/`, `docs/`, `fix/`,
+   `protocol/` prefixes); one idea per branch; PR to protected `main`;
+   self-merge once gates are green. Direct pushes to `main` ended with v0.2.
+6. Gates run in CI (`.github/workflows/gates.yml`) and must be green to
+   merge: relative links resolve; `jq`-valid manifests; skill frontmatter
+   names match directories; privacy sweep (source project unnamed); no
+   concrete model names outside the method doc's one dated mapping table.
+7. Re-assess only when the Now queue is empty or the strategic frame feels
    wrong.
 
 ## Standing constraints (non-negotiable)

@@ -1,0 +1,52 @@
+name: gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Manifests valid
+        run: |
+          jq -e '.name == "tokenomics"' .claude-plugin/plugin.json
+          jq -e '.plugins[0].source == "./"' .claude-plugin/marketplace.json
+
+      - name: Skill frontmatter matches directories
+        run: |
+          for f in skills/*/SKILL.md; do
+            d=$(basename "$(dirname "$f")")
+            head -1 "$f" | grep -qx -- '---' || { echo "no frontmatter fence: $f"; exit 1; }
+            grep -qx "name: $d" "$f" || { echo "frontmatter name != directory: $f"; exit 1; }
+          done
+
+      - name: Relative links resolve
+        run: |
+          fail=0
+          for f in $(git ls-files '*.md'); do
+            dir=$(dirname "$f")
+            for l in $(grep -oE '\]\([^) ]+\)' "$f" | sed -E 's/\]\((.+)\)/\1/'); do
+              case "$l" in http://*|https://*|mailto:*|\#*) continue ;; esac
+              t="${l%%#*}"
+              [ -z "$t" ] && continue
+              if [ ! -e "$dir/$t" ]; then echo "BROKEN: $f -> $l"; fail=1; fi
+            done
+          done
+          exit "$fail"
+
+      - name: Privacy sweep (source project stays unnamed)
+        run: |
+          ! grep -rniE 'veska|gdelt|astronom|/Users/' --include='*.md' .
+
+      - name: Concrete model names only in the method doc's mapping
+        run: |
+          hits=$(grep -rlE 'Fable|Opus|Sonnet|Haiku' --include='*.md' . | grep -vx './reference/portable-method.md' || true)
+          if [ -n "$hits" ]; then
+            echo "Concrete model names outside portable-method.md:"
+            echo "$hits"
+            exit 1
+          fi
