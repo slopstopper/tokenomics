@@ -8,6 +8,11 @@ controller-to-subagent dispatch (micro — a task brief, each section a
 sentence or two). Size the sections to the cycle; never drop one. An empty
 "Decisions already made" means the handoff is not ready — at any scale.
 
+Standing escalation clause, part of every handoff at every scale: if the
+work turns out to fail the receiving lane's routing test, stop and hand
+back early with what was learned — an early return is cheap; pushing
+through is not.
+
 - Scale: <meso (session→session) / micro (controller→subagent)>
 - From lane: <flagship/mid> → To lane: <mid/small>
 - Date: <date>  ·  Playbook item: <ID>
