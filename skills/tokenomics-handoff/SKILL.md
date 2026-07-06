@@ -26,7 +26,9 @@ a spec written to send it down-tier.
 3. Apply the routing test from `reference/portable-method.md` to the task
    at hand: **"If this is done slightly wrong, is it expensive?"**
    Yes → flagship. Clear contract with tests → mid. Mechanical with
-   automated verification → small.
+   automated verification → small. Then check the second axis: route down
+   only as far as the project's gates reach — a task with no cheap
+   verification routes up regardless of how mechanical it looks.
 4. State the lane and the reason in one sentence. Don't pad this with a
    general opinion — the routing test is the reason, so cite it directly
    (e.g. "Mid lane — this executes against the existing X contract with

@@ -10,7 +10,16 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-06 (third update) — **spend ledger shipped, v0.3.0**:
+Last updated: 2026-07-06 (fourth update) — **W4 shipped (v0.3.1)**: the
+escalation rule (§The cycle, third property), the verification axis in
+Layer 1 ("route down only as far as your gates reach"), and the standing
+escalation clause in the handoff template; W5–W7 queued from the same
+flagship review (compression-forward reframe; when-it-doesn't-pay; bootstrap
+salvage path).
+spend: lane flagship→flagship · dispatches 15 · out-tokens flagship ≈265k /
+mid ≈9.4k / small ≈1.1k · cf-flagship omitted (no dated price table
+supplied) — whole-session figures spanning v0.1→W4, approximate.
+Prior update: **spend ledger shipped, v0.3.0**:
 the spend line is live in the playbook template, the handoff skill's Mode B,
 and the method doc's Layer 2 and cycle section; W1 done. Prior update same
 day: **repo protocols live**: branch + PR flow with protected `main`, gates
@@ -47,6 +56,10 @@ outranks work that adds surface area.**
 | G1 | No spend record — the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | design closed + implementation shipped — spend line live in template/skill/method doc | high (credibility) |
 | G2 | Session-start discipline is manual — nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | open — W2 queued | medium |
 | G3 | Single-project validation — the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open — **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable — collect adopter feedback and route findings into W3 | medium (maturity) |
+| G4 | Downward-only routing — the method said when to send work down but not when a receiving tier must stop and return; mis-routed work ground out down-tier burns savings invisibly (gates catch defective output, not expensive output) | **closed** — W4: escalation rule in §The cycle, verification axis in Layer 1, standing escalation clause in the handoff template | high (method semantics) |
+| G5 | Compression thesis buried — the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | open — W5 queued | medium (positioning) |
+| G6 | No not-worth-it threshold — the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | open — W6 queued | low (credibility) |
+| G7 | Bootstrap assumes greenfield — no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open — W7 queued | medium (adoption) |
 
 ## Work queue
 
@@ -56,6 +69,9 @@ outranks work that adds surface area.**
 | -- | ---- | ------ | ---- | ---- | ------ |
 | W1 | **Spend-ledger convention (v0.3).** Design the minimal per-session spend line: what a session records (lane used, rough scale of work — turns or dispatches, not exact token counts unless cheaply available — and handoff count), where it lives (a column or sub-line in the playbook's ledger update, not a new file), and what it may never claim (no savings assertions, records only). Then: template gains the field, handoff skill's Mode B writes it, method doc's Layer 2 documents it. Design-heavy first half (what to record without turning the ledger into an essay is the expensive-to-get-wrong part); mechanical second half. | G1 | flagship (design), mid (the template/skill edits from the design) | 1 session | done |
 | W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | open — gated on a written spec |
+| W5 | **Compression-forward reframe.** Promote the compression thesis (cycle boundaries as context-compression points; context economics as the durable idea, tier arithmetic as its first application) from a paragraph inside §The cycle to the front of the README and the method doc's thesis. Small diff, high judgment — the framing is the product. | G5 | flagship | <1 session | open |
+| W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | open |
+| W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | open |
 
 ### Later
 
@@ -71,6 +87,7 @@ outranks work that adds surface area.**
 | v0.2 | The cycle reframe: macro/meso/micro section, compression thesis, up-channel rule, scale-invariant handoff template | flagship | done — 2026-07-06 |
 | — | Repo protocols: branch + PR flow, CI gates workflow, main ruleset, CONTRIBUTING.md (owner-directed, unqueued) | mid-mechanics, flagship judgment on the gate set | done — 2026-07-06 |
 | W1 | Spend-ledger convention (v0.3): the spend line, the counterfactual-flagship ratio, and the never-claim rules, designed in `docs/design/2026-07-06-spend-ledger-design.md` and wired into the playbook template, the handoff skill's Mode B, and the method doc's Layer 2 and cycle section. First data point recorded in the design spec itself. | flagship (design) + mid (mechanical half) | done — 2026-07-06 |
+| W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done — 2026-07-06 |
 
 ## Model routing
 

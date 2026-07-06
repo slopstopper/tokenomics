@@ -45,7 +45,7 @@ The method runs that loop at three nested scales:
 | **Meso** | hours — one session | the playbook pointer + one queue item, or a handoff spec | verified deliverable + the end-of-session ledger update | the lane the queue item names |
 | **Micro** | minutes — one subagent task | a task brief | a report and a reviewed diff | the cheapest capable tier |
 
-Two properties of this nesting do the actual token saving.
+Three properties of this nesting do the actual token saving.
 
 **Every cycle boundary is a context-compression point.** A cycle's full
 working context — the exploration, the dead ends, the reasoning — dies at
@@ -66,6 +66,19 @@ lands in its report; the meso cycle's close promotes it to the gap register
 if it outlives the session; the macro re-assessment reorders the queue
 around it. Nothing skips a level, and nothing escalates mid-cycle except a
 blocker.
+
+**A cycle that cannot meet its exit bar returns early.** Routing is decided
+at scope time, and scope-time judgments are sometimes wrong. The escalation
+rule: when the receiving tier discovers mid-cycle that the work fails its
+lane's routing test — the judgment calls keep coming, the gates don't
+reach, the turns multiply — it stops and hands back up with what it
+learned: what was tried, what broke, and what decision is actually needed.
+An early return is cheap tuition. Pushing through is the method's invisible
+failure mode: a cheap model grinding out triple the turns on work it cannot
+do burns the savings the routing bought, and the gates won't show it,
+because gates catch defective output, not expensive output. Escalation
+crosses the boundary the same way everything else does — as an artifact,
+one level up.
 
 The handoff contract is scale-invariant: the same sections serve a
 session-to-session handoff and a controller-to-subagent dispatch, sized to
@@ -96,6 +109,17 @@ The routing test is one question, asked before any task is assigned a lane:
 - Clear contract with tests → mid. Correctness is checkable against
   something already written down.
 - Mechanical with automated verification → small. A green gate is enough.
+
+The test has a second axis, usually left implicit: **the cost of
+verification.** Routing down is safe exactly as far as your gates reach —
+tests, contracts, diffs, checks that make correctness cheap to confirm
+without judgment. Work with no cheap gate — design prose, a taxonomy call,
+anything where checking it means redoing it — is flagship work even when it
+looks easy, because verification costs as much as execution and the wrong
+version reads exactly like the right one. Route down only as far as your
+gates reach; and when a scope-time routing call turns out wrong
+mid-cycle, the escalation rule (§The cycle) applies — return early, don't
+push through.
 
 The test cuts against a natural but wasteful instinct — reaching for the
 best model out of habit or anxiety, regardless of what the task actually
