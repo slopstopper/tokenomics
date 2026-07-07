@@ -1,5 +1,5 @@
 blank_issues_enabled: true
 contact_links:
   - name: "Where feedback goes"
-    url: "https://github.com/effythealien/tokenomics/blob/main/docs/model-effectiveness-playbook.md"
+    url: "https://github.com/slopstopper/tokenomics/blob/main/docs/model-effectiveness-playbook.md"
     about: "Findings route into the playbook's gap register and the W3 adopter-feedback pass — the method's own up-channel, one cycle level at a time."
