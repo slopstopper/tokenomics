@@ -3,7 +3,7 @@
 ## Feedback from adopters
 
 Ran the method on your own project? Open an
-[adopter-feedback issue](https://github.com/effythealien/tokenomics/issues/new?template=feedback.yml) — shape and
+[adopter-feedback issue](https://github.com/slopstopper/tokenomics/issues/new?template=feedback.yml) — shape and
 scale are enough, you don't need to name your project. What you report
 routes into the playbook's gap register and the W3 adopter-feedback pass:
 the method's own up-channel, applied to itself.

@@ -82,7 +82,7 @@ execute without re-derivation.
 plugin marketplace. From inside Claude Code:
 
 ```
-/plugin marketplace add effythealien/tokenomics
+/plugin marketplace add slopstopper/tokenomics
 /plugin install tokenomics@tokenomics
 ```
 

@@ -18,3 +18,10 @@ Rules:
 - If the builder wants this set up on their project, point them to the
   tokenomics-bootstrap skill; for a live routing/handoff decision, the
   tokenomics-handoff skill.
+
+Vocabulary seam: tokenomics' "handoff" names a down-tier work spec — the
+written brief one model tier hands to a cheaper one. Sibling plugins use the
+word differently: plumb-line's "handoff" is a skill-to-skill baton pass;
+recursive-spine's "handover" is the record of debts filed before a session
+closes. Same word, three different joints — don't assume a shared meaning
+across plugins.
