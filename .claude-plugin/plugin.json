@@ -5,7 +5,7 @@
   "author": { "name": "Aoife Okonedo Martin" },
   "homepage": "https://github.com/slopstopper/tokenomics",
   "repository": "https://github.com/slopstopper/tokenomics",
-  "license": "MIT",
+  "license": "CC-BY-4.0 AND Apache-2.0",
   "keywords": [
     "token-economy",
     "model-routing",

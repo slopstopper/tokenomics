@@ -1,21 +1,26 @@
-MIT License
+# tokenomics — licence map
 
-Copyright (c) 2026 Aoife Okonedo Martin
+The slopstopper family formula (decision record:
+https://github.com/slopstopper/recursive-spine/issues/55): CC BY 4.0
+prose + Apache-2.0 code.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+| Scope | Licence | Why |
+| --- | --- | --- |
+| `skills/`, `docs/`, `reference/`, `examples/`, `README.md`, and all other prose | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | The method itself. Take it anywhere, adapt it, use it commercially — the credit line travels with every copy. |
+| `.github/` | [Apache-2.0](LICENSES/Apache-2.0.txt) | Plumbing. |
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+**Attribution, in the manner we request (CC BY 4.0 §3(a)(1)):** one
+line, wherever your copy or adaptation lives —
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+> Adapted from tokenomics (https://github.com/slopstopper/tokenomics),
+> © 2026 Aoife Okonedo Martin, CC BY 4.0
+
+Full licence texts: [LICENSES/](LICENSES/).
+
+Using the plugin as a plugin — installing it, running its skills,
+commercially or not — is use, not adaptation. It requires nothing from
+you. These terms bind people who republish or repackage the text;
+credit is the one thing that must survive the copy.
+
+Versions published before this change remain available under their
+original MIT terms.

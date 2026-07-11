@@ -113,4 +113,10 @@ pointer to the project's playbook automatically, queued in this repo's own
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE).
+Credit-first, per the slopstopper family formula: all prose — skills,
+docs, the method, examples — is **CC BY 4.0**: take it anywhere, adapt
+it, use it commercially; the one-line credit travels with every copy.
+CI plumbing is Apache-2.0. The scope map and the requested attribution
+format live in [`LICENSE`](LICENSE). Using the plugin as a plugin
+requires nothing — these terms bind republishing, not use. Previously
+published versions remain MIT.
