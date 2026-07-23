@@ -18,8 +18,10 @@ spec, closing out with a ledger update; the method doc and templates make
 the same discipline usable on any project, with or without the plugin.
 
 For why this discipline exists — not just how it works — see
-[`docs/why.md`](docs/why.md): tokenomics as the demand-side counter-architecture
-for metered access, and the ceiling it was born at.
+[`docs/why.md`](docs/why.md): matching the model to the work rather than
+reaching for the most expensive one by default, why that's worth the trouble
+(compute isn't free, economically or environmentally), and the not-knowing it
+was born from.
 
 ## Who it's for
 
