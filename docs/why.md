@@ -51,18 +51,32 @@ is part of why the method is worth its small overhead.
 
 ## What the discipline is
 
-Everything else in this repository is the practical form of one idea: match the
-model to the work.
+Everything else in this repository is the practical form of one idea, and it's
+a little larger than choosing a model: put the capability where the work needs
+it, and don't pay for the same thinking twice.
 
 - Route by the cost of getting it wrong, so the expensive tier is spent only
-  where a mistake is actually expensive.
+  where a mistake is actually expensive. When premium access is time-boxed, let
+  that scarcity set the order of the work rather than whatever feels most urgent
+  in the moment — the clock measures the work, it doesn't get to reorder it.
 - Route down as far as your gates reach — keep judgment-priced capability for
   the judgment that has no cheap way to be checked.
-- Write decisions down, so nothing that cost the expensive tier to reach has to
-  be paid for twice.
+- Distill each stretch of work before it ends. Working context is expensive to
+  build and impossible to keep, and whatever a session figures out but doesn't
+  deliberately write down — into a spec, into the ledger — gets worked out again
+  from scratch next time. Nothing that cost the expensive tier to reach should
+  have to be reached twice.
+
+That last part is the one that outgrows model-choice. Picking the right tier
+saves what a single task would have overspent; not re-deriving what you'd
+already settled saves what a whole project's worth of sessions would each have
+paid over again. The idea this started as — context economics — is only that
+observation taken seriously: the scarce thing isn't the price of a token, it's
+the working context you can't carry across a boundary, and the method is built
+to lose as little of it as possible.
 
 None of it is about spending less for its own sake. It's about spending well —
-putting the capability where it counts, and not burning it where it doesn't.
-That the method came out of my own not-knowing, at the point where I was
-overspending on nearly everything, isn't incidental to it. It's the reason it
-exists.
+putting the capability where it counts, not burning it where it doesn't, and not
+paying twice for something you've already worked out. That the method came out
+of my own not-knowing, at the point where I was overspending on nearly
+everything, isn't incidental to it. It's the reason it exists.
