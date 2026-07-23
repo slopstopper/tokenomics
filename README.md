@@ -30,8 +30,12 @@ your project outlives a single session.
 The method has four layers. **Routing** sends each task to one of three
 lanes — flagship, mid, or small — by the nature of the work, decided with
 one question asked before a task is assigned a lane: **"If this is done
-slightly wrong, is it expensive?"** **Session protocol** governs how a
-single session runs: open with the playbook pointer rather than
+slightly wrong, is it expensive?"** A second axis decides how far down is
+safe: route down only as far as your gates reach. Work with no cheap way to
+verify it — a design call, a taxonomy decision, anything where checking it
+means redoing it — is flagship work even when it looks easy, because the
+wrong version reads exactly like the right one. **Session protocol** governs
+how a single session runs: open with the playbook pointer rather than
 re-exploring the repo, keep work spec-first across lane boundaries, and
 close with a ledger update and nothing more. **The living playbook** is
 the cross-session re-entry point — a status block, strategic frame, work
@@ -93,7 +97,10 @@ the three skills. Updates come through `/plugin`.
 directory, or add it under `plugins` in your `.claude/settings.json`. The
 method doc and templates under `reference/` are plain markdown — they're
 usable as a manual discipline on any project, with or without Claude Code
-at all.
+at all. In particular, the playbook and handoff-spec templates work as
+project knowledge in a claude.ai Project: paste them in, keep the playbook
+as a living document there, and run the routing-and-handoff discipline by
+hand — no Code required.
 
 ## Status
 
