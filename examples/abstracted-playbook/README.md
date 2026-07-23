@@ -1,12 +1,12 @@
 # Worked example: an abstracted playbook from a real project
 
 [`model-effectiveness-playbook.md`](model-effectiveness-playbook.md) is an
-abstraction of the real, in-use playbook of a private, pre-release project —
+abstraction of the real, in-use playbook of a private, pre-release project:
 a browser-local research instrument. The structure, section order, table
 shapes, and every working mechanic are preserved from the original; item
 titles, domain terms, findings, and identifiers have been generalized
-pending the project's release. Nothing is invented — each mechanic shown was
-used in practice across several weeks of multi-session work — but the
+pending the project's release. Nothing is invented (each mechanic shown was
+used in practice across several weeks of multi-session work) but the
 specifics are deliberately not the real ones.
 
 It is not an idealized sample: the abstraction was taken mid-history, with
@@ -17,25 +17,25 @@ on it.
 
 **The Lane column.** Every queue item carries its lane (flagship / mid /
 small) decided at queue time, not at session time. Routing is a property of
-the work, recorded when the work is scoped — see the `Lane` column in every
+the work, recorded when the work is scoped: see the `Lane` column in every
 work-queue table.
 
 **The ledger discipline.** Shipped items move to `### Done (shipped queue
-items — ledger)` and their rows are kept verbatim. The only churn a normal
+items: ledger)` and their rows are kept verbatim. The only churn a normal
 session produces is the status column, the gap register, and the
-"Last updated" line — the document is a ledger, not an essay.
+"Last updated" line: the document is a ledger, not an essay.
 
 **The lane-scarcity window.** The blockquote above the Now table
 ("Flagship availability window") is the lane-scarcity rule in action: with
 premium access time-boxed, **lane scarcity dominates urgency**. W10 is the
-worked case — the project's top-urgency item, deferred past the window
+worked case: the project's top-urgency item, deferred past the window
 anyway, because its design had already landed and a mid model could build
 it. Every window session leaves a mid-executable spec behind.
 
 **The do-not-re-derive note.** The `W3 schema-placement note` blockquote
-under the Done ledger froze a finished decision *and its full reasoning* —
-the two options, the finding that collapsed the tension, the consequence,
-and a mid-lane fallback breakdown — so no later session pays to rediscover
+under the Done ledger froze a finished decision *and its full reasoning*
+(the two options, the finding that collapsed the tension, the consequence,
+and a mid-lane fallback breakdown) so no later session pays to rediscover
 any of it. This is the playbook acting as institutional memory.
 
 **The negative list.** Under `### Flagship lane`, the "Do not spend
@@ -52,7 +52,7 @@ prioritization.
 ## What is abstraction and what is method
 
 Abstracted: the item titles, gap contents, domain vocabulary, document
-names, dates, counts, and findings — those belong to the private project.
+names, dates, counts, and findings, those belong to the private project.
 
 Method (unchanged from the original): every section heading, the status
 block, the strategic frame ending in one ordering rule, the gap register

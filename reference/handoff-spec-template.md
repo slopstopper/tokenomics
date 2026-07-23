@@ -3,14 +3,14 @@
 *A handoff spec is complete when the receiving tier can execute without asking the sending tier anything and without re-deriving any decision.*
 
 The contract is scale-invariant: the same sections serve a session-to-session
-handoff (meso — a spec file in the project's spec directory) and a
-controller-to-subagent dispatch (micro — a task brief, each section a
+handoff (meso: a spec file in the project's spec directory) and a
+controller-to-subagent dispatch (micro: a task brief, each section a
 sentence or two). Size the sections to the cycle; never drop one. An empty
-"Decisions already made" means the handoff is not ready — at any scale.
+"Decisions already made" means the handoff is not ready, at any scale.
 
 Standing escalation clause, part of every handoff at every scale: if the
 work turns out to fail the receiving lane's routing test, stop and hand
-back early with what was learned — an early return is cheap; pushing
+back early with what was learned: an early return is cheap; pushing
 through is not.
 
 - Scale: <meso (session→session) / micro (controller→subagent)>
@@ -21,7 +21,7 @@ through is not.
 <One paragraph: what exists when this is done.>
 
 ## Context pointers
-<The exact files/docs to read first — and nothing else up front.>
+<The exact files/docs to read first, and nothing else up front.>
 
 ## Decisions already made (do not re-derive)
 <Every design decision the sending tier already paid for, each with a

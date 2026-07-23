@@ -24,6 +24,31 @@ jobs:
             grep -qx "name: $d" "$f" || { echo "frontmatter name != directory: $f"; exit 1; }
           done
 
+      - name: Skill frontmatter is valid YAML
+        run: |
+          python3 -c "import yaml" 2>/dev/null || python3 -m pip install --quiet --break-system-packages pyyaml
+          python3 - <<'PY'
+          import glob, re, sys, yaml
+          bad = 0
+          for f in sorted(glob.glob("skills/*/SKILL.md")):
+              txt = open(f, encoding="utf-8").read()
+              m = re.match(r"^---\n(.*?)\n---\n", txt, re.S)
+              if not m:
+                  print(f + ": no YAML frontmatter block"); bad = 1; continue
+              try:
+                  data = yaml.safe_load(m.group(1))
+              except Exception as e:
+                  print(f + ": frontmatter is not valid YAML: " + str(e)); bad = 1; continue
+              if not isinstance(data, dict):
+                  print(f + ": frontmatter is not a mapping"); bad = 1; continue
+              for key in ("name", "description"):
+                  v = data.get(key)
+                  if not isinstance(v, str) or not v.strip():
+                      print(f + ": missing or empty " + key); bad = 1
+          print("skill frontmatter: all valid" if not bad else "skill frontmatter: FAILED")
+          sys.exit(bad)
+          PY
+
       - name: Relative links resolve
         run: |
           fail=0
