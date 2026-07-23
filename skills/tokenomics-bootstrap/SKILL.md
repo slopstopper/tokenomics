@@ -1,6 +1,6 @@
 ---
 name: tokenomics-bootstrap
-description: Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Ships no default lanes and invents no queue items.
+description: "Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Ships no default lanes and invents no queue items."
 ---
 
 # Bootstrap a project with tokenomics

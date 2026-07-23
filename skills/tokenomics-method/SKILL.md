@@ -1,6 +1,6 @@
 ---
 name: tokenomics-method
-description: Use when a builder wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions.
+description: "Use when a builder wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions."
 ---
 
 # The tokenomics method

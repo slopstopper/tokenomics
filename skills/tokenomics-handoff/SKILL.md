@@ -1,6 +1,6 @@
 ---
 name: tokenomics-handoff
-description: Use at the two moments tokens are saved: when routing a task to a lane and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation.
+description: "Use at the two moments tokens are saved: when routing a task to a lane and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation."
 ---
 
 # Route, hand off, or close a tokenomics session
