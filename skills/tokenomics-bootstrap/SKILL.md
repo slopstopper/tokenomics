@@ -32,6 +32,12 @@ proceed to Step 2 with whatever the builder actually gave you.
 5. Where should the playbook live? Default is
    `docs/model-effectiveness-playbook.md`: ask if the builder wants it
    somewhere else, don't just assume the default.
+6. Does this project orchestrate across tiers: are sub-agents available, or
+   is a controller pattern in use (one session or model driving cheaper
+   ones beneath it)? Or is it single-session-at-a-time? This sets whether
+   Layer 4's dispatch contract applies here. Ask about orchestration only:
+   do not ask about co-installed plugins or interop, which is a separate
+   pass, not part of a bootstrap.
 
 ## Step 2: Generate the playbook
 
@@ -62,6 +68,10 @@ Map the answers onto the template's sections directly:
   backlog, if any) and Gap register (open findings, if any).
 - Question 5 → the path the file is written to, and the pointer line in
   Step 3 below.
+- Question 6 → Model routing (an orchestration note: whether sub-agents or a
+  controller pattern are in use, which is what activates Layer 4's dispatch
+  contract; if the project is single-session, say so plainly rather than
+  leaving it blank).
 
 Copy the routing test into Model routing verbatim, exactly as it appears
 in `reference/playbook-template.md` (the same test `reference/portable-method.md`

@@ -10,7 +10,19 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-23 (sixth update), **W8 shipped (v0.4.0 method half)**: switchpoint
+Last updated: 2026-07-23 (seventh update), **W9 shipped (v0.4.0 skills half)**:
+the three skills now teach and apply the switchpoint taxonomy —
+tokenomics-method gains a compact four-switchpoint teaching block;
+tokenomics-handoff labels Mode A/B as the Dispatch/Close switchpoints and
+gains a Return-side early-return subsection; tokenomics-bootstrap gains an
+orchestration interview question feeding the generated playbook's
+model-routing section. G8 fully closed (skills half); no new doctrine (every
+switchpoint and rule name points at the method doc's shipped text).
+spend: lane mid (executed from the W9 handoff spec, routed flagship→mid) ·
+dispatches 0 · single session, docs-only diff (3 skill files, +66/-10) ·
+out-tokens not extracted · cf-flagship omitted (no dated price table
+supplied).
+Prior update: 2026-07-23 (sixth update), **W8 shipped (v0.4.0 method half)**: switchpoint
 taxonomy (Route, Dispatch, Return, Close) + Layer 4 controller contract; G8
 method-doc half closed, G9 registered; W9–W11 queued, W2 absorbed into W10.
 spend: lane flagship→flagship (controller) · dispatches 8 · out-tokens
@@ -80,7 +92,7 @@ orchestration lands, not less.
 | G5 | Compression thesis buried: the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | **closed**: W5: README opening and method-doc thesis lead with context economics; tier arithmetic framed as first application | medium (positioning) |
 | G6 | No not-worth-it threshold: the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | open: W6 queued | low (credibility) |
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
-| G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | method-doc half shipped (W8); skills half open (W9) | high (method semantics) |
+| G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
 
 ## Work queue
@@ -94,7 +106,7 @@ orchestration lands, not less.
 | W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | open |
 | W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
-| W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | open — executes from the spec + W8's shipped text |
+| W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
 | W10 | **`adapters/claude-code/` (Ring 2).** Quarantine README; SessionStart hook (absorbs W2); micro-brief template; orchestration recipe with automated spend roll-up first. | G2; enables G9 | mid, escalate on recipe design | 1 session | open |
 | W11 | **Recursive-spine interop seam (Ring 3).** Method-doc seam section + bootstrap interop mode. | — (spec §Ring 3) | flagship (seam design) | 1 session | open |
 
@@ -115,6 +127,7 @@ orchestration lands, not less.
 | W5 | Compression-forward reframe (v0.3.2): README opening and method-doc thesis now lead with context economics (cycle boundaries as compression points, working context dies at the boundary, only the distilled artifact crosses) with tier arithmetic presented as the first application of that idea, not the idea itself. Closes the buried-thesis gap. | flagship (positioning) | done: 2026-07-06 |
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done: 2026-07-06 |
 | W8 | Switchpoint taxonomy (Route, Dispatch, Return, Close — trigger/rule/artifact contract) + Layer 4 controller contract (controller discipline, dispatch contract with worked micro brief, parallelism rule, surfacing rule). Do-not-re-derive: switchpoints are named rules, not new doctrine, and are not a fifth layer. | flagship | done — 2026-07-23 |
+| W9 | Skills wiring (v0.4.0 skills half): tokenomics-method gains a compact four-switchpoint teaching block (names + trigger/rule/artifact shape + pointer to §Switchpoints); tokenomics-handoff labels Mode A/B as the Dispatch/Close switchpoints and adds a Return early-return subsection; tokenomics-bootstrap gains an orchestration interview question mapped to Model routing (interop excluded, that is W11). Do-not-re-derive: skills point at the method doc's shipped text, no new doctrine; every name used appears verbatim in `reference/portable-method.md`. Closes G8's skills half. | mid (from the W9 handoff spec) | done — 2026-07-23 |
 
 ## Model routing
 
