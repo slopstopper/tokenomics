@@ -10,7 +10,7 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-23, **W8 shipped (v0.4.0 method half)**: switchpoint
+Last updated: 2026-07-23 (sixth update), **W8 shipped (v0.4.0 method half)**: switchpoint
 taxonomy (Route, Dispatch, Return, Close) + Layer 4 controller contract; G8
 method-doc half closed, G9 registered; W9–W11 queued, W2 absorbed into W10.
 spend: lane flagship→flagship (controller) · dispatches 8 · out-tokens
@@ -74,14 +74,14 @@ orchestration lands, not less.
 | # | Gap | Status | Severity |
 | - | --- | ------ | -------- |
 | G1 | No spend record: the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | design closed + implementation shipped: spend line live in template/skill/method doc | high (credibility) |
-| G2 | Session-start discipline is manual: nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | open: W2 queued | medium |
+| G2 | Session-start discipline is manual: nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | open — absorbed into W10 (the adapter ships the hook) | medium |
 | G3 | Single-project validation: the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open: **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable: collect adopter feedback and route findings into W3 | medium (maturity) |
 | G4 | Downward-only routing: the method said when to send work down but not when a receiving tier must stop and return; mis-routed work ground out down-tier burns savings invisibly (gates catch defective output, not expensive output) | **closed**: W4: escalation rule in §The cycle, verification axis in Layer 1, standing escalation clause in the handoff template | high (method semantics) |
 | G5 | Compression thesis buried: the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | **closed**: W5: README opening and method-doc thesis lead with context economics; tier arithmetic framed as first application | medium (positioning) |
 | G6 | No not-worth-it threshold: the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | open: W6 queued | low (credibility) |
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | method-doc half shipped (W8); skills half open (W9) | high (method semantics) |
-| G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records an aggregated multi-dispatch spend line | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
+| G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
 
 ## Work queue
 
