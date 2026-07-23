@@ -94,6 +94,37 @@ The handoff contract is scale-invariant: the same sections serve a
 session-to-session handoff and a controller-to-subagent dispatch, sized to
 the cycle, see `handoff-spec-template.md`.
 
+## Switchpoints
+
+The rules above were always positional — they fire at particular
+points in the cycle, not continuously. A **switchpoint** is one of
+those points made addressable: the place where work switches lane,
+tier, or direction, and where a rule stated elsewhere in this method
+is applied. Naming the switchpoints is what makes the method
+orchestratable: anything that can observe a switchpoint — a builder,
+a controller model, a hook — can enforce the rule that belongs to it.
+
+Every switchpoint carries the same three-part contract: a **trigger
+condition** (what you observe), the **rule that fires** (nothing
+below is new doctrine — the taxonomy names rules this document
+already states), and the **crossing artifact** (nothing crosses a
+switchpoint except a distilled artifact).
+
+| Switchpoint | Trigger | Rule that fires | Crossing artifact |
+| ----------- | ------- | --------------- | ----------------- |
+| **Route** | scope time — work is about to be assigned a lane | the routing test and its verification axis (Layer 1) | a queue line carrying a lane |
+| **Dispatch** | a controller hands work down — session to session, or controller to subagent | the spec-first rule (Layer 2); the lane-scarcity rule (Layer 4) | a handoff spec or task brief |
+| **Return** | the receiving tier meets its exit bar — or discovers it cannot | the project's gates on the success path; the escalation rule on the failure path | a report and reviewed diff, or an early-return escalation artifact |
+| **Close** | a cycle boundary — the session or the arc ends | the compression point; the ledger and spend-line update (Layer 2, rule 4) | a ledger line plus spend line |
+
+Switchpoints are not a fifth layer. They are the cycle's boundary
+events (§The cycle) made addressable — Route and Dispatch on the way
+down, Return and Close on the way up. Route and Close mark a cycle's
+own boundaries; Dispatch and Return mark the boundaries of every
+cycle it runs beneath itself. Return's two paths — the verified exit
+and the early escalation — are the same crossing in opposite moods,
+and both land one level up, never further.
+
 ## Layer 1: Routing
 
 Work is routed to one of three lanes, defined by the *nature of the work*,
@@ -251,6 +282,39 @@ across sessions and tiers, in the practice that produced this method:
   context-cost control in this method: a narrowly scoped session finishes
   cleanly inside its budget; a loosely scoped one drifts and spends more
   than the task warranted.
+
+Layer 4's loop is governed by a controller contract — four rules that
+hold whenever one context is running cycles beneath itself, whatever
+the harness:
+
+- **Controller discipline.** A controller is a meso cycle running
+  micro cycles. It dispatches on briefs, never by forwarding raw
+  context, and it aggregates sub-agent spend into its own spend line —
+  dispatch count and out-tokens by tier roll *up*, so the ledger stays
+  truthful when work is parallelized.
+- **Dispatch contract.** A micro brief is the handoff-spec template at
+  its smallest size — the contract is scale-invariant, so no section
+  is dropped, only shortened. A worked micro brief, whole:
+
+  > Handoff: Q-17 status-table refresh · micro · mid → small
+  > **Goal:** the six status rows in the catalog doc match the done
+  > ledger. **Context pointers:** the catalog doc; the playbook's done
+  > ledger; nothing else. **Decisions already made:** row order stays
+  > (readers link to anchors); status wording copied verbatim from the
+  > ledger. **Deliverables:** the catalog doc, status column only.
+  > **Gates:** link gate green; diff touches one column. **Out of
+  > scope:** every other column and all surrounding prose. Standing
+  > escalation clause applies.
+
+- **Parallelism rule.** Parallelize only work that is independent
+  *and* verifiable down-lane. Parallel flagship dispatches are a
+  smell: work that needs flagship judgment usually needs the one
+  context that holds the frame.
+- **Surfacing rule.** Sub-agent findings cross at Return inside the
+  report, never as leaked context; the controller promotes the
+  findings that outlive the session at Close. This is the
+  one-level-at-a-time escalation property (§The cycle), restated for
+  orchestration.
 
 The cycle has one governing rule for when premium access is scarce in time
 rather than in judgment:
