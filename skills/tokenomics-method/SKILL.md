@@ -1,6 +1,6 @@
 ---
 name: tokenomics-method
-description: Use when a builder wants to learn or be reminded of the tokenomics method — spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions.
+description: Use when a builder wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions.
 ---
 
 # The tokenomics method
@@ -19,9 +19,9 @@ Rules:
   tokenomics-bootstrap skill; for a live routing/handoff decision, the
   tokenomics-handoff skill.
 
-Vocabulary seam: tokenomics' "handoff" names a down-tier work spec — the
+Vocabulary seam: tokenomics' "handoff" names a down-tier work spec: the
 written brief one model tier hands to a cheaper one. Sibling plugins use the
 word differently: plumb-line's "handoff" is a skill-to-skill baton pass;
 recursive-spine's "handover" is the record of debts filed before a session
-closes. Same word, three different joints — don't assume a shared meaning
+closes. Same word, three different joints: don't assume a shared meaning
 across plugins.

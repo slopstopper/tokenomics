@@ -1,13 +1,13 @@
-# Model Effectiveness Playbook — <project name>
+# Model Effectiveness Playbook: <project name>
 
 Status block:
 
-- Status: active working playbook — living document, update at session end.
+- Status: active working playbook, living document, update at session end.
 - Owns: cross-session work queue, model routing, session protocol, gap register.
 - Canonical for: what to work on next and which model tier to spend on it.
-- Not canonical for: <architecture docs / agent rules / repo state — list the project's own canonical docs>.
+- Not canonical for: <architecture docs / agent rules / repo state: list the project's own canonical docs>.
 
-Last updated: <date> — <one-line state>
+Last updated: <date>, <one-line state>
 
 ## How to use this document
 
@@ -24,12 +24,12 @@ work queue, the gap register if a gap was closed or reframed, the
 spend: lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
 ```
 
-This document is a ledger, not an essay; the spend line is records, not claims
-— it never asserts savings.
+This document is a ledger, not an essay; the spend line is records, not claims:
+it never asserts savings.
 
 ## Strategic frame
 
-<Why the queue is ordered the way it is — the risks that dominate, and the
+<Why the queue is ordered the way it is: the risks that dominate, and the
 one ordering rule every queue decision follows. Written at bootstrap;
 rewritten only at re-assessment.>
 
@@ -52,7 +52,7 @@ rewritten only at re-assessment.>
 | ID | Work | Lane | Gate | Status |
 | -- | ---- | ---- | ---- | ------ |
 
-### Done (ledger — keep rows verbatim, including do-not-re-derive notes)
+### Done (ledger: keep rows verbatim, including do-not-re-derive notes)
 
 ## Model routing
 
