@@ -4,14 +4,16 @@
 context drifts less, and drift is where the waste hides.*
 
 Tokenomics is a discipline of context economics: a model's working
-context, not its price per token, is the scarce resource, and it is spent
-well only when work runs in cycles whose boundaries compress it. At every
-cycle boundary the working context dies (the exploration, the dead ends,
-the reasoning) and only the distilled artifact crosses: a spec, a queue
-line, a ledger update. Tier routing is the first application of that idea,
-not the idea itself: the expensive model does only the work that is
-expensive to get wrong, every handoff crosses tiers on a written spec, and
-a living playbook, not re-exploration, carries strategy between sessions.
+context is the scarce resource, spent well only when work runs in cycles
+whose boundaries compress it. At every cycle boundary the working context
+dies (the exploration, the dead ends, the reasoning) and only the distilled
+artifact crosses: a spec, a queue line, a ledger update. That discipline
+pays off in tokens: a tight, deliberately compressed context costs fewer of
+them per cycle and drifts less, and drift is where a lot of token waste
+quietly hides. Tier routing is the first application of that idea, not the
+idea itself: the expensive model does only the work that is expensive to get
+wrong, every handoff crosses tiers on a written spec, and a living playbook,
+not re-exploration, carries strategy between sessions.
 
 Concretely, tokenomics is a Claude Code plugin (three skills) paired with a
 portable method doc and two templates the skills operate on. The skills
