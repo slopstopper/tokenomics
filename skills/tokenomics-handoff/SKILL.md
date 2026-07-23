@@ -5,16 +5,20 @@ description: "Use at the two moments tokens are saved: when routing a task to a 
 
 # Route, hand off, or close a tokenomics session
 
-This skill operates at cycle boundaries (see `reference/portable-method.md`
-§The cycle): Mode A is the downward boundary: macro→meso (a queue item
-into a session) or meso→micro (a controller dispatching a subagent); Mode B
-is the upward one: the meso cycle closing into the ledger. The handoff
-contract is the same at either scale, sized to the cycle.
+This skill operates at the cycle's switchpoints (see
+`reference/portable-method.md` §Switchpoints). Mode A is the downward pair:
+Route (assign the lane) then Dispatch (write the down-tier spec), macro→meso
+(a queue item into a session) or meso→micro (a controller dispatching a
+subagent). Mode B is Close: the meso cycle closing into the ledger. The
+fourth switchpoint, Return, the upward crossing when a receiving tier meets
+its exit bar or discovers it cannot, is covered by the Return subsection
+below rather than by a mode of its own. The handoff contract is the same at
+either scale, sized to the cycle.
 
 Two modes. Pick the one the builder is actually asking for: don't run
 both, and don't guess which one is wanted if the request is ambiguous, ask.
 
-## Mode A: Route + hand off
+## Mode A: Route + hand off (the Dispatch switchpoint)
 
 Use when the builder wants to know which lane a task belongs in, or wants
 a spec written to send it down-tier.
@@ -60,7 +64,29 @@ Read-only toward everything in this mode except the new handoff spec file
 you are producing. Do not edit the playbook, the task's source files, or
 anything else as a side effect of routing.
 
-## Mode B: Session close
+## The Return switchpoint: early-return guidance
+
+This is not a third mode: it is guidance for the receiving tier, the tier
+that recognizes mid-cycle that its lane test is failing. Return is the
+upward crossing (`reference/portable-method.md` §Switchpoints). On the
+success path the receiving tier meets its exit bar and hands back a report
+and reviewed diff through the project's gates: ordinary, no special
+handling. This subsection is the failure path.
+
+Take the early-return path the moment the work fails the receiving lane's
+routing test: a task that turned out to need judgment the lane does not
+have, or that has no cheap gate to confirm it. Do not grind through. A
+cheaper tier grinding out triple the turns on work it cannot do burns the
+savings the routing bought, and the gates will not show it, because gates
+catch defective output, not expensive output.
+
+Write the early-return escalation artifact: what was tried, what broke, and
+what decision is actually needed. It crosses the boundary the way every
+artifact does, one level up and never further: hand it to the tier that
+dispatched the work, not past it. An early return is cheap; pushing through
+is the method's invisible failure mode.
+
+## Mode B: Session close (the Close switchpoint)
 
 Use when the builder wants to end a session and update the ledger.
 

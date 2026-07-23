@@ -1,14 +1,34 @@
 ---
 name: tokenomics-method
-description: "Use when a builder wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions."
+description: "Use when a builder wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions."
 ---
 
 # The tokenomics method
 
 Read `reference/portable-method.md` (relative to the plugin root) and teach
 it faithfully: the thesis, the four layers (routing, session protocol,
-living playbook, tiered orchestration), the routing test, the negative
-list, and the lane-scarcity rule.
+living playbook, tiered orchestration), the four switchpoints, the routing
+test, the negative list, and the lane-scarcity rule.
+
+## The four switchpoints
+
+The method's rules are positional: they fire at points in the cycle where
+work switches lane, tier, or direction. Naming those points is what makes
+the method orchestratable, so anything that can observe one (a builder, a
+controller model, a hook) can enforce the rule that belongs to it. Teach the
+four by name and by their shared three-part contract (a trigger condition,
+the rule that fires, the crossing artifact), then point to §Switchpoints for
+the table: don't restate the table at length.
+
+- **Route** (down): work is about to be assigned a lane.
+- **Dispatch** (down): a controller hands work down-tier.
+- **Return** (up): the receiving tier meets its exit bar, or discovers it
+  cannot and escalates early.
+- **Close** (up): a cycle boundary, the session or the arc ends.
+
+Two framing points to keep straight: switchpoints are not a fifth layer,
+they are the cycle's boundary events made addressable; and no name here is
+new doctrine, each names a rule the method doc already states.
 
 Rules:
 - Take no actions. No files, no commands, no repo changes.
