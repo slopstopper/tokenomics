@@ -44,8 +44,7 @@ you hit it, a premium window that runs on a clock, a per-token bill that turns
 every bit of thinking into a withdrawal: each is arranged so that the smoothest
 answer to running short is to pay for more. The exit — do without, drop a tier,
 wait for the window to reset — stays available and stays the path of most
-friction, and that part is by design. It takes no bad faith from anyone; it's
-simply what the shape is built to encourage.
+friction, and that part is by design.
 
 It's worth saying plainly, because you can't decline a pull you haven't noticed.
 Working inside a metered system without a discipline means letting the meter set
