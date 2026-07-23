@@ -17,6 +17,10 @@ apply the discipline inside a session — routing a task, writing a handoff
 spec, closing out with a ledger update; the method doc and templates make
 the same discipline usable on any project, with or without the plugin.
 
+For why this discipline exists — not just how it works — see
+[`docs/why.md`](docs/why.md): tokenomics as the demand-side counter-architecture
+for metered access, and the ceiling it was born at.
+
 ## Who it's for
 
 Builders with tiered access to models — usage-limited subscriptions,
