@@ -283,6 +283,39 @@ across sessions and tiers, in the practice that produced this method:
   cleanly inside its budget; a loosely scoped one drifts and spends more
   than the task warranted.
 
+Layer 4's loop is governed by a controller contract — four rules that
+hold whenever one context is running cycles beneath itself, whatever
+the harness:
+
+- **Controller discipline.** A controller is a meso cycle running
+  micro cycles. It dispatches on briefs, never by forwarding raw
+  context, and it aggregates sub-agent spend into its own spend line —
+  dispatch count and out-tokens by tier roll *up*, so the ledger stays
+  truthful when work is parallelized.
+- **Dispatch contract.** A micro brief is the handoff-spec template at
+  its smallest size — the contract is scale-invariant, so no section
+  is dropped, only shortened. A worked micro brief, whole:
+
+  > Handoff: Q-17 status-table refresh · micro · mid → small
+  > **Goal:** the six status rows in the catalog doc match the done
+  > ledger. **Context pointers:** the catalog doc; the playbook's done
+  > ledger; nothing else. **Decisions already made:** row order stays
+  > (readers link to anchors); status wording copied verbatim from the
+  > ledger. **Deliverables:** the catalog doc, status column only.
+  > **Gates:** link gate green; diff touches one column. **Out of
+  > scope:** every other column and all surrounding prose. Standing
+  > escalation clause applies.
+
+- **Parallelism rule.** Parallelize only work that is independent
+  *and* verifiable down-lane. Parallel flagship dispatches are a
+  smell: work that needs flagship judgment usually needs the one
+  context that holds the frame.
+- **Surfacing rule.** Sub-agent findings cross at Return inside the
+  report, never as leaked context; the controller promotes the
+  findings that outlive the session at Close. This is the
+  one-level-at-a-time escalation property (§The cycle), restated for
+  orchestration.
+
 The cycle has one governing rule for when premium access is scarce in time
 rather than in judgment:
 
