@@ -77,7 +77,7 @@ execute without re-derivation.
 | ----------------- | ------------------------------------------------------ |
 | `skills/`         | The three Claude Code skills — method, bootstrap, handoff |
 | `reference/`      | The portable method doc, playbook template, handoff-spec template |
-| `examples/`       | Worked example: a structure-faithful abstraction of a real project's playbook |
+| `examples/`       | Two full worked playbooks (a real code project; a non-code analytical desk) plus a domain gallery mapping the method into more fields |
 | `docs/design/`    | Design notes for this repository                      |
 
 ## Install
@@ -106,10 +106,11 @@ hand — no Code required.
 
 v0.3 ships the three skills, the portable method doc — including the cycle
 section (macro / meso / micro) added in v0.2 — two scale-invariant
-templates (playbook and handoff-spec), one worked example — a
-structure-faithful abstraction of the real, in-use playbook this method was
-extracted from (the source project is private and pre-release, so its
-specifics are generalized) — this repo's own dogfooded playbook, and the
+templates (playbook and handoff-spec), worked examples — a structure-faithful
+abstraction of the real, in-use playbook this method was extracted from (the
+source project is private and pre-release, so its specifics are generalized), a
+second non-code example (an analytical desk), and a domain gallery mapping the
+method into further fields — this repo's own dogfooded playbook, and the
 spend-ledger convention: a minimal per-session record of lane used and
 rough scale of work, so the method's savings claims become falsifiable
 against its own history. This is a practice report from one real project,
