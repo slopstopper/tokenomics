@@ -10,7 +10,16 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-06 (fifth update), **W5 shipped (v0.3.2)**: the
+Last updated: 2026-07-23, **W8 shipped (v0.4.0 method half)**: switchpoint
+taxonomy (Route, Dispatch, Return, Close) + Layer 4 controller contract; G8
+method-doc half closed, G9 registered; W9–W11 queued, W2 absorbed into W10.
+spend: lane flagship→flagship (controller) · dispatches 8 · out-tokens
+flagship ≈170k / mid ≈115k / small ≈60k · cf-flagship omitted (no dated
+price table supplied) — approximate whole-session figures from harness usage
+blocks; the ledger recipe's jq extraction under-reported subagent out-tokens
+on this run (transcript format drift since 2026-07-06 — re-verification
+folded into W10's recipe work)
+Prior update: 2026-07-06 (fifth update), **W5 shipped (v0.3.2)**: the
 compression-forward reframe: README opening and method-doc thesis now lead
 with context economics (cycle boundaries as compression points), with tier
 arithmetic presented as the first application of that idea; G5 closed.
@@ -56,6 +65,10 @@ none, so the practice report cannot currently be checked against its own
 history. Ordering rule: **work that makes the method's claims falsifiable
 outranks work that adds surface area.**
 
+Post-v0.4 corollary: every named switchpoint invites ceremony around
+it, so W6's not-worth-it threshold grows more important as
+orchestration lands, not less.
+
 ## Gap register
 
 | # | Gap | Status | Severity |
@@ -67,6 +80,8 @@ outranks work that adds surface area.**
 | G5 | Compression thesis buried: the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | **closed**: W5: README opening and method-doc thesis lead with context economics; tier arithmetic framed as first application | medium (positioning) |
 | G6 | No not-worth-it threshold: the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | open: W6 queued | low (credibility) |
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
+| G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | method-doc half shipped (W8); skills half open (W9) | high (method semantics) |
+| G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records an aggregated multi-dispatch spend line | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
 
 ## Work queue
 
@@ -75,9 +90,13 @@ outranks work that adds surface area.**
 | ID | Work | Closes | Lane | Size | Status |
 | -- | ---- | ------ | ---- | ---- | ------ |
 | W1 | **Spend-ledger convention (v0.3).** Design the minimal per-session spend line: what a session records (lane used, rough scale of work (turns or dispatches, not exact token counts unless cheaply available) and handoff count), where it lives (a column or sub-line in the playbook's ledger update, not a new file), and what it may never claim (no savings assertions, records only). Then: template gains the field, handoff skill's Mode B writes it, method doc's Layer 2 documents it. Design-heavy first half (what to record without turning the ledger into an essay is the expensive-to-get-wrong part); mechanical second half. | G1 | flagship (design), mid (the template/skill edits from the design) | 1 session | done |
-| W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | open: gated on a written spec |
+| W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | absorbed into W10 (the adapter ships the hook) |
 | W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | open |
 | W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | open |
+| W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
+| W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | open — executes from the spec + W8's shipped text |
+| W10 | **`adapters/claude-code/` (Ring 2).** Quarantine README; SessionStart hook (absorbs W2); micro-brief template; orchestration recipe with automated spend roll-up first. | G2; enables G9 | mid, escalate on recipe design | 1 session | open |
+| W11 | **Recursive-spine interop seam (Ring 3).** Method-doc seam section + bootstrap interop mode. | — (spec §Ring 3) | flagship (seam design) | 1 session | open |
 
 ### Later
 
@@ -95,6 +114,7 @@ outranks work that adds surface area.**
 | W1 | Spend-ledger convention (v0.3): the spend line, the counterfactual-flagship ratio, and the never-claim rules, designed in `docs/design/2026-07-06-spend-ledger-design.md` and wired into the playbook template, the handoff skill's Mode B, and the method doc's Layer 2 and cycle section. First data point recorded in the design spec itself. | flagship (design) + mid (mechanical half) | done: 2026-07-06 |
 | W5 | Compression-forward reframe (v0.3.2): README opening and method-doc thesis now lead with context economics (cycle boundaries as compression points, working context dies at the boundary, only the distilled artifact crosses) with tier arithmetic presented as the first application of that idea, not the idea itself. Closes the buried-thesis gap. | flagship (positioning) | done: 2026-07-06 |
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done: 2026-07-06 |
+| W8 | Switchpoint taxonomy (Route, Dispatch, Return, Close — trigger/rule/artifact contract) + Layer 4 controller contract (controller discipline, dispatch contract with worked micro brief, parallelism rule, surfacing rule). Do-not-re-derive: switchpoints are named rules, not new doctrine, and are not a fifth layer. | flagship | done — 2026-07-23 |
 
 ## Model routing
 
