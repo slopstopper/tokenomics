@@ -53,7 +53,7 @@ The method runs that loop at three nested scales:
 | ----- | --------- | -------------- | ------------- | ----------- |
 | **Macro** | weeks — the project arc | strategic frame + work queue (the playbook) | re-assessment; an updated frame and queue | flagship |
 | **Meso** | hours — one session | the playbook pointer + one queue item, or a handoff spec | verified deliverable + the end-of-session ledger update | the lane the queue item names |
-| **Micro** | minutes — one subagent task | a task brief | a report and a reviewed diff | the cheapest capable tier |
+| **Micro** | minutes — one subagent task | a task brief | a report and a reviewed deliverable (a diff, a draft, a checked dataset) | the cheapest capable tier |
 
 Three properties of this nesting do the actual token saving.
 
@@ -100,15 +100,18 @@ Work is routed to one of three lanes, defined by the *nature of the work*,
 never by what happens to be available at the moment:
 
 - **Flagship lane** — design-heavy, statistically or mathematically subtle,
-  novel, cross-domain, or corpus-wide work; anything touching schemas,
-  invariants, or taxonomy where a wrong decision is expensive to unwind.
-- **Mid lane** — implementation from a written spec; code review passes;
-  test expansion against existing contracts; doc updates following an
-  established pattern.
+  novel, cross-domain, or corpus-wide work; anything touching a schema, an
+  invariant, a taxonomy, or a definitional boundary where a wrong decision is
+  expensive to unwind.
+- **Mid lane** — execution from a written spec; review passes against a
+  settled standard (a code review, an edit pass, a cite-check); coverage
+  expansion against existing contracts; updates that follow an established
+  pattern.
 - **Small lane** — high-volume, low-judgment, mechanical batches with
-  automated green-gate verification: lint sweeps, status refreshes,
-  type-annotation ratchets, archiving, and similar work where a script or a
-  test suite can confirm correctness without judgment.
+  automated green-gate verification: lint sweeps and type-annotation ratchets
+  in code, citation formatting and link-checks in prose, data-cleaning passes
+  in analysis, status refreshes and archiving anywhere — work where a script,
+  a checklist, or a test suite can confirm correctness without judgment.
 
 The routing test is one question, asked before any task is assigned a lane:
 
@@ -134,9 +137,14 @@ push through.
 The test cuts against a natural but wasteful instinct — reaching for the
 best model out of habit or anxiety, regardless of what the task actually
 needs. The negative list makes that instinct concrete by naming what it
-looks like in practice: never spend flagship budget on UI polish, formatting/lint chores, status upkeep, branch hygiene, running CI, mechanical test additions, or executing a spec another session already wrote. Every item on that list is checkable or pattern-following work; none
-of it is expensive to get wrong, and none of it needs the tier that costs
-the most to run.
+looks like in practice: never spend flagship budget on presentation polish,
+formatting chores, status upkeep, running the gates, mechanical additions
+against an existing pattern, or executing a spec another session already
+wrote — in a codebase that is UI polish, lint, branch hygiene, CI runs, and
+rote test additions; in a publishing or analytical operation it is the
+equivalent low-judgment upkeep. Every item is checkable or pattern-following
+work; none of it is expensive to get wrong, and none of it needs the tier
+that costs the most to run.
 
 Lane names are deliberately generic. They map to today's models like this:
 
@@ -180,9 +188,9 @@ lane it's in:
    baseline. See `docs/design/2026-07-06-spend-ledger-design.md` for the
    field format and the extraction recipe.
 5. **Existing project gates always apply.** The method adds no exceptions
-   for build, test, lint, or review requirements a project already has.
-   Tokenomics is a routing and handoff discipline, not a license to skip
-   verification.
+   for the verification a project already has — build, test, lint, review,
+   fact-check, sign-off. Tokenomics is a routing and handoff discipline, not
+   a license to skip verification.
 6. **Full re-assessment only on an empty queue or a wrong-feeling frame.**
    Re-examining the whole strategic picture is itself expensive; reserve it
    for the moments that actually call for it — the queue running dry, or a
@@ -204,8 +212,9 @@ components:
   session wherever possible, carrying at minimum a Lane column, a Size
   column, and a Status column.
 - **Gap register** — findings and open issues with a severity, closed with
-  the PR number that resolved them, or reframed with a stated reason when
-  they're deprioritized rather than fixed.
+  the identifier that resolved them — a PR number, a filing ID, a published
+  URL — or reframed with a stated reason when they're deprioritized rather
+  than fixed.
 - **Done ledger** — shipped items kept verbatim, including
   "do-not-re-derive" findings: conclusions that were expensive to reach the
   first time and must not be silently re-investigated by a later session
