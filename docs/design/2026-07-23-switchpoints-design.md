@@ -174,6 +174,27 @@ Order: W8 → W9 → W10 → W11. W8 is the design-heavy heart and everything
 else executes from its shipped text. W6/W7 keep their queue places;
 their ordering against W8–W11 is a playbook call at each session's Close.
 
+## Known risks (flagged, not resolved — from the design review)
+
+- **Return may be two switchpoints wearing one name.** Verified exit and
+  escalation-failure share the artifact-crosses-upward shape but differ
+  in observer, artifact, and frequency. Four is kept for now because the
+  taxonomy names existing rules; if practice shows the two paths
+  diverge, split them — the taxonomy's authority comes from matching
+  practice, not symmetry.
+- **First-phase dogfooding is partially circular.** W8 and W9 are built
+  before the orchestration machinery exists, so v0.4's earliest spend
+  lines cannot fully validate v0.4. Stated here so G9's closure is read
+  honestly: evidence begins at the first post-W10 orchestrated session.
+- **The spend roll-up is the phase's one genuinely new obligation**, and
+  the likeliest to be silently skipped under friction. W10 therefore
+  automates the roll-up first, before any convenience feature — an
+  unautomated roll-up quietly rots and takes the falsifiability claim
+  with it.
+- **Every named point invites ceremony around it.** W6's not-worth-it
+  threshold matters more after v0.4, not less; the strategic frame
+  should say so when the queue is next reordered.
+
 ## Out of scope (named to stay honest)
 
 - No changes to recursive-spine, plumb-line, or their skills.
