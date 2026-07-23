@@ -1,7 +1,7 @@
 # tokenomics
 
-*Context is the scarce resource, not the token price: a discipline for
-spending model capability well, in code and beyond.*
+*Spend your working context well and you spend fewer tokens: tighter
+context drifts less, and drift is where the waste hides.*
 
 Tokenomics is a discipline of context economics: a model's working
 context, not its price per token, is the scarce resource, and it is spent
