@@ -36,6 +36,25 @@ this one just needs doing — is a skill, and it's one almost nobody was taught.
 Tokenomics is an attempt to write that skill down, so it can be used on purpose
 instead of picked up by accident.
 
+## The meter isn't neutral
+
+And the habit has help. The way capability is sold isn't just a number on a
+service — it's a shape, and the shape has a direction. A cap you don't see until
+you hit it, a premium window that runs on a clock, a per-token bill that turns
+every bit of thinking into a withdrawal: each is arranged so that the smoothest
+answer to running short is to pay for more. The exit — do without, drop a tier,
+wait for the window to reset — stays available and stays the path of most
+friction, and that part is by design. It takes no bad faith from anyone; it's
+simply what the shape is built to encourage.
+
+It's worth saying plainly, because you can't decline a pull you haven't noticed.
+Working inside a metered system without a discipline means letting the meter set
+your pace and your priorities by default, and the response it's shaped to pull
+for is always the same one. The alternative isn't refusing to pay. It's refusing
+to be captured by the shape: deciding what each task is actually worth and
+spending on your own terms, so the meter measures your work instead of directing
+it.
+
 ## Compute isn't free
 
 There's a reason this matters past the monthly bill. Compute has a real cost —
@@ -76,7 +95,8 @@ the working context you can't carry across a boundary, and the method is built
 to lose as little of it as possible.
 
 None of it is about spending less for its own sake. It's about spending well —
-putting the capability where it counts, not burning it where it doesn't, and not
-paying twice for something you've already worked out. That the method came out
-of my own not-knowing, at the point where I was overspending on nearly
+putting the capability where it counts, not burning it where it doesn't, not
+paying twice for something you've already worked out, and deciding all of that
+for yourself instead of letting the meter decide it for you. That the method
+came out of my own not-knowing, at the point where I was overspending on nearly
 everything, isn't incidental to it. It's the reason it exists.
