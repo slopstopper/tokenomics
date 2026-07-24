@@ -404,6 +404,34 @@ the date line, nothing else) because a document that gets rewritten
 wholesale stops being a ledger and starts being a new essay every session,
 which defeats the purpose it exists to serve.
 
+## When this doesn't pay
+
+This method spends an expensive tier's judgment once and reuses it cheaply.
+Where there is nothing to reuse, or no cheaper tier to reuse it on, the
+overhead is ceremony. Three shapes cross that line:
+
+- **No tier differential.** If every task runs on the same model anyway
+  (only one tier is available, or the project is small enough that the top
+  tier never hands down), routing is a label with no destination and the
+  handoff spec has no second reader. Keep the routing *question* as a triage
+  habit if it earns its keep; drop the lanes, the specs, and the ledger.
+- **Single-context work.** The playbook and the handoff spec pay off at
+  cycle boundaries, where working context dies and only the distilled
+  artifact crosses. Work that starts and finishes inside one context never
+  crosses a boundary: there is nothing to compress and nothing to hand off.
+  A one-off script, a single-sitting fix, a prototype you will throw away:
+  do the work, skip the ledger.
+- **Throwaway output.** If the artifact is discarded, the paid-once judgment
+  is never spent a second time, so there was never anything to bank.
+
+The rule is the routing test turned on the process itself: **if getting the
+process slightly wrong is not expensive, don't run the process.** This
+matters more as orchestration lands, not less. Every switchpoint invites
+ceremony around it, and a fan-out of subagents to produce one paragraph
+costs more than it saves. Reach for the machinery when the work is large
+enough, repeated enough, or costly-enough-to-get-wrong to amortize it;
+below that line, the honest move is to not.
+
 ## Maturity
 
 This method is a practice report, not a benchmark. It has been validated on

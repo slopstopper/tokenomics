@@ -10,7 +10,23 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-24 (tenth update), **W11 shipped (v0.4 Ring 3, interop
+Last updated: 2026-07-24 (eleventh update), **W6 shipped (v0.4, not-worth-it
+threshold)**: the method doc gains §When this doesn't pay — the discipline is
+ceremony where there is no tier differential, no cycle boundary to compress
+at, or nothing worth reusing; the rule is the routing test turned on the
+process itself ("if getting the process slightly wrong is not expensive,
+don't run the process"), and it grows more important as orchestration lands
+(a fan-out of subagents to produce one paragraph costs more than it saves).
+README's §The method gains the matching one-liner. G6 closed. Routing note:
+W6 was explicitly assessed as an orchestration candidate and declined —
+running the fleet to write the "when it's ceremony" paragraph would be the
+ceremony the section names; executed single-session, in-lane (mid). No new
+doctrine: self-application of the shipped routing test.
+spend: lane mid · dispatches 0 · single session, docs-only diff (2 files:
+method doc +28, README +5) · out-tokens not extracted (single
+non-orchestrated docs session, no roll-up to recipe-extract) · cf-flagship
+omitted (no dated price table supplied).
+Prior update: 2026-07-24 (tenth update), **W11 shipped (v0.4 Ring 3, interop
 seam)**: the method doc gains §The seam — the tracker wins on work state,
 tokenomics wins on spend. Standalone behavior unchanged; co-installed, the
 work queue delegates to issues/milestones and the gap register to filed
@@ -159,7 +175,7 @@ orchestration lands, not less.
 | G3 | Single-project validation: the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open: **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable: collect adopter feedback and route findings into W3 | medium (maturity) |
 | G4 | Downward-only routing: the method said when to send work down but not when a receiving tier must stop and return; mis-routed work ground out down-tier burns savings invisibly (gates catch defective output, not expensive output) | **closed**: W4: escalation rule in §The cycle, verification axis in Layer 1, standing escalation clause in the handoff template | high (method semantics) |
 | G5 | Compression thesis buried: the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | **closed**: W5: README opening and method-doc thesis lead with context economics; tier arithmetic framed as first application | medium (positioning) |
-| G6 | No not-worth-it threshold: the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | open: W6 queued | low (credibility) |
+| G6 | No not-worth-it threshold: the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | **closed**: W6: method doc §When this doesn't pay (no tier differential / single-context / throwaway) + README one-liner; the routing test turned on the process itself | low (credibility) |
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
@@ -173,7 +189,7 @@ orchestration lands, not less.
 | -- | ---- | ------ | ---- | ---- | ------ |
 | W1 | **Spend-ledger convention (v0.3).** Design the minimal per-session spend line: what a session records (lane used, rough scale of work (turns or dispatches, not exact token counts unless cheaply available) and handoff count), where it lives (a column or sub-line in the playbook's ledger update, not a new file), and what it may never claim (no savings assertions, records only). Then: template gains the field, handoff skill's Mode B writes it, method doc's Layer 2 documents it. Design-heavy first half (what to record without turning the ledger into an essay is the expensive-to-get-wrong part); mechanical second half. | G1 | flagship (design), mid (the template/skill edits from the design) | 1 session | done |
 | W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | absorbed into W10 (the adapter ships the hook) |
-| W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | open |
+| W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | done — 2026-07-24 |
 | W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
 | W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
@@ -200,6 +216,7 @@ orchestration lands, not less.
 | W9 | Skills wiring (v0.4.0 skills half): tokenomics-method gains a compact four-switchpoint teaching block (names + trigger/rule/artifact shape + pointer to §Switchpoints); tokenomics-handoff labels Mode A/B as the Dispatch/Close switchpoints and adds a Return early-return subsection; tokenomics-bootstrap gains an orchestration interview question mapped to Model routing (interop excluded, that is W11). Do-not-re-derive: skills point at the method doc's shipped text, no new doctrine; every name used appears verbatim in `reference/portable-method.md`. Closes G8's skills half. | mid (from the W9 handoff spec) | done — 2026-07-23 |
 | W11 | Recursive-spine interop seam (v0.4, Ring 3): method doc gains §The seam — division of ownership, not a merge: the tracker wins on work state, tokenomics wins on spend. Co-installed: queue → issues/milestones, gap register → filed debts; playbook keeps frame, lanes, spend ledger, done ledger, standing constraints, and stays canonical for spend; issues carry a lane, closing records carry a spend line (annotation only). Bootstrap gains the detection-gated interop offer (question 7; offered never forced; declines reported as answers). Do-not-re-derive: switchpoint contracts untouched under interop — only Route's and Close's crossing artifacts change address; recursive-spine named exactly once in the portable core (quarantine style of the model mapping table); spine needs no change to benefit — lane and spend annotations ride in issue bodies and closing comments it already has. Plumb-line composes independently, one sentence, no wiring. | flagship (seam design, in-lane) | done — 2026-07-24 |
 | W10 | Claude Code adapter (v0.4, Ring 2): new `adapters/` tree + quarantine README; the adapter ships an opt-in SessionStart playbook-pointer hook (absorbs W2, closes G2), the micro-brief template (dispatch contract at micro size), and an orchestration recipe running the four switchpoints with native subagents. Roll-up first: re-verified the 2026-07-06 spend-extraction recipe — `unique_by(.id)` under-reported because streaming updates repeat the message id with a growing `output_tokens`; fixed to `group_by(.id) | map(max_by(.out))`, cross-checked against harness usage blocks. Do-not-re-derive: adapter implements the shipped contract, amends nothing (method/skills/templates/manifest untouched); G9 opens for the first post-W10 orchestrated session. | mid (escalated to flagship on the recipe re-verification, as the spec anticipated) | done — 2026-07-24 (#18) |
+| W6 | "When this doesn't pay" section (v0.4): method doc gains §When this doesn't pay naming the threshold below which the discipline is ceremony — no tier differential (routing is a label with no destination), single-context work (nothing crosses a boundary, so nothing to compress or hand off), throwaway output (paid-once judgment never spent twice); the rule is the routing test turned on the process itself. README §The method gains the matching one-liner. Closes G6. Do-not-re-derive: no new doctrine, the section self-applies the shipped routing test; assessed as an orchestration candidate and declined (the fleet to write this paragraph would be the ceremony it names). | mid | done — 2026-07-24 |
 
 ## Model routing
 
