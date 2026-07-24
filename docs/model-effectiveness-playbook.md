@@ -10,7 +10,32 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-24 (ninth update), **W10 parallel-run findings folded
+Last updated: 2026-07-24 (tenth update), **W11 shipped (v0.4 Ring 3, interop
+seam)**: the method doc gains §The seam — the tracker wins on work state,
+tokenomics wins on spend. Standalone behavior unchanged; co-installed, the
+work queue delegates to issues/milestones and the gap register to filed
+debts, while the playbook keeps the strategic frame, lanes, spend ledger,
+done ledger, and standing constraints — and stays **canonical for spend**
+(the spend line copied into a closing record is an annotation, never a
+second source of truth). Under interop only Route's and Close's crossing
+artifacts change address (issue-carrying-a-lane; closing record carries the
+work-state half); no new doctrine, no fifth switchpoint. Layer 3 gains a
+two-sentence delegation pointer. tokenomics-bootstrap gains the
+detection-gated interop offer (question 7, asked only when an
+issue-tracker-first convention is detected; declined offers reported as
+answers, standalone stays the unmarked case) — replacing the W9-era "do not
+ask about interop" placeholder with the mechanism it reserved space for.
+recursive-spine is named once in the portable core under the same
+quarantine style as the model mapping table; no spine-side changes (the
+seam is designed so spine needs no change to benefit). G10 practice note:
+this session's Route applied the freshness rule manually — fetched and read
+the playbook at the origin/main tip before claiming W11 (builder-prompted,
+not yet doctrine); W11 was confirmed unclaimed, no collision.
+spend: lane flagship→flagship (seam design, in-lane) · dispatches 0 ·
+out-tokens flagship ≈16k (recipe-extracted at close with the W10
+group_by/max_by fix, from the worktree-slug transcript; excludes the close
+edit itself) · cf-flagship omitted (no dated price table supplied).
+Prior update: 2026-07-24 (ninth update), **W10 parallel-run findings folded
 in**: two sessions independently executed W10 (#18 shipped first; #19 closed
 as duplicate — both root-caused the extraction drift to first-wins dedupe of
 cumulative streaming updates and fixed it the same way, convergent evidence).
@@ -138,7 +163,7 @@ orchestration lands, not less.
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
-| G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day | high (spend integrity: the failure mode silently doubles session cost) |
+| G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day; fix direction exercised manually 2026-07-24 (the W11 session fetched and routed from the origin/main playbook before claiming — builder-prompted, not yet doctrine) | high (spend integrity: the failure mode silently doubles session cost) |
 
 ## Work queue
 
@@ -153,7 +178,7 @@ orchestration lands, not less.
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
 | W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
 | W10 | **`adapters/claude-code/` (Ring 2).** Quarantine README; SessionStart hook (absorbs W2); micro-brief template; orchestration recipe with automated spend roll-up first. | G2; enables G9 | mid, escalate on recipe design | 1 session | done — 2026-07-24 (#18) |
-| W11 | **Recursive-spine interop seam (Ring 3).** Method-doc seam section + bootstrap interop mode. | — (spec §Ring 3) | flagship (seam design) | 1 session | open |
+| W11 | **Recursive-spine interop seam (Ring 3).** Method-doc seam section + bootstrap interop mode. | — (spec §Ring 3) | flagship (seam design) | 1 session | done — 2026-07-24 |
 
 ### Later
 
@@ -173,6 +198,7 @@ orchestration lands, not less.
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done: 2026-07-06 |
 | W8 | Switchpoint taxonomy (Route, Dispatch, Return, Close — trigger/rule/artifact contract) + Layer 4 controller contract (controller discipline, dispatch contract with worked micro brief, parallelism rule, surfacing rule). Do-not-re-derive: switchpoints are named rules, not new doctrine, and are not a fifth layer. | flagship | done — 2026-07-23 |
 | W9 | Skills wiring (v0.4.0 skills half): tokenomics-method gains a compact four-switchpoint teaching block (names + trigger/rule/artifact shape + pointer to §Switchpoints); tokenomics-handoff labels Mode A/B as the Dispatch/Close switchpoints and adds a Return early-return subsection; tokenomics-bootstrap gains an orchestration interview question mapped to Model routing (interop excluded, that is W11). Do-not-re-derive: skills point at the method doc's shipped text, no new doctrine; every name used appears verbatim in `reference/portable-method.md`. Closes G8's skills half. | mid (from the W9 handoff spec) | done — 2026-07-23 |
+| W11 | Recursive-spine interop seam (v0.4, Ring 3): method doc gains §The seam — division of ownership, not a merge: the tracker wins on work state, tokenomics wins on spend. Co-installed: queue → issues/milestones, gap register → filed debts; playbook keeps frame, lanes, spend ledger, done ledger, standing constraints, and stays canonical for spend; issues carry a lane, closing records carry a spend line (annotation only). Bootstrap gains the detection-gated interop offer (question 7; offered never forced; declines reported as answers). Do-not-re-derive: switchpoint contracts untouched under interop — only Route's and Close's crossing artifacts change address; recursive-spine named exactly once in the portable core (quarantine style of the model mapping table); spine needs no change to benefit — lane and spend annotations ride in issue bodies and closing comments it already has. Plumb-line composes independently, one sentence, no wiring. | flagship (seam design, in-lane) | done — 2026-07-24 |
 | W10 | Claude Code adapter (v0.4, Ring 2): new `adapters/` tree + quarantine README; the adapter ships an opt-in SessionStart playbook-pointer hook (absorbs W2, closes G2), the micro-brief template (dispatch contract at micro size), and an orchestration recipe running the four switchpoints with native subagents. Roll-up first: re-verified the 2026-07-06 spend-extraction recipe — `unique_by(.id)` under-reported because streaming updates repeat the message id with a growing `output_tokens`; fixed to `group_by(.id) | map(max_by(.out))`, cross-checked against harness usage blocks. Do-not-re-derive: adapter implements the shipped contract, amends nothing (method/skills/templates/manifest untouched); G9 opens for the first post-W10 orchestrated session. | mid (escalated to flagship on the recipe re-verification, as the spec anticipated) | done — 2026-07-24 (#18) |
 
 ## Model routing

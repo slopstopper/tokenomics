@@ -1,6 +1,6 @@
 ---
 name: tokenomics-bootstrap
-description: "Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Ships no default lanes and invents no queue items."
+description: "Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Ships no default lanes and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
 ---
 
 # Bootstrap a project with tokenomics
@@ -35,9 +35,32 @@ proceed to Step 2 with whatever the builder actually gave you.
 6. Does this project orchestrate across tiers: are sub-agents available, or
    is a controller pattern in use (one session or model driving cheaper
    ones beneath it)? Or is it single-session-at-a-time? This sets whether
-   Layer 4's dispatch contract applies here. Ask about orchestration only:
-   do not ask about co-installed plugins or interop, which is a separate
-   pass, not part of a bootstrap.
+   Layer 4's dispatch contract applies here. Ask about orchestration only;
+   interop is handled by the detection-gated offer below, never as an
+   open-ended question.
+
+### Interop offer (question 7 — only when detected)
+
+After question 6, check whether the repo carries an issue-tracker-first
+tracking convention — recursive-spine is the known instance: look for a
+tracking section naming the convention in `CLAUDE.md`/`AGENTS.md`, or
+convention-stamped issue/PR templates under `.github/`. Then:
+
+- **Not detected:** do not ask question 7 and do not mention interop at
+  all. Standalone is the unmarked case.
+- **Detected:** ask exactly one more question — an offer, never a
+  default:
+
+7. This repo has a tracking convention installed that owns work state
+   (issues + milestones, never prose ledgers). Should the playbook be
+   generated in **interop mode** — the work queue and gap register
+   delegate to issues and filed debts, and the playbook keeps the
+   strategic frame, lanes, spend ledger, done ledger, and standing
+   constraints — or **standalone**, where the two overlap and the builder
+   reconciles them manually?
+
+If the builder declines or doesn't answer, generate standalone: interop
+is offered, never forced (`reference/portable-method.md` §The seam).
 
 ## Step 2: Generate the playbook
 
@@ -72,6 +95,16 @@ Map the answers onto the template's sections directly:
   controller pattern are in use, which is what activates Layer 4's dispatch
   contract; if the project is single-session, say so plainly rather than
   leaving it blank).
+- Question 7 (only if asked and accepted) → interop mode, per
+  `reference/portable-method.md` §The seam. The Work queue section gets a
+  delegation note naming where work state lives (the tracker's issues and
+  milestones) and no item rows; the Gap register gets the same note
+  pointing at filed debts; Model routing gains the annotation contract
+  (issues carry a lane; closing records carry a spend line; the playbook
+  stays canonical for spend). The Status block's "canonical for" line
+  must say the playbook is *not* canonical for work state. If question 7
+  was never asked or was declined, none of this applies — generate the
+  standalone playbook unchanged.
 
 Copy the routing test into Model routing verbatim, exactly as it appears
 in `reference/playbook-template.md` (the same test `reference/portable-method.md`
@@ -99,6 +132,9 @@ mid-message.
 ## Reporting
 
 State plainly which questions were answered, which were left as "not
-established," and the exact path the playbook was written to. Label the
+established," and the exact path the playbook was written to. Report the
+interop outcome explicitly: not detected (question 7 never asked),
+offered and declined, or offered and accepted — a declined offer is a
+recorded answer, not a gap. Label the
 playbook as a fresh bootstrap output, not a finished strategic document:
 it is only as complete as the interview that produced it.
