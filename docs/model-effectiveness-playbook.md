@@ -10,7 +10,37 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-24 (eleventh update), **W6 shipped (v0.4, not-worth-it
+Last updated: 2026-07-24 (twelfth update), **first orchestrated session —
+G9 closed, v0.4 audit**: the first controller session to actually run the
+four switchpoints with native subagents, dispatched to test whether
+orchestration is ever worth it here (the standing observation being that every
+authoring item so far correctly declined it). Answer: on a **review/audit**
+task it pays — 7 dispatches (5 blind audit dimensions over the v0.4 doc set +
+2 adversarial verifiers, all mid; controller flagship). Three dimensions came
+back clean (skills↔method-doc verbatim; interop-seam claims incl.
+recursive-spine-named-once; ledger↔shipped-text). Two raised findings; the
+adversarial pass killed one (README epigraph — founding-thesis register, not a
+never-claim breach) and confirmed three, all shipped in this PR: the
+tokenomics-handoff Mode A mislabelled macro→meso queue-pickup (Route's
+artifact) as Dispatch — corrected to Dispatch's actual two scales
+(meso→meso / meso→micro); and two savings-**outcome** overstatements softened
+to the method's *claim* (§The cycle "do the actual token saving" → "claimed
+to come from"; "the two moments tokens are saved" → "the method targets
+savings", in the README and the handoff skill's machine-read frontmatter).
+Running the recipe on itself also hardened the adapter: subagent transcripts
+landed under a `tasks/*.output` root, not the recipe's `subagents/agent-*.jsonl`
+glob (harness variant); `jq -rs` aborted on one malformed line (now
+`inputs | fromjson?`); the transcript dir over-counted dispatches — all three
+folded into `adapters/claude-code/orchestration-recipe.md`. G9 closed: this is
+the first verified, recipe-extracted multi-dispatch roll-up.
+spend: lane flagship (controller) · dispatches 7 (5 audit + 2 verify, all
+mid) · out-tokens flagship ≈36k / mid ≈31k / small 0 (recipe-extracted at
+close; read from the `tasks/*.output` root after the `subagents/` glob came
+back empty, robust `inputs | fromjson?` after `jq -rs` choked; cross-checked
+same-order-of-magnitude against the harness's per-agent usage) · dir held 8
+transcript files vs 7 dispatched — one unknown-provenance file, recorded not
+smoothed · cf-flagship omitted (no dated price table supplied).
+Prior update: 2026-07-24 (eleventh update), **W6 shipped (v0.4, not-worth-it
 threshold)**: the method doc gains §When this doesn't pay — the discipline is
 ceremony where there is no tier differential, no cycle boundary to compress
 at, or nothing worth reusing; the rule is the routing test turned on the
@@ -178,7 +208,7 @@ orchestration lands, not less.
 | G6 | No not-worth-it threshold: the method never says when its overhead exceeds its return, which reads as overclaim to skeptics | **closed**: W6: method doc §When this doesn't pay (no tier differential / single-context / throwaway) + README one-liner; the routing test turned on the process itself | low (credibility) |
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
-| G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
+| G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | **closed** (twelfth update): the first orchestrated session — a v0.4 doc-set audit, 7 dispatches (5 audit + 2 adversarial verify), recipe-extracted roll-up (flagship ≈36k / mid ≈31k) cross-checked against harness usage; it also found 3 confirmed doc defects and hardened the adapter recipe against transcript-path/parse drift | medium (credibility) |
 | G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day; fix direction exercised manually 2026-07-24 (the W11 session fetched and routed from the origin/main playbook before claiming — builder-prompted, not yet doctrine) | high (spend integrity: the failure mode silently doubles session cost) |
 
 ## Work queue

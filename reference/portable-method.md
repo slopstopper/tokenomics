@@ -55,7 +55,8 @@ The method runs that loop at three nested scales:
 | **Meso** | hours: one session | the playbook pointer + one queue item, or a handoff spec | verified deliverable + the end-of-session ledger update | the lane the queue item names |
 | **Micro** | minutes: one subagent task | a task brief | a report and a reviewed deliverable (a diff, a draft, a checked dataset) | the cheapest capable tier |
 
-Three properties of this nesting do the actual token saving.
+Three properties of this nesting are where the token saving is claimed to
+come from.
 
 **Every cycle boundary is a context-compression point.** A cycle's full
 working context (the exploration, the dead ends, the reasoning) dies at

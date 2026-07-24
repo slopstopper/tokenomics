@@ -80,9 +80,9 @@ limit shape, project gates, and backlog, then generates the project's
 model-effectiveness playbook from the template. Ships no default lanes and
 invents no queue items.
 
-**tokenomics-handoff** is used at the two moments tokens are saved: routing
-a task to a lane and writing the down-tier handoff spec, and closing a
-session with the ledger update. Applies the routing test, flags
+**tokenomics-handoff** is used at the two moments the method targets savings:
+routing a task to a lane and writing the down-tier handoff spec, and closing
+a session with the ledger update. Applies the routing test, flags
 negative-list violations, and produces handoff specs a cheaper tier can
 execute without re-derivation.
 

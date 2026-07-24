@@ -52,14 +52,26 @@ checkout's slug silently misses it. Paths are written relative to the home
 directory here on purpose — never paste an absolute home path into a tracked
 file.)
 
+**Harness variants move the subagent path** (re-verified 2026-07-24, second
+observation). Some runners — notably background-job / sandboxed sessions —
+write subagent transcripts to a sibling `<session-id>/tasks/*.output` set
+instead of `<session-id>/subagents/agent-*.jsonl`, and may root them under a
+different temp directory than `~/.claude/projects/` altogether. The files
+carry the same per-message `message.usage` schema, so the extraction below is
+unchanged — only the glob moves. If `subagents/agent-*.jsonl` comes back
+empty, look for a sibling `tasks/*.output` set before concluding there were no
+dispatches: an empty glob silently reports zero subagent spend, the same rot
+the cross-check exists to catch. Re-verify the path, don't trust it.
+
 ### The extraction
 
 ```sh
 MAIN=~/.claude/projects/<project-slug>/<session-id>.jsonl
 SUBS=~/.claude/projects/<project-slug>/<session-id>/subagents/agent-*.jsonl
+# empty SUBS? try the variant: SUBS=~/.claude/projects/<slug>/<session-id>/tasks/*.output
 
-cat $MAIN $SUBS | jq -rs '
-  [ .[]
+cat $MAIN $SUBS | jq -Rrn '
+  [ inputs | fromjson?                          # tolerate a malformed line
     | select(.message.usage != null)
     | { id:    (.message.id // .uuid),
         model: .message.model,
@@ -69,17 +81,29 @@ cat $MAIN $SUBS | jq -rs '
   | .[] | [ .[0].model, length, ([.[].out] | add) ] | @tsv'
 ```
 
+The `-Rrn` / `inputs | fromjson?` form (not `-rs`) reads the transcripts line
+by line and **skips any malformed line** instead of aborting the whole slurp —
+re-verified 2026-07-24 after a single non-JSON line broke `jq -rs` mid-file.
+The aggregation is otherwise identical.
+
 Output is one row per model id: `model  message-count  output-tokens`. Map
 each model id to its lane with the project's own lane mapping (the flagship /
 mid / small table in the method doc), then sum output-tokens per lane for the
 spend line. Ignore any non-model rows (e.g. a `<synthetic>` id carries no real
 usage and sums to zero).
 
-Count **dispatches** as the number of subagent files:
+Count **dispatches** as the number of subagent files (from whichever glob is
+populated — `subagents/agent-*.jsonl` or the `tasks/*.output` variant):
 
 ```sh
 ls ~/.claude/projects/<project-slug>/<session-id>/subagents/agent-*.jsonl | wc -l
 ```
+
+Cross-check that count against the number you actually dispatched: a stray or
+nested transcript file in the directory inflates it (observed 2026-07-24 — the
+dir held one more file than the session dispatched). If they disagree, record
+the number you dispatched and note the discrepancy rather than trusting the
+file count.
 
 ### Why `max_by(.out)` — the drift the old recipe hit
 
