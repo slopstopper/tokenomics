@@ -21,8 +21,12 @@ the recipe (worktree sessions write transcripts under their own slug).
 Additional verification from that run: last==max held for all 167 distinct
 message ids (main + subagents), and the hook was observed end-to-end in a
 scratch project (`SessionStart:startup` fired, pointer verbatim in context).
-The collision itself is registered as G10 (no claim mechanism for parallel
-sessions).
+The collision itself is registered as G10 — not a concurrency race but a
+stale read: W10 was already done and recorded on main five minutes before
+the duplicate session was even asked to route; the session read its
+worktree's pinned playbook copy and never looked at the default-branch
+tip. Tier-swapping across terminals is this method's normal operating
+mode, so stale checkouts at Route are structural, not accidental.
 spend: lane mid→flagship (mismatch recorded; the duplicate W10 run plus this
 findings fold-in ran flagship throughout) · dispatches 0 · out-tokens
 flagship ≈45k (recipe-extracted at close, this session only; the parallel
@@ -134,7 +138,7 @@ orchestration lands, not less.
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
-| G10 | Queue items have no claim mechanism: "one session, one queue item" assumes sessions run serially, so two parallel sessions can both take the same unclaimed item — observed 2026-07-24, when two sessions independently executed W10 (#18 shipped; #19 closed as duplicate). The duplicate run converged on the same recipe fix, which is good evidence but bad economics | open — surfaced by the first parallel-session run | medium (orchestration semantics) |
+| G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day | high (spend integrity: the failure mode silently doubles session cost) |
 
 ## Work queue
 
