@@ -1,14 +1,14 @@
 ---
 name: tokenomics-handoff
-description: "Use at the two moments tokens are saved: when routing a task to a lane and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation."
+description: "Use at the two moments the method targets token savings: when routing a task to a lane and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation."
 ---
 
 # Route, hand off, or close a tokenomics session
 
 This skill operates at the cycle's switchpoints (see
 `reference/portable-method.md` §Switchpoints). Mode A is the downward pair:
-Route (assign the lane) then Dispatch (write the down-tier spec), macro→meso
-(a queue item into a session) or meso→micro (a controller dispatching a
+Route (assign the lane) then Dispatch (write the down-tier spec), meso→meso
+(a handoff spec into a new session) or meso→micro (a controller dispatching a
 subagent). Mode B is Close: the meso cycle closing into the ledger. The
 fourth switchpoint, Return, the upward crossing when a receiving tier meets
 its exit bar or discovers it cannot, is covered by the Return subsection
