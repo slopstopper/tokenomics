@@ -64,6 +64,11 @@ distilled artifact crosses. Full detail, including the cycle table, the
 negative list, and the lane-scarcity rule, is in
 [`reference/portable-method.md`](reference/portable-method.md).
 
+The method is scoped on purpose: where there is no tier differential, no
+cycle boundary to compress at, or nothing worth reusing, the discipline is
+ceremony and the honest move is to skip it (see
+[When this doesn't pay](reference/portable-method.md#when-this-doesnt-pay)).
+
 ## The skills
 
 **tokenomics-method** loads and teaches the method: the thesis, the four
@@ -75,9 +80,9 @@ limit shape, project gates, and backlog, then generates the project's
 model-effectiveness playbook from the template. Ships no default lanes and
 invents no queue items.
 
-**tokenomics-handoff** is used at the two moments tokens are saved: routing
-a task to a lane and writing the down-tier handoff spec, and closing a
-session with the ledger update. Applies the routing test, flags
+**tokenomics-handoff** is used at the two moments the method targets savings:
+routing a task to a lane and writing the down-tier handoff spec, and closing
+a session with the ledger update. Applies the routing test, flags
 negative-list violations, and produces handoff specs a cheaper tier can
 execute without re-derivation.
 
