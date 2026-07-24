@@ -10,7 +10,29 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-23 (seventh update), **W9 shipped (v0.4.0 skills half)**:
+Last updated: 2026-07-24 (eighth update), **W10 shipped (v0.4 adapter, Ring 2)**:
+new top-level `adapters/` tree with the quarantine README (everything under
+it is a dated implementation of the portable core; the method never depends
+on it). The Claude Code adapter ships the SessionStart playbook-pointer hook
+(opt-in, not a default; absorbs W2, closes G2), the micro-brief template (the
+handoff-spec contract at micro size, for subagent dispatch), and the
+orchestration recipe running Route/Dispatch/Return/Close with native
+subagents. Roll-up first, before convenience: the recipe re-verifies the
+2026-07-06 extraction. Root cause of that recipe's drift — Claude Code writes
+one transcript line per streaming update (same message id, growing
+output_tokens), so `unique_by(.id)` kept an arbitrary partial row and
+under-reported subagent out-tokens; fix is `group_by(.id) | map(max_by(.out))`,
+verified against a real multi-dispatch session (subagent mid/small totals
+moved from ~1131/~94 back to ~19089/~17048, matching harness usage blocks'
+order of magnitude). G2 closed (#18); G9 stays open — evidence begins at the
+first post-W10 orchestrated session. No changes to the method doc, skills,
+templates, or manifest (all out of scope for Ring 2).
+spend: lane mid→flagship (the recipe re-verification was the spec's
+anticipated "escalate on recipe design"; the rest was mid mechanical
+execution of the handoff spec) · dispatches 0 · single ongoing session,
+out-tokens not extracted · cf-flagship omitted (no dated price table
+supplied).
+Prior update: 2026-07-23 (seventh update), **W9 shipped (v0.4.0 skills half)**:
 the three skills now teach and apply the switchpoint taxonomy —
 tokenomics-method gains a compact four-switchpoint teaching block;
 tokenomics-handoff labels Mode A/B as the Dispatch/Close switchpoints and
@@ -86,7 +108,7 @@ orchestration lands, not less.
 | # | Gap | Status | Severity |
 | - | --- | ------ | -------- |
 | G1 | No spend record: the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | design closed + implementation shipped: spend line live in template/skill/method doc | high (credibility) |
-| G2 | Session-start discipline is manual: nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | open — absorbed into W10 (the adapter ships the hook) | medium |
+| G2 | Session-start discipline is manual: nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | **closed** (#18): the Claude Code adapter ships an opt-in SessionStart playbook-pointer hook (W10 absorbed W2) | medium |
 | G3 | Single-project validation: the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open: **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable: collect adopter feedback and route findings into W3 | medium (maturity) |
 | G4 | Downward-only routing: the method said when to send work down but not when a receiving tier must stop and return; mis-routed work ground out down-tier burns savings invisibly (gates catch defective output, not expensive output) | **closed**: W4: escalation rule in §The cycle, verification axis in Layer 1, standing escalation clause in the handoff template | high (method semantics) |
 | G5 | Compression thesis buried: the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | **closed**: W5: README opening and method-doc thesis lead with context economics; tier arithmetic framed as first application | medium (positioning) |
@@ -107,7 +129,7 @@ orchestration lands, not less.
 | W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
 | W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
-| W10 | **`adapters/claude-code/` (Ring 2).** Quarantine README; SessionStart hook (absorbs W2); micro-brief template; orchestration recipe with automated spend roll-up first. | G2; enables G9 | mid, escalate on recipe design | 1 session | open |
+| W10 | **`adapters/claude-code/` (Ring 2).** Quarantine README; SessionStart hook (absorbs W2); micro-brief template; orchestration recipe with automated spend roll-up first. | G2; enables G9 | mid, escalate on recipe design | 1 session | done — 2026-07-24 (#18) |
 | W11 | **Recursive-spine interop seam (Ring 3).** Method-doc seam section + bootstrap interop mode. | — (spec §Ring 3) | flagship (seam design) | 1 session | open |
 
 ### Later
@@ -128,6 +150,7 @@ orchestration lands, not less.
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done: 2026-07-06 |
 | W8 | Switchpoint taxonomy (Route, Dispatch, Return, Close — trigger/rule/artifact contract) + Layer 4 controller contract (controller discipline, dispatch contract with worked micro brief, parallelism rule, surfacing rule). Do-not-re-derive: switchpoints are named rules, not new doctrine, and are not a fifth layer. | flagship | done — 2026-07-23 |
 | W9 | Skills wiring (v0.4.0 skills half): tokenomics-method gains a compact four-switchpoint teaching block (names + trigger/rule/artifact shape + pointer to §Switchpoints); tokenomics-handoff labels Mode A/B as the Dispatch/Close switchpoints and adds a Return early-return subsection; tokenomics-bootstrap gains an orchestration interview question mapped to Model routing (interop excluded, that is W11). Do-not-re-derive: skills point at the method doc's shipped text, no new doctrine; every name used appears verbatim in `reference/portable-method.md`. Closes G8's skills half. | mid (from the W9 handoff spec) | done — 2026-07-23 |
+| W10 | Claude Code adapter (v0.4, Ring 2): new `adapters/` tree + quarantine README; the adapter ships an opt-in SessionStart playbook-pointer hook (absorbs W2, closes G2), the micro-brief template (dispatch contract at micro size), and an orchestration recipe running the four switchpoints with native subagents. Roll-up first: re-verified the 2026-07-06 spend-extraction recipe — `unique_by(.id)` under-reported because streaming updates repeat the message id with a growing `output_tokens`; fixed to `group_by(.id) | map(max_by(.out))`, cross-checked against harness usage blocks. Do-not-re-derive: adapter implements the shipped contract, amends nothing (method/skills/templates/manifest untouched); G9 opens for the first post-W10 orchestrated session. | mid (escalated to flagship on the recipe re-verification, as the spec anticipated) | done — 2026-07-24 (#18) |
 
 ## Model routing
 
