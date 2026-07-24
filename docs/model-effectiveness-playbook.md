@@ -10,7 +10,25 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-24 (eighth update), **W10 shipped (v0.4 adapter, Ring 2)**:
+Last updated: 2026-07-24 (ninth update), **W10 parallel-run findings folded
+in**: two sessions independently executed W10 (#18 shipped first; #19 closed
+as duplicate — both root-caused the extraction drift to first-wins dedupe of
+cumulative streaming updates and fixed it the same way, convergent evidence).
+The duplicate run's surviving deltas land here: hook `matcher: startup|clear`
+(resume/compact would mis-nudge mid-item work), playbook-existence check +
+`TOKENOMICS_PLAYBOOK` override in the hook, and the worktree-slug gotcha in
+the recipe (worktree sessions write transcripts under their own slug).
+Additional verification from that run: last==max held for all 167 distinct
+message ids (main + subagents), and the hook was observed end-to-end in a
+scratch project (`SessionStart:startup` fired, pointer verbatim in context).
+The collision itself is registered as G10 (no claim mechanism for parallel
+sessions).
+spend: lane mid→flagship (mismatch recorded; the duplicate W10 run plus this
+findings fold-in ran flagship throughout) · dispatches 0 · out-tokens
+flagship ≈45k (recipe-extracted at close, this session only; the parallel
+#18 session's spend is its own eighth-update line) · cf-flagship omitted (no
+dated price table supplied).
+Prior update: 2026-07-24 (eighth update), **W10 shipped (v0.4 adapter, Ring 2)**:
 new top-level `adapters/` tree with the quarantine README (everything under
 it is a dated implementation of the portable core; the method never depends
 on it). The Claude Code adapter ships the SessionStart playbook-pointer hook
@@ -116,6 +134,7 @@ orchestration lands, not less.
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | open: W7 queued | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | open — evidence begins at the first post-W10 orchestrated session | medium (credibility) |
+| G10 | Queue items have no claim mechanism: "one session, one queue item" assumes sessions run serially, so two parallel sessions can both take the same unclaimed item — observed 2026-07-24, when two sessions independently executed W10 (#18 shipped; #19 closed as duplicate). The duplicate run converged on the same recipe fix, which is good evidence but bad economics | open — surfaced by the first parallel-session run | medium (orchestration semantics) |
 
 ## Work queue
 

@@ -31,6 +31,7 @@ Add this to the project's `.claude/settings.json` (merge into any existing
   "hooks": {
     "SessionStart": [
       {
+        "matcher": "startup|clear",
         "hooks": [
           { "type": "command", "command": "sh adapters/claude-code/sessionstart-hook.sh" }
         ]
@@ -42,8 +43,14 @@ Add this to the project's `.claude/settings.json` (merge into any existing
 
 At session start Claude Code runs the command and adds its stdout to the
 session context — here, the one-line instruction to read the playbook and
-pick up the next queue item in the running lane. The command path is relative
-to the project root; adjust it if you vendor the adapter elsewhere.
+pick up the next queue item in the running lane. The `matcher` limits the
+hook to fresh contexts (`startup` and `clear`): on `resume` and `compact`
+work is already mid-item, and "start on the next unclaimed item" is the
+wrong nudge there. The command path is relative
+to the project root; adjust it if you vendor the adapter elsewhere. If the
+playbook lives somewhere other than `docs/model-effectiveness-playbook.md`,
+set `TOKENOMICS_PLAYBOOK` to the real path; the hook stays silent when the
+file doesn't exist, so installing it before bootstrapping is harmless.
 
 **Uninstall:** remove that `SessionStart` entry from `.claude/settings.json`
 (or delete the whole `hooks` block if it holds nothing else). Nothing else in
