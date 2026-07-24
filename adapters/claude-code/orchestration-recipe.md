@@ -45,7 +45,10 @@ transcripts, in two places per session:
   `~/.claude/projects/<project-slug>/<session-id>/subagents/agent-*.jsonl`
 
 (The `<project-slug>` is Claude Code's own encoding of the project path; list
-`~/.claude/projects/` to find it. Paths are written relative to the home
+`~/.claude/projects/` to find it. **Git worktrees get their own slug**,
+distinct from the main checkout's — a session run in a worktree writes its
+transcripts under the worktree's slug, so a roll-up pointed at the main
+checkout's slug silently misses it. Paths are written relative to the home
 directory here on purpose — never paste an absolute home path into a tracked
 file.)
 

@@ -12,7 +12,14 @@
 # public contract.
 #
 # The pointer path is relative to the project root (the session's cwd).
-cat <<'POINTER'
-Read docs/model-effectiveness-playbook.md, then start on the next
-unclaimed item in the work queue that matches your lane.
-POINTER
+# Override with TOKENOMICS_PLAYBOOK when the playbook lives elsewhere. The
+# hook stays silent when the file doesn't exist (a pointer to a missing
+# playbook is worse than none) and exits 0 either way, so it never blocks
+# a session.
+PLAYBOOK="${TOKENOMICS_PLAYBOOK:-docs/model-effectiveness-playbook.md}"
+
+if [ -f "$PLAYBOOK" ]; then
+  printf 'Read %s, then start on the next unclaimed item in the work queue that matches your lane.\n' "$PLAYBOOK"
+fi
+
+exit 0
