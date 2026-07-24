@@ -255,6 +255,11 @@ components:
   constraint has a canonical source elsewhere, this section links to it
   rather than duplicating it.
 
+Two of the six — the work queue and the gap register — are exactly the
+ground an issue-tracker-first tracking convention claims for itself. When
+one is co-installed, those two components delegate and the playbook keeps
+the rest; see §The seam below.
+
 The property that makes all six worth maintaining is a single pointer: read
 the playbook, take the next unclaimed item in your lane. That one sentence
 replaces repo re-exploration at the start of every session. A session that
@@ -324,6 +329,51 @@ spec is deferred past the premium window, even when it is the more urgent
 item in the abstract. Every premium session should leave a cheaper-tier-
 executable spec behind: that spec is what lets the urgent-but-cheap item
 get done without spending scarce flagship time on it.
+
+## The seam: composing with a tracking convention
+
+Tokenomics overlaps with issue-tracker-first tracking conventions at
+exactly one point: the playbook carries a work queue and a gap register,
+and a convention whose first principle is "work state lives in issues and
+milestones, never prose ledgers" claims that same ground. Co-installed,
+one must yield. The seam is a division of ownership, not a merge:
+
+**The tracker wins on work state; tokenomics wins on spend.**
+
+- **Standalone** (no tracking convention installed): nothing changes. The
+  playbook owns the queue and the gap register exactly as Layer 3
+  describes. Standalone is the unmarked case; the rest of this section
+  activates only on co-installation.
+- **Co-installed:** the work queue delegates to issues and milestones,
+  and the gap register to filed debts. The playbook keeps everything the
+  tracker has no opinion on — the strategic frame, the routing lanes, the
+  spend ledger, the done ledger's do-not-re-derive findings, and the
+  standing constraints — and its queue references become issue numbers.
+  In return, tokenomics annotates the tracker's world: an issue carries a
+  **lane**, and a closing record carries a **spend line**. The tracker
+  owns *what and when*; tokenomics owns *what tier and at what cost*.
+
+Under interop the switchpoints keep their contracts; two crossing
+artifacts change address. Route's queue-line-carrying-a-lane becomes an
+issue carrying a lane. Close's exit splits by owner: the work-state half
+(status, what shipped) lands in the issue's closing record, while the
+ledger line and spend line stay in the playbook, which remains canonical
+for spend — the spend line copied into the closing record is an
+annotation for the tracker-side reader, never a second source of truth.
+Dispatch and Return are unaffected: handoff specs and reports never
+lived in the playbook to begin with.
+
+The seam is designed so the tracker needs no change to benefit: lane and
+spend annotations ride in issue bodies and closing comments every issue
+tracker already has. The convention this seam was designed against is
+**recursive-spine** (named here once, the same quarantine the lane names
+apply to model names); any convention matching the shape — issues own
+work state, closings carry a structured record — composes the same way.
+Interop is offered, never forced: the bootstrap skill offers it only
+when it detects such a convention installed, mirroring the etiquette of
+conventions that offer tokenomics wiring without requiring it.
+Plumb-line, the epistemic-honesty discipline, composes with both
+independently; nothing in this seam wires to it.
 
 ## Rationale
 
