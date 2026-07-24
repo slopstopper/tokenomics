@@ -64,6 +64,11 @@ distilled artifact crosses. Full detail, including the cycle table, the
 negative list, and the lane-scarcity rule, is in
 [`reference/portable-method.md`](reference/portable-method.md).
 
+The method is scoped on purpose: where there is no tier differential, no
+cycle boundary to compress at, or nothing worth reusing, the discipline is
+ceremony and the honest move is to skip it (see
+[When this doesn't pay](reference/portable-method.md#when-this-doesnt-pay)).
+
 ## The skills
 
 **tokenomics-method** loads and teaches the method: the thesis, the four
