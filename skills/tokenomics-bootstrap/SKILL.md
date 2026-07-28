@@ -1,6 +1,6 @@
 ---
 name: tokenomics-bootstrap
-description: "Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Ships no default lanes and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
+description: "Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Works greenfield or mid-project: an existing TODO/notes pile is carried into the first work queue verbatim, nothing reworded or invented. Ships no default lanes and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
 ---
 
 # Bootstrap a project with tokenomics
@@ -25,10 +25,13 @@ proceed to Step 2 with whatever the builder actually gave you.
    that must pass before anything is considered done?
 3. Where do specs and design docs live in this project (the path the
    session protocol's "spec-first" rule will point to)?
-4. Is there an existing backlog or issue list to seed the work queue, and
-   what are the 1–3 biggest risks to the project right now? (This seeds the
-   strategic frame: it is not a request for the full backlog contents,
-   just what's live today.)
+4. Is there an existing backlog, TODO list, or notes pile to seed the work
+   queue, and what are the 1–3 biggest risks to the project right now? The
+   risks seed the strategic frame. Any existing pile is the likelier entry
+   point — most adopters arrive mid-project, not greenfield — and it is
+   carried into the first Now queue **verbatim** in Step 2, so share it
+   as-is: no need to curate it, reword it, or pre-assign lanes first (that
+   is the builder's to do at the first working session).
 5. Where should the playbook live? Default is
    `docs/model-effectiveness-playbook.md`: ask if the builder wants it
    somewhere else, don't just assume the default.
@@ -76,6 +79,16 @@ Three hard rules govern generation:
 - **Invent no queue items.** If question 4 produced no backlog, the Now
   table gets its column headers and nothing else. An empty Now table is a
   valid, honest output, a plausible-looking placeholder row is not.
+- **Migrate, don't curate (the salvage path).** If question 4 produced an
+  existing pile, each item becomes one Now-table row with the builder's text
+  kept **verbatim** — nothing reworded, reordered, merged, split, or dropped,
+  and the pile's own order preserved. Leave Lane and Size **unassigned**
+  (`unrouted` / `—`): routing is a separate act the builder performs at the
+  first working session, and assigning a lane here would invent a decision
+  the interview never made. The builder should recognize their own list,
+  unedited, in the generated queue. This is the mid-project entry — the
+  complement of the rule above, not an exception to it: salvage invents
+  nothing either, it only preserves what already exists.
 - **Invent no answers.** If any interview question went unanswered or the
   builder said "not sure," the corresponding playbook section states
   plainly that this was not established yet (e.g. "Not established: ask
@@ -87,8 +100,9 @@ Map the answers onto the template's sections directly:
   actually has, plus each tier's limit shape).
 - Question 2 → Session protocol rule 5 (existing project gates).
 - Question 3 → Session protocol rule 3 (spec path).
-- Question 4 → Strategic frame (the risks) and Work queue Now table (the
-  backlog, if any) and Gap register (open findings, if any).
+- Question 4 → Strategic frame (the risks); Work queue Now table (any
+  existing pile, migrated verbatim per the salvage rule above, Lane and Size
+  left unrouted); Gap register (open findings, if any).
 - Question 5 → the path the file is written to, and the pointer line in
   Step 3 below.
 - Question 6 → Model routing (an orchestration note: whether sub-agents or a
@@ -135,6 +149,8 @@ State plainly which questions were answered, which were left as "not
 established," and the exact path the playbook was written to. Report the
 interop outcome explicitly: not detected (question 7 never asked),
 offered and declined, or offered and accepted — a declined offer is a
-recorded answer, not a gap. Label the
+recorded answer, not a gap. State whether the Now queue was generated empty
+(greenfield) or salvaged from an existing pile, and if salvaged, how many
+items were carried in verbatim with their lanes left unrouted. Label the
 playbook as a fresh bootstrap output, not a finished strategic document:
 it is only as complete as the interview that produced it.
