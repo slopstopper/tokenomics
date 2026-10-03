@@ -27,12 +27,19 @@ and the method it follows in
 ## Gates (CI, `.github/workflows/gates.yml`)
 
 - Plugin manifests parse and keep their required fields.
+- Versions agree: `plugin.json`, the newest `CHANGELOG.md` section, and the
+  README's Status section name the same version.
 - Every skill's frontmatter `name` matches its directory.
 - Every relative markdown link resolves.
 - Privacy sweep: the method's source project stays unnamed and
   unidentifiable until it is released.
 - Concrete model names appear only in the method doc's single, dated
   mapping table: lanes are flagship/mid/small everywhere else.
+
+## Releases
+
+Bump the version in `plugin.json` and merge; the tag and GitHub release
+follow automatically. See [`RELEASING.md`](RELEASING.md).
 
 ## Constraints that are not up for PR
 

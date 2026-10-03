@@ -10,7 +10,32 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-07-24 (thirteenth update), **W7 shipped (v0.4, bootstrap
+Last updated: 2026-10-03 (fourteenth update), **W13 shipped (v0.4.0, first
+tagged release)**: a cross-repo review found three disagreeing version claims
+(manifest 0.3.2, README v0.3, ledger v0.4) and no tags or releases ever; the
+site showed v0.3 only from a manual fallback. Fix: version bumped to 0.4.0;
+`CHANGELOG.md` reconstructs v0.1.0 to v0.3.2 as untagged history from this
+ledger and the merged PRs; recursive-spine's version-triggered release
+harness transplanted (`release.yml` reuses `gates.yml` whole, notes from the
+CHANGELOG section); a new gate (`scripts/check-version-agreement.sh`) keeps
+manifest, CHANGELOG, and README status in agreement; `RELEASING.md` added;
+README install leads with the family marketplace (`tokenomics@slopstopper`,
+owner-confirmed current). Owner decisions this session: name stays (it came
+from token spend; context economics is how the saving is made); v0.5.0 is
+"routing axes": lane as class of work vs model tier (owner prefers class of
+work, names left to a brainstorm, #25), prompt caching vs the compression
+thesis, auto-compaction (G12). The recursive-spine bootstrap of this repo is
+**held** for spine's declare+reconcile label stamp
+(slopstopper/recursive-spine#133, owner decision) and for #25's lane names,
+so nothing is labelled twice; until it lands this playbook stays canonical
+for the queue. Do-not-re-derive: the per-repo marketplace stays as a second
+install route (all three family READMEs used it; plumb-line and
+recursive-spine still do).
+spend: lane flagship (cross-repo review + release design, in-lane) ·
+dispatches 2 (read-only surveys of kin repos) · out-tokens not extracted
+(cloud session, recipe not run) · cf-flagship omitted (no dated price table
+supplied).
+Prior update: 2026-07-24 (thirteenth update), **W7 shipped (v0.4, bootstrap
 salvage path)**: tokenomics-bootstrap gains a mid-project entry — the likelier
 adopter shape (G7). Question 4 now invites an existing TODO/notes pile, and a
 new Step-2 generation rule ("Migrate, don't curate") carries each item into the
@@ -234,6 +259,7 @@ orchestration lands, not less.
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | **closed** (twelfth update): the first orchestrated session — a v0.4 doc-set audit, 7 dispatches (5 audit + 2 adversarial verify), recipe-extracted roll-up (flagship ≈36k / mid ≈31k) cross-checked against harness usage; it also found 3 confirmed doc defects and hardened the adapter recipe against transcript-path/parse drift | medium (credibility) |
 | G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day; fix direction exercised manually 2026-07-24 (the W11 session fetched and routed from the origin/main playbook before claiming — builder-prompted, not yet doctrine) | high (spend integrity: the failure mode silently doubles session cost) |
 | G11 | The queue routes by Lane (capability) and Size but not by decomposability — orchestration-shape is an orthogonal axis (a task can be mid+fan-out or flagship+solo). With no fan-out hint read at Route, a controller is spawned only when a session discovers the decomposition mid-item, or never, so orchestration surfaces as an exception (the twelfth-update audit was the repo's first) rather than a routed default. Fix direction: a lightweight fan-out hint on known-decomposable queue items, read at the Route switchpoint — **not** pre-decomposing items into queue sub-items, which would collapse the meso/micro boundary and manufacture the ceremony W6 names (the controller's within-session decomposition and its synthesis/verify-barrier role must stay). | open — surfaced by the first orchestrated session (twelfth update); design queued as W12 | low-medium (efficiency; not a falsifiability gap, so it ranks below claim-hardening work per the strategic frame) |
+| G12 | The method predates harness features that change cycle economics: per-call reasoning effort (a second dial inside a tier), prompt caching (a deliberate boundary now forfeits a warm cache), auto-compaction (an uncontrolled compression boundary), and native dispatch with per-subagent model choice. None is addressed in the method doc; the mapping table is dated 2026-07. | open — v0.5.0 "routing axes"; lane semantics in #25, caching + compaction in #26 | high (method currency) |
 
 ## Work queue
 
@@ -245,6 +271,8 @@ orchestration lands, not less.
 | W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | absorbed into W10 (the adapter ships the hook) |
 | W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | done — 2026-07-24 |
 | W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | done — 2026-07-24 |
+| W13 | **v0.4.0 release.** Align the version claims, reconstruct the CHANGELOG, transplant the version-triggered release harness, add the version-agreement gate. | (version drift) | flagship (release design), mid (writes) | 1 session | done — 2026-10-03 |
+| W14 | **Adopt recursive-spine tracking on this repo.** Run recursive-spine-bootstrap; migrate the open queue and gap register into issues verbatim per §The seam. Blocked on slopstopper/recursive-spine#133 (label reconcile) and #25 (lane names). | G10 (likely: Route becomes a live issue query, the claim marker becomes assignment) | mid (interview answers are the owner's) | 1 session | blocked |
 | W12 | **Orchestration axis at Route.** Add a decomposability hint to the queue, orthogonal to Lane, so Route can spawn a controller for known fan-out-shaped items instead of a session discovering it mid-item (or never). Design-first: how the hint is expressed in a queue row, how Route reads it, its interaction with Lane and the verification axis, and where the controller-vs-queue decomposition line sits — do not pre-decompose items into sub-items. Ranks below falsifiability work per the strategic frame; surfaced by the first orchestrated session. | G11 | flagship (method-design axis, expensive to get wrong) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
 | W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
@@ -272,6 +300,7 @@ orchestration lands, not less.
 | W11 | Recursive-spine interop seam (v0.4, Ring 3): method doc gains §The seam — division of ownership, not a merge: the tracker wins on work state, tokenomics wins on spend. Co-installed: queue → issues/milestones, gap register → filed debts; playbook keeps frame, lanes, spend ledger, done ledger, standing constraints, and stays canonical for spend; issues carry a lane, closing records carry a spend line (annotation only). Bootstrap gains the detection-gated interop offer (question 7; offered never forced; declines reported as answers). Do-not-re-derive: switchpoint contracts untouched under interop — only Route's and Close's crossing artifacts change address; recursive-spine named exactly once in the portable core (quarantine style of the model mapping table); spine needs no change to benefit — lane and spend annotations ride in issue bodies and closing comments it already has. Plumb-line composes independently, one sentence, no wiring. | flagship (seam design, in-lane) | done — 2026-07-24 |
 | W10 | Claude Code adapter (v0.4, Ring 2): new `adapters/` tree + quarantine README; the adapter ships an opt-in SessionStart playbook-pointer hook (absorbs W2, closes G2), the micro-brief template (dispatch contract at micro size), and an orchestration recipe running the four switchpoints with native subagents. Roll-up first: re-verified the 2026-07-06 spend-extraction recipe — `unique_by(.id)` under-reported because streaming updates repeat the message id with a growing `output_tokens`; fixed to `group_by(.id) | map(max_by(.out))`, cross-checked against harness usage blocks. Do-not-re-derive: adapter implements the shipped contract, amends nothing (method/skills/templates/manifest untouched); G9 opens for the first post-W10 orchestrated session. | mid (escalated to flagship on the recipe re-verification, as the spec anticipated) | done — 2026-07-24 (#18) |
 | W6 | "When this doesn't pay" section (v0.4): method doc gains §When this doesn't pay naming the threshold below which the discipline is ceremony — no tier differential (routing is a label with no destination), single-context work (nothing crosses a boundary, so nothing to compress or hand off), throwaway output (paid-once judgment never spent twice); the rule is the routing test turned on the process itself. README §The method gains the matching one-liner. Closes G6. Do-not-re-derive: no new doctrine, the section self-applies the shipped routing test; assessed as an orchestration candidate and declined (the fleet to write this paragraph would be the ceremony it names). | mid | done — 2026-07-24 |
+| W13 | v0.4.0, the first tagged release: version claims aligned (manifest, README, CHANGELOG), v0.1.0 to v0.3.2 recorded as untagged history, recursive-spine's version-triggered release harness transplanted, version-agreement gate added, install leads with `tokenomics@slopstopper`. Do-not-re-derive: never tag by hand; earlier versions are not retro-tagged. | flagship | done — 2026-10-03 |
 | W7 | Bootstrap salvage path (v0.4): tokenomics-bootstrap gains a mid-project entry — Q4 invites an existing TODO/notes pile, and a new Step-2 rule ("Migrate, don't curate") carries each item into the first Now queue verbatim (nothing reworded, reordered, merged, split, or dropped; order preserved), Lane and Size left unrouted since routing is the builder's first-session act. Threaded through frontmatter, Q4→template mapping, and Reporting. Closes G7. Do-not-re-derive: salvage is the complement of "invent no queue items", not an exception — invents nothing, preserves what exists; interview design ran flagship in-session, the write was mid. | mid→flagship (in-session design escalation, as the queue anticipated) | done — 2026-07-24 |
 
 ## Model routing
@@ -295,7 +324,8 @@ Clear contract with tests → mid. Mechanical with automated verification → sm
    `protocol/` prefixes); one idea per branch; PR to protected `main`;
    self-merge once gates are green. Direct pushes to `main` ended with v0.2.
 6. Gates run in CI (`.github/workflows/gates.yml`) and must be green to
-   merge: relative links resolve; `jq`-valid manifests; skill frontmatter
+   merge: relative links resolve; `jq`-valid manifests; versions agree
+   across `plugin.json`, CHANGELOG, and README status; skill frontmatter
    names match directories; privacy sweep (source project unnamed); no
    concrete model names outside the method doc's one dated mapping table.
 7. Re-assess only when the Now queue is empty or the strategic frame feels

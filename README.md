@@ -93,20 +93,25 @@ execute without re-derivation.
 | `skills/`         | The three Claude Code skills: method, bootstrap, handoff |
 | `reference/`      | The portable method doc, playbook template, handoff-spec template |
 | `examples/`       | Two full worked playbooks (a real code project; a non-code analytical desk) plus a domain gallery mapping the method into more fields |
+| `adapters/`       | Optional, opt-in harness implementations of the method (Claude Code) |
 | `docs/design/`    | Design notes for this repository                      |
+| `CHANGELOG.md`, `RELEASING.md` | Version history and how a release is cut |
 
 ## Install
 
-**As a Claude Code plugin (recommended).** The repository is its own
-plugin marketplace. From inside Claude Code:
+**As a Claude Code plugin (recommended).** tokenomics is listed in the
+slopstopper marketplace alongside plumb-line and recursive-spine. From inside
+Claude Code:
 
 ```
-/plugin marketplace add slopstopper/tokenomics
-/plugin install tokenomics@tokenomics
+/plugin marketplace add slopstopper/marketplace
+/plugin install tokenomics@slopstopper
 ```
 
-The first command registers the repo as a marketplace; the second installs
-the three skills. Updates come through `/plugin`.
+The first command registers the family marketplace; the second installs the
+three skills. Updates come through `/plugin`. The repository is also its own
+single-plugin marketplace (`/plugin marketplace add slopstopper/tokenomics`,
+then `/plugin install tokenomics@tokenomics`) if you want tokenomics alone.
 
 **Manually.** Clone the repository and point Claude Code at the plugin
 directory, or add it under `plugins` in your `.claude/settings.json`. The
@@ -119,19 +124,30 @@ no Code required.
 
 ## Status
 
-v0.3 ships the three skills; the portable method doc, including the cycle
-section (macro/meso/micro) added in v0.2; two scale-invariant templates
-(playbook and handoff-spec); two worked example playbooks (a structure-faithful
-abstraction of the real, in-use playbook this method was extracted from, with
-specifics generalized because the source project is private and pre-release,
-and a second, non-code one, an analytical desk) plus a domain gallery covering
-further fields; this repo's own dogfooded playbook; and the spend-ledger
-convention, a minimal per-session record of lane used and rough scale of work
-that makes the method's savings claims falsifiable against its own history. This is a practice report from one real project,
-not a benchmark: no controlled comparison against alternative approaches
-exists yet. Planned, not shipped: a session-start hook that injects a
-pointer to the project's playbook automatically, queued in this repo's own
-[playbook](docs/model-effectiveness-playbook.md).
+**v0.4.0** is the first tagged release ([CHANGELOG](CHANGELOG.md); earlier
+version labels were never tagged). It ships the three skills; the portable
+method doc, now including the cycle (macro/meso/micro), the spend ledger, the
+escalation rule and verification axis, the four switchpoints with a
+controller contract for orchestration, [When this doesn't
+pay](reference/portable-method.md#when-this-doesnt-pay), and the seam for
+composing with an issue-tracker-first convention such as recursive-spine; two
+scale-invariant templates (playbook and handoff-spec); an opt-in Claude Code
+adapter (session-start playbook-pointer hook, micro-brief template, and an
+orchestration recipe that reads the per-tier spend roll-up from transcripts);
+two worked example playbooks (a structure-faithful abstraction of the real,
+in-use playbook this method was extracted from, with specifics generalized
+because the source project is private and pre-release, and a second, non-code
+one, an analytical desk) plus a domain gallery covering further fields; and
+this repo's own dogfooded playbook.
+
+This is a practice report from one real project, not a benchmark: no
+controlled comparison against alternative approaches exists yet, and the
+spend ledger, which makes the savings claim falsifiable in design, has not
+yet produced a counterfactual-cost figure (no dated price table has been
+supplied to any recorded session). Next: v0.5.0, "routing axes": whether a
+lane names a class of work or a model tier
+([#25](https://github.com/slopstopper/tokenomics/issues/25)), and how prompt
+caching and auto-compaction change the economics of a cycle boundary.
 
 ## License
 

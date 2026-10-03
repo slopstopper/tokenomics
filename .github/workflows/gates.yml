@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_call:   # release.yml reuses this whole gate set
 
 jobs:
   gates:
@@ -15,6 +16,9 @@ jobs:
         run: |
           jq -e '.name == "tokenomics"' .claude-plugin/plugin.json
           jq -e '.plugins[0].source == "./"' .claude-plugin/marketplace.json
+
+      - name: Versions agree (plugin.json, CHANGELOG, README status)
+        run: bash scripts/check-version-agreement.sh
 
       - name: Skill frontmatter matches directories
         run: |
