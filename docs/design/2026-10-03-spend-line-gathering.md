@@ -40,7 +40,10 @@ spend: lane <planned>→<ran> [escalation <cause>] · effort <tier> <level> · d
    assistant entries hold only streaming partials (`stop_reason: null`,
    `output_tokens` 3 to 16); final usage is never written there. The
    adapter recipe's per-tier roll-up therefore under-reports dispatched
-   work on this harness version. The harness's task-completion notice does
+   work on this harness version. This is a recurrence: the playbook's
+   sixth update (2026-07-23) recorded the same drift, and W10 fixed it.
+   The recipe breaks with harness updates, so each new harness version
+   needs a re-verification run, not a one-off patch. The harness's task-completion notice does
    report a per-subagent total (all token types, not output alone).
 3. **The cost record lags.** `cost-state` is a periodic snapshot: at
    extraction its output total (64,673) trailed the main transcript's

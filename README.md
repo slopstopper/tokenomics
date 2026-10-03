@@ -150,6 +150,19 @@ lane names a class of work or a model tier
 ([#25](https://github.com/slopstopper/tokenomics/issues/25)), and how prompt
 caching and auto-compaction change the economics of a cycle boundary.
 
+**Outside corroboration of the failure modes, not of the savings.** An
+independent project, the [superpowers](https://github.com/obra/superpowers)
+plugin (MIT, © Jesse Vincent), reports two of the failures this method
+names, found in its own runs: subagents that silently inherit the session's
+most expensive model when none is named ("one run put all 26 of its
+reviewers on the top tier", v6.4.2 release notes), and work lost to
+compaction ("controllers that lost their place have re-dispatched entire
+completed task sequences — the single most expensive failure observed",
+`skills/subagent-driven-development/SKILL.md`), the same failure as this
+repo's G10. A second observer reaching the same failures is evidence the
+problems are real. It is not evidence that tokenomics' remedies save
+anything; that still rests on one source project.
+
 ## License
 
 Credit-first, per the slopstopper family formula: all prose (skills,
