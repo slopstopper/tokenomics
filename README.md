@@ -93,6 +93,7 @@ execute without re-derivation.
 | `skills/`         | The three Claude Code skills: method, bootstrap, handoff |
 | `reference/`      | The portable method doc, playbook template, handoff-spec template |
 | `examples/`       | Two full worked playbooks (a real code project; a non-code analytical desk) plus a domain gallery mapping the method into more fields |
+| `evals/`          | Skill-text assertions CI checks: the rules each skill must keep |
 | `adapters/`       | Optional, opt-in harness implementations of the method (Claude Code) |
 | `docs/design/`    | Design notes for this repository                      |
 | `CHANGELOG.md`, `RELEASING.md` | Version history and how a release is cut |

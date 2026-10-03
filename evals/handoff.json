@@ -1,0 +1,80 @@
+{
+  "skill": "tokenomics-handoff",
+  "assertions": [
+    { "id": "ask-when-mode-ambiguous",
+      "kind": "contains",
+      "anchor": "don't guess which one is wanted if the request is ambiguous, ask",
+      "why": "running the wrong mode edits the wrong things" },
+
+    { "id": "mode-a-before-mode-b",
+      "kind": "precedes",
+      "anchor": "## mode a: route + hand off",
+      "before": "## mode b: session close",
+      "why": "structural: the downward pair is documented before Close" },
+
+    { "id": "routing-test-question",
+      "kind": "contains",
+      "anchor": "if this is done slightly wrong, is it expensive?",
+      "why": "the routing test is the reason for every lane call" },
+
+    { "id": "gates-reach-axis",
+      "kind": "contains",
+      "anchor": "route down only as far as the project's gates reach",
+      "why": "the verification axis: work with no cheap gate routes up however mechanical it looks" },
+
+    { "id": "empty-decisions-means-not-ready",
+      "kind": "contains",
+      "anchor": "the handoff is **not ready**",
+      "why": "'Decisions already made' is the whole point of a handoff; an empty one must block, not be papered over" },
+
+    { "id": "no-placeholder-sections",
+      "kind": "contains",
+      "anchor": "no section left as the template's angle-bracket placeholder text",
+      "why": "a placeholder spec forces the receiving tier to re-derive, which is the cost the handoff exists to avoid" },
+
+    { "id": "flag-negative-list-before-proceeding",
+      "kind": "contains",
+      "anchor": "say so inline, plainly, before proceeding",
+      "why": "a mis-tiered session flagged only in a later report has already spent the budget" },
+
+    { "id": "early-return-not-grind",
+      "kind": "contains",
+      "anchor": "do not grind through",
+      "why": "W4 escalation rule: grinding down-tier burns savings invisibly" },
+
+    { "id": "gates-catch-defective-not-expensive",
+      "kind": "contains",
+      "anchor": "gates catch defective output, not expensive output",
+      "why": "the reason early return must be a rule: nothing else catches it" },
+
+    { "id": "escalate-one-level",
+      "kind": "contains",
+      "anchor": "one level up and never further",
+      "why": "artifacts climb one cycle level at a time" },
+
+    { "id": "never-claim-unmeasured-savings",
+      "kind": "contains",
+      "anchor": "never assert savings against an unmeasured baseline",
+      "why": "spend-ledger never-claim rule: the ledger records, it does not advertise" },
+
+    { "id": "ratio-carries-its-assumptions",
+      "kind": "contains",
+      "anchor": "never quote the ratio without its price-table date and token-volume assumption",
+      "why": "an undated ratio is unfalsifiable" },
+
+    { "id": "close-refuses-rewrites",
+      "kind": "contains",
+      "anchor": "refuse wholesale rewrites",
+      "why": "re-assessment is reserved for an empty queue or a wrong-feeling frame, not folded into a routine close" },
+
+    { "id": "never-invent",
+      "kind": "contains",
+      "anchor": "never invent a lane, a decision, or a gap",
+      "why": "nothing invented ships (family house rule)" },
+
+    { "id": "quote-test-verbatim",
+      "kind": "contains",
+      "anchor": "quote the routing test verbatim when applying it",
+      "why": "a softened test stops cutting against the reach-for-the-best-model instinct" }
+  ]
+}

@@ -12,7 +12,19 @@ the merged PRs, and are kept for the record, not as installable versions.
 
 ## [Unreleased]
 
-_Nothing yet._ v0.5.0 ("routing axes") is being scoped: lane as class of
+### Added
+
+- **Skill-text evals**: `scripts/skill-eval.sh` (transplanted from
+  recursive-spine's `spine-eval.sh`) checks 35 anchored assertions in
+  `evals/*.json` against the three skills on every PR: the verbatim routing
+  test, the invent-nothing rules, the never-claim rules, early return, and
+  the switchpoint order. Coverage is 3/3 skills and may not regress. These
+  check that the doctrine is still written down, not that a model follows
+  it; behavioural evals wait on #25.
+
+### Planned
+
+v0.5.0 ("routing axes") is being scoped: lane as class of
 work rather than model tier
 ([#25](https://github.com/slopstopper/tokenomics/issues/25)), prompt caching
 against the compression thesis, and auto-compaction as an uncontrolled

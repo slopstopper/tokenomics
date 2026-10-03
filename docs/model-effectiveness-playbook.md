@@ -325,7 +325,8 @@ Clear contract with tests → mid. Mechanical with automated verification → sm
    self-merge once gates are green. Direct pushes to `main` ended with v0.2.
 6. Gates run in CI (`.github/workflows/gates.yml`) and must be green to
    merge: relative links resolve; `jq`-valid manifests; versions agree
-   across `plugin.json`, CHANGELOG, and README status; skill frontmatter
+   across `plugin.json`, CHANGELOG, and README status; skill-text evals
+   (`evals/*.json`) hold, all three skills covered; skill frontmatter
    names match directories; privacy sweep (source project unnamed); no
    concrete model names outside the method doc's one dated mapping table.
 7. Re-assess only when the Now queue is empty or the strategic frame feels

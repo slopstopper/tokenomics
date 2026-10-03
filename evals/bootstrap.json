@@ -1,0 +1,70 @@
+{
+  "skill": "tokenomics-bootstrap",
+  "assertions": [
+    { "id": "read-before-asking",
+      "kind": "precedes",
+      "anchor": "required reading first",
+      "before": "## step 1: interview",
+      "why": "the interview assumes the method is loaded; asking first produces questions that don't map onto the template" },
+
+    { "id": "one-question-at-a-time",
+      "kind": "contains",
+      "anchor": "**one at a time, in this order**",
+      "why": "interview-driven, never batched: house rule across the family" },
+
+    { "id": "no-default-for-unanswered",
+      "kind": "contains",
+      "anchor": "do not supply your own default for an unanswered question",
+      "why": "an invented default reads exactly like the builder's answer" },
+
+    { "id": "ship-no-default-lanes",
+      "kind": "contains",
+      "anchor": "**ship no default lanes.**",
+      "why": "lanes are the builder's own words (family rule, shared-vocabulary.md). Expected to be re-anchored, not dropped, when #25 settles what a lane names" },
+
+    { "id": "invent-no-queue-items",
+      "kind": "contains",
+      "anchor": "**invent no queue items.**",
+      "why": "an empty Now table is honest; a plausible placeholder row is not" },
+
+    { "id": "salvage-verbatim",
+      "kind": "contains",
+      "anchor": "nothing reworded, reordered, merged, split, or dropped",
+      "why": "W7: the salvage path preserves the builder's pile exactly; curation would invent decisions" },
+
+    { "id": "salvage-leaves-lanes-unrouted",
+      "kind": "contains",
+      "anchor": "leave lane and size **unassigned**",
+      "why": "routing is the builder's first-session act, not a bootstrap invention" },
+
+    { "id": "invent-no-answers",
+      "kind": "contains",
+      "anchor": "**invent no answers.**",
+      "why": "unanswered questions are stated as 'not established', never filled" },
+
+    { "id": "interop-offered-never-forced",
+      "kind": "contains",
+      "anchor": "interop is offered, never forced",
+      "why": "the seam (W11) and the family boundary rule: kin wiring is an offer" },
+
+    { "id": "interop-silent-when-not-detected",
+      "kind": "contains",
+      "anchor": "do not ask question 7 and do not mention interop at all",
+      "why": "standalone is the unmarked case; raising interop unprompted turns an offer into pressure" },
+
+    { "id": "declined-offer-is-an-answer",
+      "kind": "contains",
+      "anchor": "a declined offer is a recorded answer, not a gap",
+      "why": "honest denominator: a decline must be reported, not hidden or re-asked" },
+
+    { "id": "routing-test-copied-verbatim",
+      "kind": "contains",
+      "anchor": "if this is done slightly wrong, is it expensive?",
+      "why": "the generated playbook carries the test unmodified" },
+
+    { "id": "pointer-line-last",
+      "kind": "contains",
+      "anchor": "make sure it's the last thing in your output",
+      "why": "the session-opening pointer replaces repo re-exploration; buried, it is not used" }
+  ]
+}
