@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="tokenomics">
+  <title>tokenomics</title>
+  <defs><clipPath id="edge"><circle cx="236" cy="262" r="204"/></clipPath></defs>
+  <!-- coin edge (back) -->
+  <circle cx="236" cy="262" r="204" fill="#CBA528"/>
+  <g clip-path="url(#edge)" stroke="#17171a" stroke-width="6" stroke-linecap="round" opacity=".5">
+    <path d="M177.0 443.7 L180.9 442.2 M158.3 436.5 L164.8 434.0 M140.5 427.4 L149.0 424.2 M123.7 416.5 L133.7 412.8 M108.2 403.9 L119.4 399.8 M94.1 389.8 L106.1 385.3 M81.5 374.3 L94.1 369.5 M70.6 357.5 L83.6 352.6 M61.5 339.7 L74.8 334.7 M54.3 321.0 L67.6 316.1 M49.2 301.7 L62.3 296.8 M46.0 282.0 L58.8 277.2 M45.0 262.0 L57.1 257.5 M46.0 242.0 L57.4 237.8 M49.2 222.3 L59.4 218.5 M54.3 203.0 L63.1 199.7 M61.5 184.3 L68.3 181.8 M70.6 166.5 L74.9 164.9"/>
+  </g>
+  <circle cx="236" cy="262" r="204" fill="none" stroke="#17171a" stroke-width="24"/>
+  <!-- coin face (front) -->
+  <circle cx="268" cy="250" r="198" fill="#FFC501" stroke="#17171a" stroke-width="24"/>
+  <!-- double-barred T: always ink, it sits on gold -->
+  <g fill="none" stroke="#17171a" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M168 196 Q170 164 198 164 L340 162 Q366 162 370 192"/>
+    <path d="M268 164 Q266 260 262 346"/>
+    <path d="M226 236 L304 232"/>
+    <path d="M224 280 L306 278"/>
+    <path d="M238 350 L290 350"/>
+  </g>
+</svg>
