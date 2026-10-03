@@ -16,7 +16,7 @@ _Nothing yet._ v0.5.0 ("routing axes") is being scoped: lane as class of
 work rather than model tier
 ([#25](https://github.com/slopstopper/tokenomics/issues/25)), prompt caching
 against the compression thesis, and auto-compaction as an uncontrolled
-compression boundary.
+compression boundary ([#26](https://github.com/slopstopper/tokenomics/issues/26)).
 
 ## [0.4.0] — 2026-10-03
 
