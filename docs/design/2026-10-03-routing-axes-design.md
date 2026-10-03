@@ -1,10 +1,9 @@
 # Routing axes: design spec (v0.5.0, #25)
 
 Status: **spec, not implemented.** Shape agreed in the 2026-10-03
-brainstorm (owner + Claude), recorded on #25. Class **names are open**:
-this spec uses class 1–4 as placeholders until the owner names them.
-Nothing here changes the method doc, skills, templates, or labels yet; the
-implementation half executes from this spec.
+brainstorm (owner + Claude), recorded on #25. Classes **named by the
+owner** (see Names). Nothing here changes the method doc, skills,
+templates, or labels yet; the implementation half executes from this spec.
 
 ## Problem
 
@@ -42,10 +41,31 @@ playbook entries are the reference.
 
 | Yeses | Class | Default mapping |
 | ----- | ----- | --------------- |
-| 3 | class 1 | top tier |
-| 2 | class 2 | second tier |
-| 1 | class 3 | mid tier |
-| 0 | class 4 | small tier |
+| 3 | 1 · **pathfinder** | top tier |
+| 2 | 2 · **navigator** | second tier |
+| 1 | 3 · **builder** | mid tier |
+| 0 | 4 · **keeper** | small tier |
+
+### Names (owner, 2026-10-03)
+
+Titles, chosen to sound right as a team. Each class also carries a
+three-word card for teaching (title · what the work asks for · relation
+to precedent):
+
+| Class | Label | Card |
+| ----- | ----- | ---- |
+| 1 | `lane:pathfinder` | pathfinder · frontier · uncharted |
+| 2 | `lane:navigator` | navigator · judgment · charted |
+| 3 | `lane:builder` | builder · build · specified |
+| 4 | `lane:keeper` | keeper · routine · automatic |
+
+Pathfinder and navigator both describe movement through territory, which
+fits the new-ground axis. **Collision resolved:** "builder" was the
+family's word for the *person* using the method (about 300 uses across
+tokenomics, recursive-spine, plumb-line, hq and the marketplace
+vocabulary). The owner chose to give the lane the word and rename the
+person **operator**: someone running a coding agent is operating the
+project. See Implementation.
 
 ### Veto (owner: add now)
 
@@ -63,7 +83,7 @@ scores 2.
 | lint sweep | no | no | no | 0 | 4 |
 | implementation from a spec, with tests | no | yes | no | 1 | 3 |
 | familiar design call, no gate | no | yes | yes | 2 | 2 |
-| exploration (disposable) | yes | no | yes | 2 | 2, passed up by escalation when needed |
+| exploration (disposable) | yes | no | yes | 2 | 2 (navigator), passed up by escalation when needed |
 | novel load-bearing architecture | yes | yes | yes | 3 | 1 |
 | familiar migration, irreversible, unverifiable | no | yes (irreversible) | yes | 2 → **veto** | 1 |
 
@@ -85,7 +105,7 @@ boundary** (Route, Dispatch, Return, Close):
 ## Mapping table
 
 - The four classes are method doctrine. **Which tier serves each class is
-  the builder's mapping**, set in their playbook. A builder with two tiers
+  the operator's mapping**, set in their playbook. An operator with two tiers
   maps four classes onto two; the bootstrap interview asks for the
   mapping, never ships one. (Replaces "ship no default lanes": the method
   now ships classes, still no default mapping.)
@@ -120,7 +140,7 @@ The provisional fields (`2026-10-03-spend-line-gathering.md`) gain:
 
 Descriptive comparisons only, never-claim rules apply, n stated.
 
-## Implementation (executes from this spec, after names)
+## Implementation (executes from this spec)
 
 | Where | Change |
 | ----- | ------ |
@@ -133,8 +153,9 @@ Descriptive comparisons only, never-claim rules apply, n stated.
 | `evals/*.json` | re-anchor routing-test assertions (they go UNRESOLVED by design); add anchors for the veto and re-scoring |
 | examples (two playbooks) | re-route their queues under the four classes |
 | CHANGELOG / version | **v0.5.0**: a change of meaning, minor bump; migration note for anyone using the three-lane names |
-| recursive-spine (separate PR there) | `lane:*` labels move from three to four, tier-named → class-named |
-| marketplace `shared-vocabulary.md` | lane = class of work; tier = model rank |
+| recursive-spine (separate PR there) | `lane:*` labels move from three to four, tier-named → class-named (`lane:pathfinder/navigator/builder/keeper`) |
+| marketplace `shared-vocabulary.md` | lane = class of work; tier = model rank; **operator** = the person using a tool |
+| **person rename, family-wide** (one PR per repo) | "builder" (the person) → **operator**: tokenomics (~53), recursive-spine (~101), plumb-line (~150), hq (~3), marketplace (1). Mechanical but read each hit: only the *person* sense changes. Lands **before** `lane:builder` ships anywhere, so the two senses never coexist. |
 
 ## Not yet known
 
