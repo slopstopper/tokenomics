@@ -10,7 +10,28 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-10-03 (fourteenth update), **W13 shipped (v0.4.0, first
+Last updated: 2026-10-03 (fifteenth update), **session close: v0.4.0
+follow-through and v0.5.0 handed off**. Shipped after the v0.4.0 tag:
+skill-text evals (#28); the six provisional spend fields and the
+API-list-price decision (#28); G12's recurrence correction and W15 (#31);
+the routing-axes spec with the classes named pathfinder / navigator /
+builder / keeper and the person renamed **operator** (#33); the coin icon
+and a README rewritten in tokenomics' own voice (#33); brand canon in
+slopstopper/hq#17. Filed: #25 decided, #26, #29, #30, #32, #34 with children
+#35, recursive-spine#134, plumb-line#643, hq#16, and recursive-spine#133.
+Owner decision recorded on #30: when a nudge suggests clearing or
+compacting, it **offers a ready-made handover**, which also makes clearing
+safe. Next session starts from `docs/design/2026-10-03-v0.5.0-handoff.md`.
+spend (extended format): lane —→flagship (unqueued; release follow-through,
+brainstorms, brand, README) · effort flagship medium · dispatches 3 (tiers:
+flagship×2 inherited, not routed; mid×1 named) · out-tokens flagship 263k
+(main session) / mid ≈5k (dispatch) / small 0 · in flagship uncached 0.7k /
+cache-read 145M / cache-write 1.4M · compactions 0, and the session was never
+cleared across 322 assistant messages: the case W15's clear/compact nudge
+exists for (cache reads ≈550× output) · cf-flagship ≈1.0 against the merged
+top lane; not computable against the top tier, which did not run (source:
+harness API list-price estimate ≈$42.50, Claude Code 2.1.288).
+Prior update: 2026-10-03 (fourteenth update), **W13 shipped (v0.4.0, first
 tagged release)**: a cross-repo review found three disagreeing version claims
 (manifest 0.3.2, README v0.3, ledger v0.4) and no tags or releases ever; the
 site showed v0.3 only from a manual fallback. Fix: version bumped to 0.4.0;
