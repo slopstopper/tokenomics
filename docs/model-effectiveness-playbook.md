@@ -39,9 +39,12 @@ dispatches 2 (tiers: flagship×2, **inherited, not routed**: read-only surveys
 were mid/small work by the routing test) · out-tokens flagship 72.2k (main
 session only; subagent output not extractable, see G12) / mid 0 / small 0 ·
 in flagship uncached 0.2k / cache-read 14.7M / cache-write 0.26M ·
-compactions 0 (self-reported) · cf-flagship 1.00 (trivially: all work ran
-flagship; source harness list-price estimate, Claude Code 2.1.288,
-2026-10-03; snapshot at extraction, session still running).
+compactions 0 (self-reported) · cf-flagship 1.00 against the flagship
+*lane* as mapped (the top two tiers merged), but this session ran the second of
+four tiers, so against the top tier R < 1, not computed: the harness
+record prices only models used, and the top tier did not run (source
+harness API list-price estimate, Claude Code 2.1.288, 2026-10-03; snapshot,
+session still running). The lane merging the top two tiers is filed on #25.
 Prior update: 2026-07-24 (thirteenth update), **W7 shipped (v0.4, bootstrap
 salvage path)**: tokenomics-bootstrap gains a mid-project entry — the likelier
 adopter shape (G7). Question 4 now invites an existing TODO/notes pile, and a

@@ -65,3 +65,39 @@ spend: lane <planned>→<ran> [escalation <cause>] · effort <tier> <level> · d
 - Never-claim rule 4 applies with the source named: R is quoted with its
   price source, its date, and the same-token-volume assumption, or not at
   all.
+
+## Decision (owner, 2026-10-03): API list price, option B
+
+Gather with the harness's API list-price estimate (option B); choose
+between B and a dated price table in the method doc (option C) in v0.5.0.
+
+The owner's reasoning, recorded because it is the method's purpose: the
+method was built to stretch a subscription's usage allowance, spending the
+top tier only where it is genuinely needed and passing everything else
+down. Per-model allowance cost is not observable; API list price is the
+only per-model cost that is. It is honest for API users directly, and for
+subscription users it is the best available proxy.
+
+**The proxy assumption, stated so it can be checked:** allowance
+consumption between tiers scales roughly like API list price between
+tiers. Unverified. R is therefore an *API-price-weighted tier mix*; the
+ledger never claims allowance saved.
+
+## Finding: the mapping merges the two top tiers
+
+The method doc's mapping table puts the top two model tiers in one Flagship row.
+The method was designed around separating exactly those two (use the
+top tier only where it is clearly worth it), so the decision it was built
+for is the one its three lanes cannot express: four tiers, three lanes. Two consequences:
+
+- **R's denominator is ambiguous.** "All-flagship" can mean the top tier
+  or the merged two-tier lane. This session ran the second tier, so against the
+  lane R is 1.00 and against the top tier R is below 1.
+- **Option B cannot always compute R.** The harness record prices only the
+  models a session actually used. A session that never touches the top
+  tier carries no top-tier price, so the counterfactual against it cannot
+  come from the record alone. The reference tier's price must come from
+  somewhere else. That is an argument for C, at least for the reference
+  tier's row.
+
+Both belong to #25 (what a lane names) and are recorded there.
