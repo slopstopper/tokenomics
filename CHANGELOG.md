@@ -21,6 +21,13 @@ the merged PRs, and are kept for the record, not as installable versions.
   the switchpoint order. Coverage is 3/3 skills and may not regress. These
   check that the doctrine is still written down, not that a model follows
   it; behavioural evals wait on #25.
+- **Provisional spend-line fields, gathered in this repo only**
+  (`docs/design/2026-10-03-spend-line-gathering.md`): effort, cache split,
+  compactions, escalation cause, dispatch tiers, and a cf-flagship figure
+  from the harness's list-price cost record. Adopter-facing changes wait for
+  v0.5.0 and the data. First extraction found that native subagent dispatch
+  silently inherits the controller's tier, and that subagent output tokens
+  are not recoverable from subagent transcripts (G12).
 
 ### Planned
 

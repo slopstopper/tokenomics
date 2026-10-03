@@ -31,10 +31,17 @@ so nothing is labelled twice; until it lands this playbook stays canonical
 for the queue. Do-not-re-derive: the per-repo marketplace stays as a second
 install route (all three family READMEs used it; plumb-line and
 recursive-spine still do).
-spend: lane flagship (cross-repo review + release design, in-lane) ·
-dispatches 2 (read-only surveys of kin repos) · out-tokens not extracted
-(cloud session, recipe not run) · cf-flagship omitted (no dated price table
-supplied).
+spend (corrected 2026-10-03, first line in the provisional extended format
+of `docs/design/2026-10-03-spend-line-gathering.md`; the original line
+omitted that both dispatches ran flagship): lane —→flagship (unqueued
+cross-repo review + release design; in-lane) · effort flagship medium ·
+dispatches 2 (tiers: flagship×2, **inherited, not routed**: read-only surveys
+were mid/small work by the routing test) · out-tokens flagship 72.2k (main
+session only; subagent output not extractable, see G12) / mid 0 / small 0 ·
+in flagship uncached 0.2k / cache-read 14.7M / cache-write 0.26M ·
+compactions 0 (self-reported) · cf-flagship 1.00 (trivially: all work ran
+flagship; source harness list-price estimate, Claude Code 2.1.288,
+2026-10-03; snapshot at extraction, session still running).
 Prior update: 2026-07-24 (thirteenth update), **W7 shipped (v0.4, bootstrap
 salvage path)**: tokenomics-bootstrap gains a mid-project entry — the likelier
 adopter shape (G7). Question 4 now invites an existing TODO/notes pile, and a
@@ -259,7 +266,7 @@ orchestration lands, not less.
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | **closed** (twelfth update): the first orchestrated session — a v0.4 doc-set audit, 7 dispatches (5 audit + 2 adversarial verify), recipe-extracted roll-up (flagship ≈36k / mid ≈31k) cross-checked against harness usage; it also found 3 confirmed doc defects and hardened the adapter recipe against transcript-path/parse drift | medium (credibility) |
 | G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day; fix direction exercised manually 2026-07-24 (the W11 session fetched and routed from the origin/main playbook before claiming — builder-prompted, not yet doctrine) | high (spend integrity: the failure mode silently doubles session cost) |
 | G11 | The queue routes by Lane (capability) and Size but not by decomposability — orchestration-shape is an orthogonal axis (a task can be mid+fan-out or flagship+solo). With no fan-out hint read at Route, a controller is spawned only when a session discovers the decomposition mid-item, or never, so orchestration surfaces as an exception (the twelfth-update audit was the repo's first) rather than a routed default. Fix direction: a lightweight fan-out hint on known-decomposable queue items, read at the Route switchpoint — **not** pre-decomposing items into queue sub-items, which would collapse the meso/micro boundary and manufacture the ceremony W6 names (the controller's within-session decomposition and its synthesis/verify-barrier role must stay). | open — surfaced by the first orchestrated session (twelfth update); design queued as W12 | low-medium (efficiency; not a falsifiability gap, so it ranks below claim-hardening work per the strategic frame) |
-| G12 | The method predates harness features that change cycle economics: per-call reasoning effort (a second dial inside a tier), prompt caching (a deliberate boundary now forfeits a warm cache), auto-compaction (an uncontrolled compression boundary), and native dispatch with per-subagent model choice. None is addressed in the method doc; the mapping table is dated 2026-07. | open — v0.5.0 "routing axes"; lane semantics in #25, caching + compaction in #26 | high (method currency) |
+| G12 | The method predates harness features that change cycle economics: per-call reasoning effort (a second dial inside a tier), prompt caching (a deliberate boundary now forfeits a warm cache), auto-compaction (an uncontrolled compression boundary), and native dispatch with per-subagent model choice. None is addressed in the method doc; the mapping table is dated 2026-07. **Observed 2026-10-03:** (a) *silent tier inheritance*: native subagent dispatch without a named model inherits the controller's tier and effort, so the expensive default is the silent one (this session's two read-only surveys ran flagship); (b) subagent transcripts hold only streaming partials, so the adapter recipe under-reports dispatched output on Claude Code 2.1.288; (c) cache reads were ~200× output by volume in one session. Six provisional spend-line fields are being gathered in this repo (`docs/design/2026-10-03-spend-line-gathering.md`). | open — v0.5.0 "routing axes"; lane semantics in #25, caching + compaction in #26 | high (method currency) |
 
 ## Work queue
 
