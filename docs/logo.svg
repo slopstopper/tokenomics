@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="tokenomics">
+  <title>tokenomics</title>
+  <defs><clipPath id="edge"><circle cx="236" cy="262" r="204"/></clipPath></defs>
+  <!-- coin edge (back) -->
+  <circle cx="236" cy="262" r="204" fill="#CBA528"/>
+  <g clip-path="url(#edge)" stroke="#17171a" stroke-width="7" stroke-linecap="round" opacity=".45">
+    <path d="M40 200 l26 -10 M34 240 l26 -10 M34 280 l26 -10 M38 320 l26 -10 M48 360 l26 -10 M62 398 l26 -10 M80 432 l26 -10 M104 462 l26 -10"/>
+  </g>
+  <circle cx="236" cy="262" r="204" fill="none" stroke="#17171a" stroke-width="24"/>
+  <!-- coin face (front) -->
+  <circle cx="268" cy="250" r="198" fill="#FFC501" stroke="#17171a" stroke-width="24"/>
+  <!-- double-barred T: always ink, it sits on gold -->
+  <g fill="none" stroke="#17171a" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M168 196 Q170 164 198 164 L340 162 Q366 162 370 192"/>
+    <path d="M268 164 Q266 260 262 346"/>
+    <path d="M226 236 L304 232"/>
+    <path d="M224 280 L306 278"/>
+    <path d="M238 350 L290 350"/>
+  </g>
+</svg>

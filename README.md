@@ -1,4 +1,7 @@
-# tokenomics
+<h1 align="center">
+  <img src="docs/logo.svg" alt="" height="42" align="middle">
+  &nbsp;tokenomics
+</h1>
 
 *Spend your working context well and you spend fewer tokens: tighter
 context drifts less, and drift is where the waste hides.*
