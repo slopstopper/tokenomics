@@ -1,0 +1,69 @@
+name: release
+# Auto-release on a version bump: when .claude-plugin/plugin.json changes on
+# main and its version has no tag yet, gate on the same checks a PR runs,
+# then create the tag + GitHub release with this version's CHANGELOG section
+# as the notes. The slopstopper site pulls releases via the API. Never tag by
+# hand: see RELEASING.md. Transplanted from recursive-spine's release.yml
+# (pollen: version-triggered-release).
+on:
+  push:
+    branches: [main]
+    paths: [".claude-plugin/plugin.json"]
+
+permissions:
+  contents: write   # create tags + releases
+
+jobs:
+  gates:
+    # A release must not pass a narrower gate than a PR.
+    uses: ./.github/workflows/gates.yml
+
+  release:
+    needs: gates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version + idempotency guard
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VER="$(bash scripts/check-release-version.sh)"   # prints X.Y.Z or fails loud
+          echo "version=$VER" >> "$GITHUB_OUTPUT"
+          if gh release view "v$VER" >/dev/null 2>&1 \
+             || gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/v${VER}" >/dev/null 2>&1; then
+            echo "already=1" >> "$GITHUB_OUTPUT"
+            echo "v$VER already released, nothing to do."
+          else
+            echo "already=0" >> "$GITHUB_OUTPUT"
+            echo "Releasing v$VER."
+          fi
+
+      - name: Notes from CHANGELOG
+        if: steps.guard.outputs.already == '0'
+        env:
+          VER: ${{ steps.guard.outputs.version }}
+        run: |
+          awk -v v="$VER" '
+            index($0, "## [" v "]") == 1 { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+          if [ ! -s "$RUNNER_TEMP/notes.md" ]; then
+            echo "CHANGELOG.md has no section for $VER" >&2
+            exit 1
+          fi
+
+      - name: Tag + GitHub release
+        if: steps.guard.outputs.already == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VER: ${{ steps.guard.outputs.version }}
+        run: |
+          gh release create "v$VER" \
+            --target "$GITHUB_SHA" \
+            --notes-file "$RUNNER_TEMP/notes.md" \
+            --title "tokenomics v$VER"
