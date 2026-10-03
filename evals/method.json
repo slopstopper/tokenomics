@@ -1,0 +1,41 @@
+{
+  "skill": "tokenomics-method",
+  "assertions": [
+    { "id": "takes-no-actions",
+      "kind": "contains",
+      "anchor": "take no actions. no files, no commands, no repo changes.",
+      "why": "the method skill is pure knowledge; acting is bootstrap's and handoff's job" },
+
+    { "id": "routing-test-and-negative-list-verbatim",
+      "kind": "contains",
+      "anchor": "quote the routing test and the negative list verbatim; do not soften them",
+      "why": "a paraphrased routing test drifts toward 'use the best model to be safe', the instinct the method exists to counter" },
+
+    { "id": "answer-with-the-test",
+      "kind": "contains",
+      "anchor": "answer with the routing test, not a general opinion",
+      "why": "'should this go to the expensive model?' is the method's core question; an opinion in place of the test is the failure it names" },
+
+    { "id": "switchpoints-not-a-fifth-layer",
+      "kind": "contains",
+      "anchor": "switchpoints are not a fifth layer",
+      "why": "W8 do-not-re-derive: switchpoints name existing rules, they are not new doctrine" },
+
+    { "id": "route-before-dispatch",
+      "kind": "precedes",
+      "anchor": "**route** (down)",
+      "before": "**dispatch** (down)",
+      "why": "the cycle order: a lane is assigned before work is handed down" },
+
+    { "id": "return-before-close",
+      "kind": "precedes",
+      "anchor": "**return** (up)",
+      "before": "**close** (up)",
+      "why": "the cycle order: a tier returns before the cycle closes into the ledger" },
+
+    { "id": "vocabulary-seam",
+      "kind": "contains",
+      "anchor": "same word, three different joints",
+      "why": "handoff/handover is a deliberate homograph across the family (marketplace shared-vocabulary.md); losing the warning invites conflation" }
+  ]
+}

@@ -12,7 +12,26 @@ the merged PRs, and are kept for the record, not as installable versions.
 
 ## [Unreleased]
 
-_Nothing yet._ v0.5.0 ("routing axes") is being scoped: lane as class of
+### Added
+
+- **Skill-text evals**: `scripts/skill-eval.sh` (transplanted from
+  recursive-spine's `spine-eval.sh`) checks 35 anchored assertions in
+  `evals/*.json` against the three skills on every PR: the verbatim routing
+  test, the invent-nothing rules, the never-claim rules, early return, and
+  the switchpoint order. Coverage is 3/3 skills and may not regress. These
+  check that the doctrine is still written down, not that a model follows
+  it; behavioural evals wait on #25.
+- **Provisional spend-line fields, gathered in this repo only**
+  (`docs/design/2026-10-03-spend-line-gathering.md`): effort, cache split,
+  compactions, escalation cause, dispatch tiers, and a cf-flagship figure
+  from the harness's list-price cost record. Adopter-facing changes wait for
+  v0.5.0 and the data. First extraction found that native subagent dispatch
+  silently inherits the controller's tier, and that subagent output tokens
+  are not recoverable from subagent transcripts (G12).
+
+### Planned
+
+v0.5.0 ("routing axes") is being scoped: lane as class of
 work rather than model tier
 ([#25](https://github.com/slopstopper/tokenomics/issues/25)), prompt caching
 against the compression thesis, and auto-compaction as an uncontrolled

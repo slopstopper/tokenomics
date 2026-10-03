@@ -20,6 +20,12 @@ jobs:
       - name: Versions agree (plugin.json, CHANGELOG, README status)
         run: bash scripts/check-version-agreement.sh
 
+      - name: Skill-text evals (guarded doctrine still present, in order)
+        run: bash scripts/skill-eval.sh
+
+      - name: Skill-eval coverage has not regressed
+        run: bash scripts/skill-eval.sh --coverage --min-covered 3
+
       - name: Skill frontmatter matches directories
         run: |
           for f in skills/*/SKILL.md; do
