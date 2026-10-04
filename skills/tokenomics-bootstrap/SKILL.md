@@ -1,22 +1,22 @@
 ---
 name: tokenomics-bootstrap
-description: "Use when setting a project up with the tokenomics discipline: interviews the builder about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Works greenfield or mid-project: an existing TODO/notes pile is carried into the first work queue verbatim, nothing reworded or invented. Ships no default lanes and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
+description: "Use when setting a project up with the tokenomics discipline: interviews the operator about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Works greenfield or mid-project: an existing TODO/notes pile is carried into the first work queue verbatim, nothing reworded or invented. Ships no default lanes and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
 ---
 
 # Bootstrap a project with tokenomics
 
 REQUIRED READING FIRST: `reference/portable-method.md` and
 `reference/playbook-template.md` (plugin root). Read both in full before
-asking the builder anything: the interview questions below assume you
+asking the operator anything: the interview questions below assume you
 already know the four layers, the routing test, and the six playbook
 components.
 
 ## Step 1: Interview (one question at a time)
 
-Ask the builder these questions **one at a time, in this order**. Wait for
+Ask the operator these questions **one at a time, in this order**. Wait for
 each answer before asking the next. Do not batch them into a single
 message, and do not supply your own default for an unanswered question:
-proceed to Step 2 with whatever the builder actually gave you.
+proceed to Step 2 with whatever the operator actually gave you.
 
 1. Which model tiers do you actually have access to, and what is the limit
    shape for each: a subscription window, per-token billing, time-boxed
@@ -31,9 +31,9 @@ proceed to Step 2 with whatever the builder actually gave you.
    point — most adopters arrive mid-project, not greenfield — and it is
    carried into the first Now queue **verbatim** in Step 2, so share it
    as-is: no need to curate it, reword it, or pre-assign lanes first (that
-   is the builder's to do at the first working session).
+   is the operator's to do at the first working session).
 5. Where should the playbook live? Default is
-   `docs/model-effectiveness-playbook.md`: ask if the builder wants it
+   `docs/model-effectiveness-playbook.md`: ask if the operator wants it
    somewhere else, don't just assume the default.
 6. Does this project orchestrate across tiers: are sub-agents available, or
    is a controller pattern in use (one session or model driving cheaper
@@ -59,44 +59,44 @@ convention-stamped issue/PR templates under `.github/`. Then:
    generated in **interop mode** — the work queue and gap register
    delegate to issues and filed debts, and the playbook keeps the
    strategic frame, lanes, spend ledger, done ledger, and standing
-   constraints — or **standalone**, where the two overlap and the builder
+   constraints — or **standalone**, where the two overlap and the operator
    reconciles them manually?
 
-If the builder declines or doesn't answer, generate standalone: interop
+If the operator declines or doesn't answer, generate standalone: interop
 is offered, never forced (`reference/portable-method.md` §The seam).
 
 ## Step 2: Generate the playbook
 
 Fill `reference/playbook-template.md`'s placeholders using only what the
-builder said, and write the result to the target path from question 5.
+operator said, and write the result to the target path from question 5.
 
 Three hard rules govern generation:
 
 - **Ship no default lanes.** Model routing must name exactly the tiers the
-  builder said they have access to in question 1: if they have two tiers,
+  operator said they have access to in question 1: if they have two tiers,
   write two lanes, not the template's three. Never invent a third lane
   "for completeness."
 - **Invent no queue items.** If question 4 produced no backlog, the Now
   table gets its column headers and nothing else. An empty Now table is a
   valid, honest output, a plausible-looking placeholder row is not.
 - **Migrate, don't curate (the salvage path).** If question 4 produced an
-  existing pile, each item becomes one Now-table row with the builder's text
+  existing pile, each item becomes one Now-table row with the operator's text
   kept **verbatim** — nothing reworded, reordered, merged, split, or dropped,
   and the pile's own order preserved. Leave Lane and Size **unassigned**
-  (`unrouted` / `—`): routing is a separate act the builder performs at the
+  (`unrouted` / `—`): routing is a separate act the operator performs at the
   first working session, and assigning a lane here would invent a decision
-  the interview never made. The builder should recognize their own list,
+  the interview never made. The operator should recognize their own list,
   unedited, in the generated queue. This is the mid-project entry — the
   complement of the rule above, not an exception to it: salvage invents
   nothing either, it only preserves what already exists.
 - **Invent no answers.** If any interview question went unanswered or the
-  builder said "not sure," the corresponding playbook section states
+  operator said "not sure," the corresponding playbook section states
   plainly that this was not established yet (e.g. "Not established: ask
   at next bootstrap pass"). It never receives a plausible-sounding default
   in its place.
 
 Map the answers onto the template's sections directly:
-- Question 1 → Model routing (lanes named for the tiers the builder
+- Question 1 → Model routing (lanes named for the tiers the operator
   actually has, plus each tier's limit shape).
 - Question 2 → Session protocol rule 5 (existing project gates).
 - Question 3 → Session protocol rule 3 (spec path).
@@ -133,7 +133,7 @@ test is generic by design.
 
 ## Step 3: Close with the session-opening pointer
 
-End the session by printing the exact pointer line the builder should use
+End the session by printing the exact pointer line the operator should use
 to open every future session, using the real path from question 5, e.g.:
 
 > Read `docs/model-effectiveness-playbook.md`, then start on the next

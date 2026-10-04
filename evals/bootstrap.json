@@ -15,12 +15,12 @@
     { "id": "no-default-for-unanswered",
       "kind": "contains",
       "anchor": "do not supply your own default for an unanswered question",
-      "why": "an invented default reads exactly like the builder's answer" },
+      "why": "an invented default reads exactly like the operator's answer" },
 
     { "id": "ship-no-default-lanes",
       "kind": "contains",
       "anchor": "**ship no default lanes.**",
-      "why": "lanes are the builder's own words (family rule, shared-vocabulary.md). Expected to be re-anchored, not dropped, when #25 settles what a lane names" },
+      "why": "lanes are the operator's own words (family rule, shared-vocabulary.md). Expected to be re-anchored, not dropped, when #25 settles what a lane names" },
 
     { "id": "invent-no-queue-items",
       "kind": "contains",
@@ -30,12 +30,12 @@
     { "id": "salvage-verbatim",
       "kind": "contains",
       "anchor": "nothing reworded, reordered, merged, split, or dropped",
-      "why": "W7: the salvage path preserves the builder's pile exactly; curation would invent decisions" },
+      "why": "W7: the salvage path preserves the operator's pile exactly; curation would invent decisions" },
 
     { "id": "salvage-leaves-lanes-unrouted",
       "kind": "contains",
       "anchor": "leave lane and size **unassigned**",
-      "why": "routing is the builder's first-session act, not a bootstrap invention" },
+      "why": "routing is the operator's first-session act, not a bootstrap invention" },
 
     { "id": "invent-no-answers",
       "kind": "contains",

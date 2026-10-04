@@ -29,6 +29,19 @@ the merged PRs, and are kept for the record, not as installable versions.
   silently inherits the controller's tier, and that subagent output tokens
   are not recoverable from subagent transcripts (G12).
 
+### Changed
+
+- **The person using the method is now the "operator"**, not the
+  "builder" ([#35](https://github.com/slopstopper/tokenomics/issues/35),
+  part of the family rename in
+  [#34](https://github.com/slopstopper/tokenomics/issues/34)). "builder"
+  becomes the name of a v0.5.0 routing class. Live guidance changed (the
+  three skills, the method doc, eval rationales, the current playbook
+  sections); dated records (design specs, plans, ledger update lines, this
+  changelog's released entries) keep the word as written. Sibling repos
+  rename on their own schedules, so for a while they may still say
+  "builder" for the person.
+
 ### Planned
 
 v0.5.0 ("routing axes") is being scoped: lane as class of

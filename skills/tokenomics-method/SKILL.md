@@ -1,6 +1,6 @@
 ---
 name: tokenomics-method
-description: "Use when a builder wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions."
+description: "Use when an operator wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through tiered routing, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints, the routing test, and the lane-scarcity rule. Pure knowledge; takes no actions."
 ---
 
 # The tokenomics method
@@ -14,7 +14,7 @@ test, the negative list, and the lane-scarcity rule.
 
 The method's rules are positional: they fire at points in the cycle where
 work switches lane, tier, or direction. Naming those points is what makes
-the method orchestratable, so anything that can observe one (a builder, a
+the method orchestratable, so anything that can observe one (an operator, a
 controller model, a hook) can enforce the rule that belongs to it. Teach the
 four by name and by their shared three-part contract (a trigger condition,
 the rule that fires, the crossing artifact), then point to §Switchpoints for
@@ -35,7 +35,7 @@ Rules:
 - Quote the routing test and the negative list verbatim; do not soften them.
 - If asked "should this task go to the expensive model?", answer with the
   routing test, not a general opinion.
-- If the builder wants this set up on their project, point them to the
+- If the operator wants this set up on their project, point them to the
   tokenomics-bootstrap skill; for a live routing/handoff decision, the
   tokenomics-handoff skill.
 

@@ -15,17 +15,17 @@ its exit bar or discovers it cannot, is covered by the Return subsection
 below rather than by a mode of its own. The handoff contract is the same at
 either scale, sized to the cycle.
 
-Two modes. Pick the one the builder is actually asking for: don't run
+Two modes. Pick the one the operator is actually asking for: don't run
 both, and don't guess which one is wanted if the request is ambiguous, ask.
 
 ## Mode A: Route + hand off (the Dispatch switchpoint)
 
-Use when the builder wants to know which lane a task belongs in, or wants
+Use when the operator wants to know which lane a task belongs in, or wants
 a spec written to send it down-tier.
 
 1. Read the project's playbook. Default path is
    `docs/model-effectiveness-playbook.md`; if it isn't there, ask the
-   builder for the real path rather than assuming the default applies.
+   operator for the real path rather than assuming the default applies.
 2. Read `reference/handoff-spec-template.md` (plugin root).
 3. Apply the routing test from `reference/portable-method.md` to the task
    at hand: **"If this is done slightly wrong, is it expensive?"**
@@ -88,7 +88,7 @@ is the method's invisible failure mode.
 
 ## Mode B: Session close (the Close switchpoint)
 
-Use when the builder wants to end a session and update the ledger.
+Use when the operator wants to end a session and update the ledger.
 
 1. Read the playbook (same default/ask rule as Mode A, step 1).
 2. Update **only**:
@@ -100,7 +100,7 @@ Use when the builder wants to end a session and update the ledger.
      and findings climb one cycle level at a time),
    - the "Last updated" line.
 3. Run the spend-ledger extraction recipe from
-   `docs/design/2026-07-06-spend-ledger-design.md` (or accept the builder's
+   `docs/design/2026-07-06-spend-ledger-design.md` (or accept the operator's
    own numbers if they supply them), then append the spend line to the
    session's ledger entry. Refuse savings language per the design spec's
    never-claim rules: never assert savings against an unmeasured baseline,
@@ -124,8 +124,8 @@ not touch source code, specs, or other docs while closing a session.
 ## Shared constraints
 
 - Never invent a lane, a decision, or a gap that wasn't actually stated by
-  the builder or actually recorded in the current session.
-- If the playbook can't be found and the builder can't say where it is,
+  the operator or actually recorded in the current session.
+- If the playbook can't be found and the operator can't say where it is,
   stop and say so: don't proceed on a guessed path.
 - Quote the routing test verbatim when applying it; don't paraphrase it
   into something softer.

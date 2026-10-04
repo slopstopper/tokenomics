@@ -28,9 +28,9 @@ where it came from.
 
 ## Who this is for
 
-Builders with tiered access to models (usage limits, time-boxed premium
+Operators with tiered access to models (usage limits, time-boxed premium
 windows, per-token billing, or any mix of these) running projects that span
-more than one session. It matters most for solo builders, who don't have a
+more than one session. It matters most for solo operators, who don't have a
 team to absorb the cost of a badly-routed task or a re-explored repo; every
 wasted token is a wasted token against their own budget, and every
 re-derivation is a session that produced nothing new.
@@ -102,7 +102,7 @@ points in the cycle, not continuously. A **switchpoint** is one of
 those points made addressable: the place where work switches lane,
 tier, or direction, and where a rule stated elsewhere in this method
 is applied. Naming the switchpoints is what makes the method
-orchestratable: anything that can observe a switchpoint — a builder,
+orchestratable: anything that can observe a switchpoint — an operator,
 a controller model, a hook — can enforce the rule that belongs to it.
 
 Every switchpoint carries the same three-part contract: a **trigger
