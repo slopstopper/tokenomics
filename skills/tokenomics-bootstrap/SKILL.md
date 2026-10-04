@@ -1,6 +1,6 @@
 ---
 name: tokenomics-bootstrap
-description: "Use when setting a project up with the tokenomics discipline: interviews the operator about their model tiers, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Works greenfield or mid-project: an existing TODO/notes pile is carried into the first work queue verbatim, nothing reworded or invented. Ships no default lanes and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
+description: "Use when setting a project up with the tokenomics discipline: interviews the operator about their model tiers, their class-to-tier mapping, limit shape, project gates, and backlog, then generates the project's model-effectiveness playbook from the template. Works greenfield or mid-project: an existing TODO/notes pile is carried into the first work queue verbatim, nothing reworded or invented. Ships no default mapping and invents no queue items; offers (never forces) interop mode when an issue-tracker-first tracking convention like recursive-spine is detected."
 ---
 
 # Bootstrap a project with tokenomics
@@ -8,8 +8,8 @@ description: "Use when setting a project up with the tokenomics discipline: inte
 REQUIRED READING FIRST: `reference/portable-method.md` and
 `reference/playbook-template.md` (plugin root). Read both in full before
 asking the operator anything: the interview questions below assume you
-already know the four layers, the routing test, and the six playbook
-components.
+already know the four layers, the three routing questions, and the six
+playbook components.
 
 ## Step 1: Interview (one question at a time)
 
@@ -20,7 +20,12 @@ proceed to Step 2 with whatever the operator actually gave you.
 
 1. Which model tiers do you actually have access to, and what is the limit
    shape for each: a subscription window, per-token billing, time-boxed
-   premium access, or some mix?
+   premium access, or some mix? Then, as a second part asked on its own
+   once that is answered: the method has four classes of work (pathfinder,
+   navigator, builder, keeper; a lane is a class of work, not a tier), so
+   which of your tiers serves each class, and at what effort? The mapping
+   is the operator's to give. Two tiers is a valid answer: several classes
+   then map to one tier.
 2. What are the project's green gates: the exact build/test/lint commands
    that must pass before anything is considered done?
 3. Where do specs and design docs live in this project (the path the
@@ -58,7 +63,7 @@ convention-stamped issue/PR templates under `.github/`. Then:
    (issues + milestones, never prose ledgers). Should the playbook be
    generated in **interop mode** — the work queue and gap register
    delegate to issues and filed debts, and the playbook keeps the
-   strategic frame, lanes, spend ledger, done ledger, and standing
+   strategic frame, class mapping, spend ledger, done ledger, and standing
    constraints — or **standalone**, where the two overlap and the operator
    reconciles them manually?
 
@@ -72,10 +77,12 @@ operator said, and write the result to the target path from question 5.
 
 Three hard rules govern generation:
 
-- **Ship no default lanes.** Model routing must name exactly the tiers the
-  operator said they have access to in question 1: if they have two tiers,
-  write two lanes, not the template's three. Never invent a third lane
-  "for completeness."
+- **Ship no default mapping.** The four classes are method doctrine and
+  always appear in Model routing; the class → tier mapping table is filled
+  only with what the operator said in question 1, naming exactly the tiers
+  they said they have access to. If they have two tiers, four classes map
+  onto those two. Never invent a tier "for completeness," and never fill a
+  mapping row the operator did not give: write "Not established" in it.
 - **Invent no queue items.** If question 4 produced no backlog, the Now
   table gets its column headers and nothing else. An empty Now table is a
   valid, honest output, a plausible-looking placeholder row is not.
@@ -96,8 +103,9 @@ Three hard rules govern generation:
   in its place.
 
 Map the answers onto the template's sections directly:
-- Question 1 → Model routing (lanes named for the tiers the operator
-  actually has, plus each tier's limit shape).
+- Question 1 → Model routing (the tiers the operator actually has, each
+  tier's limit shape, and the class → tier mapping with effort, in the
+  operator's words).
 - Question 2 → Session protocol rule 5 (existing project gates).
 - Question 3 → Session protocol rule 3 (spec path).
 - Question 4 → Strategic frame (the risks); Work queue Now table (any
@@ -120,16 +128,22 @@ Map the answers onto the template's sections directly:
   was never asked or was declined, none of this applies — generate the
   standalone playbook unchanged.
 
-Copy the routing test into Model routing verbatim, exactly as it appears
-in `reference/playbook-template.md` (the same test `reference/portable-method.md`
-presents in expanded form):
+Copy the three questions into Model routing verbatim, exactly as they
+appear in `reference/playbook-template.md` (the same questions
+`reference/portable-method.md` presents in expanded form), with the count:
 
-> Ask: "If this is done slightly wrong, is it expensive?" → flagship.
-> Clear contract with tests → mid. Mechanical with automated verification
-> → small.
+> 1. Is this new ground: no precedent, pattern, or spec in the project to
+>    follow, or does it cross domains?
+> 2. If it is slightly wrong, is that expensive: costly to fix, built on
+>    by other work, or impossible to undo?
+> 3. Would checking it mean redoing it: no test, contract, or gate that
+>    confirms it cheaply?
+>
+> Count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder,
+> 0 → keeper. Veto: irreversible and unverifiable → pathfinder.
 
-Do not add project-specific commentary to the routing test itself: the
-test is generic by design.
+Do not add project-specific commentary to the questions themselves: they
+are generic by design.
 
 ## Step 3: Close with the session-opening pointer
 
@@ -137,7 +151,7 @@ End the session by printing the exact pointer line the operator should use
 to open every future session, using the real path from question 5, e.g.:
 
 > Read `docs/model-effectiveness-playbook.md`, then start on the next
-> unclaimed item in the work queue that matches your lane.
+> unclaimed item in the work queue that matches your class.
 
 This is the one line that replaces repo re-exploration at the start of
 every session: make sure it's the last thing in your output, not buried
@@ -151,6 +165,6 @@ interop outcome explicitly: not detected (question 7 never asked),
 offered and declined, or offered and accepted — a declined offer is a
 recorded answer, not a gap. State whether the Now queue was generated empty
 (greenfield) or salvaged from an existing pile, and if salvaged, how many
-items were carried in verbatim with their lanes left unrouted. Label the
+items were carried in verbatim with their lanes (classes) left unrouted. Label the
 playbook as a fresh bootstrap output, not a finished strategic document:
 it is only as complete as the interview that produced it.

@@ -14,8 +14,28 @@
 
     { "id": "routing-test-question",
       "kind": "contains",
-      "anchor": "if this is done slightly wrong, is it expensive?",
-      "why": "the routing test is the reason for every lane call" },
+      "anchor": "route: apply the three questions from",
+      "why": "re-anchored for #25 (was the single routing question): Route applies the three questions, and they are the reason for every class call" },
+
+    { "id": "count-the-yeses",
+      "kind": "contains",
+      "anchor": "count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder,",
+      "why": "the class is a count of yeses (AND, not OR), not a judgment call" },
+
+    { "id": "veto-irreversible-and-unverifiable",
+      "kind": "contains",
+      "anchor": "then apply the veto: irreversible (q2) and unverifiable (q3) → pathfinder, whatever the count",
+      "why": "the method's worst case: the wrong version reads like the right one and cannot be taken back; without the veto a familiar irreversible migration scores navigator" },
+
+    { "id": "dispatch-rescores",
+      "kind": "contains",
+      "anchor": "dispatch: re-score before writing anything down",
+      "why": "re-score at every boundary: a decision made or spec written is what lets the class drop; without re-scoring, tier inertia" },
+
+    { "id": "close-rescores-and-records-class",
+      "kind": "contains",
+      "anchor": "both go in the spend line",
+      "why": "Mode B records the class planned at Route and the class it ran as after re-scoring, so the ledger shows where tier inertia or escalation happened" },
 
     { "id": "gates-reach-axis",
       "kind": "contains",
@@ -74,7 +94,7 @@
 
     { "id": "quote-test-verbatim",
       "kind": "contains",
-      "anchor": "quote the routing test verbatim when applying it",
-      "why": "a softened test stops cutting against the reach-for-the-best-model instinct" }
+      "anchor": "quote the three questions verbatim when applying them",
+      "why": "re-anchored for #25 (was: the routing test): softened questions stop cutting against the reach-for-the-best-model instinct" }
   ]
 }

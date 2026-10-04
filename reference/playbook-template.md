@@ -14,14 +14,14 @@ Last updated: <date>, <one-line state>
 At the start of a session, point the model here:
 
 > Read `<path to this file>`, then start on the next unclaimed item in the
-> work queue that matches your lane.
+> work queue that matches your class.
 
 At the end of a session, the model updates **only**: the status column of the
 work queue, the gap register if a gap was closed or reframed, the
 "Last updated" line, and the spend line:
 
 ```
-spend: lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
+spend: lane <class planned at Route>→<class ran after re-scoring> · dispatches <N> · out-tokens <tier> <n> / <tier> <n> · cf-flagship <R> (prices <as-of date>)
 ```
 
 This document is a ledger, not an essay; the spend line is records, not claims:
@@ -45,7 +45,7 @@ rewritten only at re-assessment.>
 
 | ID | Work | Closes | Lane | Size | Status |
 | -- | ---- | ------ | ---- | ---- | ------ |
-| W1 | <item sized to one session> | G1 | <flagship/mid/small> | <sessions> | open |
+| W1 | <item sized to one session> | G1 | <pathfinder/navigator/builder/keeper> | <sessions> | open |
 
 ### Later (gated)
 
@@ -56,18 +56,40 @@ rewritten only at re-assessment.>
 
 ## Model routing
 
-<The project's lanes. Name the tiers you actually have access to and their
-limit shape. For each lane: what it does here, and the negative list for the
-premium lane. Copy the routing test:>
+<The project's tiers and the operator's mapping. Name the tiers you
+actually have access to and their limit shape, then fill the table below
+yourself: the method ships four classes of work and no default mapping.
+Effort lives in the mapping (e.g. "class 2 → second tier, high effort"),
+not in the class. Add the negative list for the premium tier.>
 
-Ask: **"If this is done slightly wrong, is it expensive?"** → flagship.
-Clear contract with tests → mid. Mechanical with automated verification → small.
+| Class | Tier | Effort |
+| ----- | ---- | ------ |
+| 1 pathfinder | <tier> | <effort> |
+| 2 navigator | <tier> | <effort> |
+| 3 builder | <tier> | <effort> |
+| 4 keeper | <tier> | <effort> |
+
+<A two-tier operator maps four classes onto two tiers.>
+
+Before assigning a class, ask the three questions of the work, and ask them
+again at every boundary (Route, Dispatch, Return, Close):
+
+1. **Q1, new ground:** Is this new ground: no precedent, pattern, or spec
+   in the project to follow, or does it cross domains?
+2. **Q2, consequence:** If it is slightly wrong, is that expensive: costly
+   to fix, built on by other work, or impossible to undo?
+3. **Q3, verification:** Would checking it mean redoing it: no test,
+   contract, or gate that confirms it cheaply?
+
+Count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder, 0 → keeper.
+Veto: irreversible (Q2) and unverifiable (Q3) → pathfinder, whatever the
+count.
 
 ## Session protocol
 
 1. One session, one queue item; finish early → update this playbook and stop.
 2. Open with the playbook pointer, not "explore the repo."
-3. Spec-first for anything designed in one lane and executed in another
+3. Spec-first for anything designed in one class and executed in another
    (specs live in `<project spec path>`).
 4. End-of-session ledger update: status column, gap register, date line.
 5. Existing project gates always apply: <build/test/lint commands>.

@@ -19,8 +19,18 @@
 
     { "id": "ship-no-default-lanes",
       "kind": "contains",
-      "anchor": "**ship no default lanes.**",
-      "why": "lanes are the operator's own words (family rule, shared-vocabulary.md). Expected to be re-anchored, not dropped, when #25 settles what a lane names" },
+      "anchor": "**ship no default mapping.**",
+      "why": "re-anchored for #25 (was: ship no default lanes). Lanes are now classes of work, which the method ships; the class-to-tier mapping is the operator's own answer and never shipped (family rule, shared-vocabulary.md)" },
+
+    { "id": "two-tiers-map-four-classes",
+      "kind": "contains",
+      "anchor": "four classes map onto those two",
+      "why": "replaces the retired 'never invent a third lane' rule: a two-tier operator keeps all four classes and maps them onto two tiers; inventing a tier would be the shipped default the rule above forbids" },
+
+    { "id": "interview-asks-for-mapping",
+      "kind": "contains",
+      "anchor": "which of your tiers serves each class, and at what effort?",
+      "why": "the mapping is the operator's, set in their playbook; the interview must ask for it rather than supply one, and effort lives in the mapping, not the class" },
 
     { "id": "invent-no-queue-items",
       "kind": "contains",
@@ -59,8 +69,18 @@
 
     { "id": "routing-test-copied-verbatim",
       "kind": "contains",
-      "anchor": "if this is done slightly wrong, is it expensive?",
-      "why": "the generated playbook carries the test unmodified" },
+      "anchor": "would checking it mean redoing it: no test, contract, or gate that",
+      "why": "re-anchored for #25 (was the single routing question): the generated playbook carries the three questions unmodified; this anchors the third, verbatim from the spec" },
+
+    { "id": "three-questions-copied-verbatim",
+      "kind": "contains",
+      "anchor": "is this new ground: no precedent, pattern, or spec in the project to",
+      "why": "Q1 copied verbatim into the generated playbook; 'in the project' is the load-bearing phrase (precedent in the project, not in the person)" },
+
+    { "id": "bootstrap-count-the-yeses",
+      "kind": "contains",
+      "anchor": "count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder,",
+      "why": "scoring is a count (AND, not OR); the generated playbook must carry it with the questions" },
 
     { "id": "pointer-line-last",
       "kind": "contains",
