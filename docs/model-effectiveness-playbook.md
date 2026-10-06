@@ -27,7 +27,9 @@ deliverables; this session first misread it as undecided. Logged G13
 list; fix direction is a reading receipt at Route. W14 stays blocked on
 slopstopper/recursive-spine#133 alone (#25's names are settled). Left
 for the spine and marketplace repos (owner-scheduled): `lane:*` labels,
-vocabulary. Next: W15 / #30 (navigator), then #29.
+vocabulary. W14 hold reconfirmed (owner, 2026-10-06). Next session
+starts from `docs/design/2026-10-06-w15-handoff.md` (W15 / #30, navigator),
+then #29.
 spend (provisional format): lane builder→builder (#35 keeper→keeper and
 the archive move keeper, both run in-session) · effort second-tier medium,
 mid medium · dispatches 2 (tiers: mid×2, named, not inherited; turns 18
