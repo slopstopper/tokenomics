@@ -129,11 +129,14 @@ and both land one level up, never further.
 
 The re-score at Dispatch, Return, and Close also covers the session the
 operator is in: whether to clear it, compact it, or switch its tier. Said
-to the operator as one suggestion, that re-score is a **boundary nudge**.
-It is a suggestion, never an action. It is rare: only at a boundary
-actually reached. Staying is a valid answer when it was decided. A clear or
-compact comes after the state is written down, because compression is safe
-only when the state lives outside the context. The tokenomics-handoff skill
+to the operator, that re-score is a **boundary nudge**. Operators rarely
+know when the moment is, so the agent leads: it dispatches lower-class work
+to the mapped tier itself, and for the session's own clear, compact, or
+model switch (the operator's commands) it says so and gets everything
+ready. It speaks whenever the re-score says change. Staying is a valid
+answer when it was decided. A clear or compact comes after the state is
+written down, because compression is safe only when the state lives
+outside the context. The tokenomics-handoff skill
 carries the nudges.
 
 ## Layer 1: Routing

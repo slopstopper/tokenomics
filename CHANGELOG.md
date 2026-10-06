@@ -32,15 +32,18 @@ the merged PRs, and are kept for the record, not as installable versions.
   [#30](https://github.com/slopstopper/tokenomics/issues/30)): at Dispatch,
   Return, and Close the tokenomics-handoff skill re-scores the operator's
   own session and may suggest clearing it, compacting it, or switching its
-  tier. A nudge only suggests and never runs anything. It is rare: at most
-  once per boundary actually reached, and not repeated once declined.
-  Staying is a valid answer. A clear or compact comes after the state is
-  written down, and with an offer to write the handover as a file (for a
+  tier. The agent leads: it speaks up whenever the re-score says change,
+  at every boundary and on long-cycle signs, dispatches lower-class work
+  to the mapped tier itself, and gets the operator's own commands (clear,
+  compact, switch model) ready so the operator only types them. If told
+  not now, it raises it again at the next boundary. Staying is a valid
+  answer. A clear or compact comes after the state is written down, with
+  an offer to write the handover as a file (written on yes; for a
   switch-tier nudge, the down-tier handoff spec). Nudges trigger on
   boundaries and observable signs, never on a context percentage.
   tokenomics-method teaches the four rules; the method doc's §Switchpoints
-  gains one anchoring paragraph, no new layer. 12 eval assertions added
-  (61 in all). Opt-in hooks and a status-line recipe are later steps.
+  gains one anchoring paragraph, no new layer. 14 eval assertions added
+  (63 in all). Opt-in hooks and a status-line recipe are later steps.
 
 ### Changed
 

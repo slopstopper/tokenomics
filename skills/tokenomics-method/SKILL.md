@@ -71,14 +71,18 @@ new doctrine, each names a rule the method doc already states.
 
 At Dispatch, Return, and Close the re-score covers the session itself, not
 only the work: should the operator clear it, compact it, or switch its
-tier? A boundary nudge is that re-score said out loud as one suggestion
-(the tokenomics-handoff skill carries the full set). Teach four points:
+tier? Operators rarely know when that moment is, so the agent leads: a
+boundary nudge is that re-score said out loud, with the work done or
+prepared (the tokenomics-handoff skill carries the full set). Teach four
+points:
 
-- **Suggest, never execute.** Clear, compact, and switch-model are the
-  operator's commands; a skill or hook can only suggest them.
-- **Rare and right.** Only at a boundary actually reached, once, and only
-  when the re-score says something should change. A nudge that always
-  fires stops being read, so silence is the default.
+- **Act where you can, prepare where you can't.** The agent can dispatch
+  lower-class work to a subagent on the mapped tier itself. Clear, compact,
+  and switch-model for the session are the operator's commands; the agent
+  gets everything ready so the operator only types the command.
+- **Speak up whenever the re-score says change**, at every boundary and on
+  long-cycle signs, without waiting to be asked; if the operator says not
+  now, raise it again at the next boundary.
 - **Staying is a valid answer**, as long as it was decided. A decision
   made is a reason to re-score, not a rule to drop a tier.
 - **Write state down, then compact.** Compaction and clearing are safe only

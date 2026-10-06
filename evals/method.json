@@ -65,13 +65,13 @@
 
     { "id": "nudge-suggest-never-execute",
       "kind": "contains",
-      "anchor": "**suggest, never execute.** clear, compact, and switch-model are the operator's commands",
-      "why": "harness fact (#30): nudges can only suggest; teaching otherwise sets a false expectation" },
+      "anchor": "**act where you can, prepare where you can't.**",
+      "why": "re-anchored 2026-10-06 (owner: the agent leads; was 'suggest, never execute'): the agent dispatches lower-class work itself and prepares the operator's commands" },
 
     { "id": "nudge-rare-and-right",
       "kind": "contains",
-      "anchor": "**rare and right.**",
-      "why": "owner (#30): nudge fatigue; rare and right beats frequent" },
+      "anchor": "**speak up whenever the re-score says change**",
+      "why": "re-anchored 2026-10-06 (owner, superseding 'rare and right' on #30): the agent raises the moment because operators can't ask about a moment they don't know is there" },
 
     { "id": "nudge-stay-is-valid",
       "kind": "contains",

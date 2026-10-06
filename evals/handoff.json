@@ -104,13 +104,23 @@
 
     { "id": "nudge-suggest-never-execute",
       "kind": "contains",
-      "anchor": "**suggest, never execute.**",
-      "why": "harness fact (#30): plugins, hooks and skills cannot run clear, compact or switch-model; text that says 'do' promises what it cannot deliver" },
+      "anchor": "**act where you can, prepare where you can't.**",
+      "why": "re-anchored 2026-10-06 (owner: the agent leads; was 'suggest, never execute'). Harness fact kept inside the rule: clear, compact and the session's model switch are the operator's commands, so the agent prepares them and never claims to have run them" },
+
+    { "id": "nudge-agent-dispatches-lower-class",
+      "kind": "contains",
+      "anchor": "dispatch it yourself to a subagent on the tier the operator's mapping gives that class, naming the model",
+      "why": "owner 2026-10-06: the agent does the tier switch it can make itself (G12: a named model, never silent inheritance)" },
 
     { "id": "nudge-rare-and-right",
       "kind": "contains",
-      "anchor": "a nudge that always fires stops being read",
-      "why": "owner (#30): nudges are rare and right; nudge fatigue turns the signal into noise" },
+      "anchor": "**speak up whenever the re-score says change.**",
+      "why": "re-anchored 2026-10-06 (owner, superseding 'rare and right' of 2026-10-03 on #30): operators don't know when the moment is, so the agent raises it at every boundary where the re-score says change, and again at the next boundary if told not now" },
+
+    { "id": "nudge-handover-written-on-yes",
+      "kind": "contains",
+      "anchor": "don't write it unasked. when the operator says yes, write it, then give them the command to type",
+      "why": "owner 2026-10-06: the handover is offered, written on yes, never unprompted; the operator's only act is typing the command" },
 
     { "id": "nudge-stay-is-valid",
       "kind": "contains",
@@ -141,6 +151,6 @@
       "kind": "precedes",
       "anchor": "## boundary nudges: clear, compact, or switch tier",
       "before": "## mode b: session close",
-      "why": "structural: the nudge rules are stated before Mode B's step 7 points back to them (wording chosen by the W15 session, 2026-10-06; owner to confirm)" }
+      "why": "structural: the nudge rules are stated before Mode B's step 7 points back to them" }
   ]
 }

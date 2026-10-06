@@ -21,13 +21,18 @@ compact; offer the handover as a file; boundaries and signs, never a
 context percentage) with pointers from Mode A step 5, Return and Mode B
 step 7; a four-point teaching block in tokenomics-method; one anchoring
 paragraph in the method doc's §Switchpoints; 12 eval assertions (61, 0
-unresolved, 3/3). **Session choices, not owner decisions (G14), for the
-owner to confirm or correct:** the wording throughout; "at most once per
-boundary, not repeated once declined" as the rarity rule; the long-cycle
-row as an observable sign (turns multiply, settled ground re-read, resume
-after a long gap), explicitly not a fifth switchpoint; no slash-command
-names in skill text; Mode B's read-only rule now admits the accepted
-handover spec file (a rule change). Not decided here: #26's question
+unresolved, 3/3). **Owner review, 2026-10-06:** confirmed: Mode B may write the
+handover file once accepted (a rule change); no slash-command names in
+skill text; the long-cycle row stays an observable sign, not a fifth
+switchpoint. Changed: the stance. The first draft said "suggest, never
+execute; rare and right; don't repeat once declined", which the owner
+found counter-productive, since operators don't know when the moment is.
+Now the agent leads: it speaks up whenever the re-score says change (at
+every boundary and on long-cycle signs; told "not now", it asks again at
+the next boundary), dispatches lower-class work to the mapped tier itself,
+and prepares the operator's own commands. The handover is offered and
+written on yes, never unprompted. This supersedes "rare and right"
+(2026-10-03, #30). 63 assertions. Not decided here: #26's question
 whether auto-compaction is a boundary or an unplanned Close (doctrine,
 left open). Left on #30: delivery steps 2 (opt-in hooks) and 3
 (status-line recipe), and the superpowers note and `adapters/` phase
