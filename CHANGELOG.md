@@ -74,6 +74,16 @@ the merged PRs, and are kept for the record, not as installable versions.
     `lane:pathfinder` / `lane:navigator` / `lane:builder` /
     `lane:keeper`. The spend line's `cf-flagship` field keeps its name.
     Dated records written under the old names stay as written.
+- **Examples and the Claude Code adapter follow the classes.** The
+  analytical-desk example is re-routed under the four classes (its open
+  queue re-scored, its Model routing rewritten with the desk's own
+  mapping); the domain gallery, the micro-brief template and the
+  orchestration recipe use the three questions; the recipe's spend
+  roll-up sums output per tier through the operator's mapping.
+- **The code example is archived**, moved to
+  `examples/archive/abstracted-playbook-v0.4/` unchanged. It abstracts a
+  real project's playbook under the old lane names, and re-routing it
+  would invent routing calls that project never made.
 
 ### Planned
 

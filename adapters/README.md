@@ -3,7 +3,7 @@
 Everything under `adapters/` is a **dated implementation** of the portable
 core (`../reference/portable-method.md`, the skills, the templates) for one
 specific harness. The method never depends on any adapter: the switchpoints,
-the routing test, the spend line, and the handoff contract are all
+the three routing questions, the spend line, and the handoff contract are all
 harness-neutral, and an adapter only wires them to the buttons a particular
 tool actually has. This is the same quarantine the method already applies to
 model names — concrete tools, like concrete model generations, turn over

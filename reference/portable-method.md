@@ -500,8 +500,9 @@ below that line, the honest move is to not.
 
 This method is a practice report, not a benchmark. It has been validated on
 one real project (a private, pre-release research instrument; see the
-structure-faithful abstraction of its playbook at
-[`../examples/abstracted-playbook/`](../examples/abstracted-playbook/)) and no
+structure-faithful abstraction of its playbook, archived at
+[`../examples/archive/abstracted-playbook-v0.4/`](../examples/archive/abstracted-playbook-v0.4/)
+under the v0.4 lane names) and no
 controlled comparison against alternative approaches exists. Treat it as
 current for the practice it describes, not as a proven-optimal strategy.
 If your project's shape differs substantially from the one it was drawn

@@ -10,30 +10,36 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-10-04 (sixteenth update), **v0.5.0 started: #35
-and W16 slice 1**. #35: the person is "operator" in live guidance (skills,
-method doc, eval rationales, current playbook sections); dated records left
-as written; no eval anchor held the word. W16 slice 1: method doc Layer 1,
-both templates, three skills, README routing section and CHANGELOG moved
-to the four classes; 6 eval anchors re-anchored, 13 added (48, 0
-unresolved). Routed: #35 keeper (0 yeses); W16 builder (Q2 only). Model
+Last updated: 2026-10-06 (sixteenth update), **v0.5.0: #35 and W16
+done in tokenomics**. #35: the person is "operator" in live guidance
+(skills, method doc, eval rationales, current playbook sections); dated
+records left as written; no eval anchor held the word. W16 slice 1:
+method doc Layer 1, both templates, three skills, README routing section,
+CHANGELOG (6 eval anchors re-anchored, 13 added: 48, 0 unresolved).
+Slice 2: analytical-desk example re-routed, domain gallery, adapter brief
+and recipe, CONTRIBUTING. Owner decision 2026-10-06: the code example is
+archived unchanged (`examples/archive/abstracted-playbook-v0.4/`), since
+re-routing a real project's snapshot would invent its routing. Model
 routing now carries the owner's 1:1 mapping (class n → tier n), recorded
 2026-10-03 in the spec and #25 but not carried into the handoff's
-deliverables: this session first misread it as undecided (finding: a
-handoff names where a decision applies, not only that it exists). Effort
-per class stays not established. The method doc ships the spec's mapping
-column as an example only (no default mapping for adopters). W16 slice 2: examples, adapters, `examples/domains.md`,
-CONTRIBUTING. Re-verified on this harness: subagent transcripts still hold
-only streaming partials (G12 b).
-spend (provisional format): lane builder→builder (#35 keeper→keeper, ran
-in-session) · effort second-tier medium, mid medium · dispatches 1 (tiers:
-mid×1, named, not inherited) · out-tokens second-tier 21.3k (main session,
-to slice-1 commit) / mid not recoverable from its transcript (216 in
-partials; the harness's completion notice reports ≈118k all token types) /
-small 0 · in second-tier uncached 0.06k / cache-read 3.2M / cache-write
-0.15M · compactions 0 · cf-flagship omitted (no harness cost record found
-in this container). The session ran the second tier, not the top: under
-the four-class example mapping, top-tier spend this session was 0.
+deliverables; this session first misread it as undecided. Logged G13
+(#37): the session skipped #26, #29 and #32 from the handoff's reading
+list; fix direction is a reading receipt at Route. W14 stays blocked on
+slopstopper/recursive-spine#133 alone (#25's names are settled). Left
+for the spine and marketplace repos (owner-scheduled): `lane:*` labels,
+vocabulary. Next: W15 / #30 (navigator), then #29.
+spend (provisional format): lane builder→builder (#35 keeper→keeper and
+the archive move keeper, both run in-session) · effort second-tier medium,
+mid medium · dispatches 2 (tiers: mid×2, named, not inherited; turns 18
+and 22) · out-tokens second-tier 51.7k (main session, 61 messages) / mid
+not recoverable from transcripts (partials only, G12 b; the harness's
+completion notices report ≈118k and ≈110k all token types) / small 0 · in
+second-tier uncached 0.13k / cache-read 9.8M / cache-write 0.53M ·
+compactions 0; the session spanned three days without a clear, which is
+W15's case · cf-flagship omitted (no harness cost record in this
+container). Under the 1:1 mapping, keeper work and controller review ran
+two tiers above their class: tier inertia, in a session that cannot
+switch its own model.
 Prior update: 2026-10-03 (fifteenth update), **session close: v0.4.0
 follow-through and v0.5.0 handed off**. Shipped after the v0.4.0 tag:
 skill-text evals (#28); the six provisional spend fields and the
@@ -329,7 +335,7 @@ orchestration lands, not less.
 | W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the operator's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | done — 2026-07-24 |
 | W13 | **v0.4.0 release.** Align the version claims, reconstruct the CHANGELOG, transplant the version-triggered release harness, add the version-agreement gate. | (version drift) | flagship (release design), mid (writes) | 1 session | done — 2026-10-03 |
 | W14 | **Adopt recursive-spine tracking on this repo.** Run recursive-spine-bootstrap; migrate the open queue and gap register into issues verbatim per §The seam. Blocked on slopstopper/recursive-spine#133 (label reconcile) and #25 (lane names). | G10 (likely: Route becomes a live issue query, the claim marker becomes assignment) | mid (interview answers are the owner's) | 1 session | blocked |
-| W16 | **Routing axes (v0.5.0).** Lane = class of work: three questions (new ground, consequence, verification), count the yeses for four classes, veto (irreversible + unverifiable → class 1), re-score at every boundary. Spec: `docs/design/2026-10-03-routing-axes-design.md`. Classes named: pathfinder, navigator, builder, keeper; the person becomes **operator** family-wide first (rename lands before `lane:builder`). Tracked in #25. | G12 | flagship (spec, done); mid (implementation from spec) | multi-session | in progress: #35 rename done; slice 1 (method doc, templates, skills, evals, README, CHANGELOG) done 2026-10-04; slice 2 (examples, adapters, domains, CONTRIBUTING) open |
+| W16 | **Routing axes (v0.5.0).** Lane = class of work: three questions (new ground, consequence, verification), count the yeses for four classes, veto (irreversible + unverifiable → class 1), re-score at every boundary. Spec: `docs/design/2026-10-03-routing-axes-design.md`. Classes named: pathfinder, navigator, builder, keeper; the person becomes **operator** family-wide first (rename lands before `lane:builder`). Tracked in #25. | G12 | flagship (spec, done); mid (implementation from spec) | multi-session | done in tokenomics — 2026-10-06 (#35 first; slice 1 core, slice 2 examples/adapters; code example archived). Spine labels and marketplace vocabulary are owner-scheduled |
 | W15 | **Boundary nudges (v0.5.0 headline).** When to clear, compact, or switch the session's tier, at the method's four boundaries; skill text first, then opt-in hooks, then a status-line recipe; works without other plugins. Tracked in #30; shapes #29. | G12 | flagship (design) | multi-session | open |
 | W12 | **Orchestration axis at Route.** Add a decomposability hint to the queue, orthogonal to Lane, so Route can spawn a controller for known fan-out-shaped items instead of a session discovering it mid-item (or never). Design-first: how the hint is expressed in a queue row, how Route reads it, its interaction with Lane and the verification axis, and where the controller-vs-queue decomposition line sits — do not pre-decompose items into sub-items. Ranks below falsifiability work per the strategic frame; surfaced by the first orchestrated session. | G11 | flagship (method-design axis, expensive to get wrong) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |

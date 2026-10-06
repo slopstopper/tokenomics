@@ -1,5 +1,14 @@
 # Worked example: an abstracted playbook from a real project
 
+> **Archived (2026-10-06, v0.5.0).** This snapshot was taken under v0.4 and
+> routes with the old lane names (flagship / mid / small), which were tier
+> names. Since v0.5.0 a lane is a class of work (pathfinder, navigator,
+> builder, keeper), scored by three questions; see
+> [`reference/portable-method.md`](../../../reference/portable-method.md)
+> Layer 1. It is kept unchanged as a record of real use: re-routing it
+> would invent routing calls the source project never made. Read it for
+> its structure and mechanics, not for current routing guidance.
+
 [`model-effectiveness-playbook.md`](model-effectiveness-playbook.md) is an
 abstraction of the real, in-use playbook of a private, pre-release project:
 a browser-local research instrument. The structure, section order, table
@@ -59,5 +68,5 @@ block, the strategic frame ending in one ordering rule, the gap register
 columns, the queue tables with Lane/Size/Status, the window blockquote, the
 done ledger with frozen reasoning, the three-lane routing with a negative
 list, the routing test, the session protocol, and the standing-constraints
-section. Start from [`../../reference/playbook-template.md`](../../reference/playbook-template.md)
+section. Start from [`../../reference/playbook-template.md`](../../../reference/playbook-template.md)
 and yours will have the same skeleton.
