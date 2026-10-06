@@ -16,11 +16,13 @@ method doc, eval rationales, current playbook sections); dated records left
 as written; no eval anchor held the word. W16 slice 1: method doc Layer 1,
 both templates, three skills, README routing section and CHANGELOG moved
 to the four classes; 6 eval anchors re-anchored, 13 added (48, 0
-unresolved). Routed: #35 keeper (0 yeses); W16 builder (Q2 only). Open for
-the owner: this playbook's own class → tier mapping (Model routing and the
-"flagship/mid/small everywhere" constraint are stale until it is given);
-the spec's "Default mapping" column shipped as an example only, per the
-handoff. W16 slice 2: examples, adapters, `examples/domains.md`,
+unresolved). Routed: #35 keeper (0 yeses); W16 builder (Q2 only). Model
+routing now carries the owner's 1:1 mapping (class n → tier n), recorded
+2026-10-03 in the spec and #25 but not carried into the handoff's
+deliverables: this session first misread it as undecided (finding: a
+handoff names where a decision applies, not only that it exists). Effort
+per class stays not established. The method doc ships the spec's mapping
+column as an example only (no default mapping for adopters). W16 slice 2: examples, adapters, `examples/domains.md`,
 CONTRIBUTING. Re-verified on this harness: subagent transcripts still hold
 only streaming partials (G12 b).
 spend (provisional format): lane builder→builder (#35 keeper→keeper, ran
@@ -360,13 +362,34 @@ orchestration lands, not less.
 
 ## Model routing
 
-Lanes per `reference/portable-method.md`. This repo is docs-only, so in
-practice: method-doc and template design → flagship; prose from a written
-content spec, and review passes → mid; transcription of fully-specified
-content, link checks, and sweeps → small.
+Classes per `reference/portable-method.md` Layer 1. The operator's
+mapping for this repo (owner, 2026-10-03: one class per tier; spec
+`docs/design/2026-10-03-routing-axes-design.md`, #25):
 
-Ask: **"If this is done slightly wrong, is it expensive?"** → flagship.
-Clear contract with tests → mid. Mechanical with automated verification → small.
+| Class | Tier | Effort |
+| ----- | ---- | ------ |
+| 1 pathfinder | top tier | not established: spend-line data decides (#25, #32) |
+| 2 navigator | second tier | not established: spend-line data decides (#25, #32) |
+| 3 builder | mid tier | not established: spend-line data decides (#25, #32) |
+| 4 keeper | small tier | not established: spend-line data decides (#25, #32) |
+
+Before assigning a class, ask the three questions of the work, and ask them
+again at every boundary (Route, Dispatch, Return, Close):
+
+1. **Q1, new ground:** Is this new ground: no precedent, pattern, or spec
+   in the project to follow, or does it cross domains?
+2. **Q2, consequence:** If it is slightly wrong, is that expensive: costly
+   to fix, built on by other work, or impossible to undo?
+3. **Q3, verification:** Would checking it mean redoing it: no test,
+   contract, or gate that confirms it cheaply?
+
+Count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder, 0 → keeper.
+Veto: irreversible (Q2) and unverifiable (Q3) → pathfinder, whatever the
+count.
+
+Queue rows and ledger lines written before 2026-10-04 use the old lane
+names (flagship / mid / small); they stay as written. Open rows are
+re-scored when picked up.
 
 ## Session protocol
 
@@ -393,7 +416,8 @@ Clear contract with tests → mid. Mechanical with automated verification → sm
   it is released, every public commit is swept for identifying terms.
 - The worked example is always labeled as an abstraction, never presented as
   the verbatim artifact.
-- Lanes are flagship/mid/small everywhere; concrete model names only in the
-  method doc's single as-of-dated mapping table.
+- Lanes are the four classes (pathfinder / navigator / builder / keeper)
+  everywhere; concrete model names only in the method doc's single
+  as-of-dated mapping table.
 - Maturity claims stay honest: practice report, one source project, no
   controlled comparison.
