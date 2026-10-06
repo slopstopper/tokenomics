@@ -30,19 +30,20 @@ for the spine and marketplace repos (owner-scheduled): `lane:*` labels,
 vocabulary. W14 hold reconfirmed (owner, 2026-10-06). Next session
 starts from `docs/design/2026-10-06-w15-handoff.md` (W15 / #30, navigator),
 then #29.
-spend (provisional format): entry pointer (handoff spec) · lane
-builder→builder (#35 keeper→keeper and
-the archive move keeper, both run in-session) · effort second-tier medium,
-mid medium · dispatches 2 (tiers: mid×2, named, not inherited; turns 18
-and 22) · out-tokens second-tier 51.7k (main session, 61 messages) / mid
-not recoverable from transcripts (partials only, G12 b; the harness's
-completion notices report ≈118k and ≈110k all token types) / small 0 · in
-second-tier uncached 0.13k / cache-read 9.8M / cache-write 0.53M ·
-compactions 0; the session spanned three days without a clear, which is
-W15's case · cf-flagship omitted (no harness cost record in this
-container). Under the 1:1 mapping, keeper work and controller review ran
-two tiers above their class: tier inertia, in a session that cannot
-switch its own model.
+spend (provisional format, re-closed at session end 2026-10-06): entry
+pointer (handoff spec) · lane builder→builder (#35, the archive move, the
+#7 re-land and this handover keeper; G13/G14 investigation navigator;
+all run in-session) · effort second-tier medium, mid medium · dispatches
+2 (tiers: mid×2, named, not inherited; turns 18 and 22) · out-tokens
+second-tier 100k (main session, 140 messages) / mid not recoverable from
+transcripts (partials only, G12 b; completion notices ≈118k and ≈110k all
+token types) / small 0 · in second-tier uncached 0.3k / cache-read 32.2M /
+cache-write 0.62M · compactions 0; never cleared across three days (cache
+reads ≈320× output), which is W15's case · cf-flagship omitted (no harness
+cost record in this container). Keeper work and controller review ran two
+tiers above their class (tier inertia; the session cannot switch its own
+model). Merged as #38 after owner review. Next session starts from
+`docs/design/2026-10-06-w15-handoff.md` (updated at close).
 Prior update: 2026-10-03 (fifteenth update), **session close: v0.4.0
 follow-through and v0.5.0 handed off**. Shipped after the v0.4.0 tag:
 skill-text evals (#28); the six provisional spend fields and the
