@@ -21,8 +21,11 @@ and the method it follows in
   templates), `skills/` (the three skills), `docs/`, `fix/`,
   `protocol/` (repo process itself).
 - One idea per branch; PR to `main`. `main` is protected: PRs only, and the
-  `gates` check must be green. Self-merge once green is the normal path,
-  this is a solo-maintained repo; review is welcome but not required.
+  `gates` check must be green.
+- **Every PR has a human review before it merges** (owner, 2026-10-06,
+  all slopstopper repos). Green gates are necessary, never sufficient.
+  An agent session opens PRs and answers review; it never merges or
+  approves, and never self-merges.
 
 ## Gates (CI, `.github/workflows/gates.yml`)
 
@@ -45,7 +48,8 @@ and the method it follows in
 
 ## Releases
 
-Bump the version in `plugin.json` and merge; the tag and GitHub release
+Bump the version in `plugin.json` and, after human review, merge; the tag
+and GitHub release
 follow automatically. See [`RELEASING.md`](RELEASING.md).
 
 ## Constraints that are not up for PR
