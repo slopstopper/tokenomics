@@ -271,11 +271,12 @@ lane it's in:
    column, the gap register, and the date line. This should take under a
    minute; the playbook is a ledger, not an essay. Don't rewrite the
    strategic frame or restate history that's already recorded: append the
-   delta and stop. The update also carries a spend line: class planned
-   at Route vs. class run after re-scoring, dispatch count, output tokens
-   by tier, and the counterfactual-flagship ratio where a dated price
-   table makes it computable. It is records, not claims: it never asserts savings against an unmeasured
-   baseline. See `docs/design/2026-07-06-spend-ledger-design.md` for the
+   delta and stop. The update also carries a spend line: how the session
+   entered (playbook pointer or ad hoc), class planned at Route vs. class
+   run after re-scoring, dispatch count, output tokens by tier, and the
+   counterfactual-flagship ratio where a dated price table makes it
+   computable. It is records, not claims: it never asserts savings
+   against an unmeasured baseline. See `docs/design/2026-07-06-spend-ledger-design.md` for the
    field format and the extraction recipe.
 5. **Existing project gates always apply.** The method adds no exceptions
    for the verification a project already has: build, test, lint, review,

@@ -30,7 +30,8 @@ for the spine and marketplace repos (owner-scheduled): `lane:*` labels,
 vocabulary. W14 hold reconfirmed (owner, 2026-10-06). Next session
 starts from `docs/design/2026-10-06-w15-handoff.md` (W15 / #30, navigator),
 then #29.
-spend (provisional format): lane builder→builder (#35 keeper→keeper and
+spend (provisional format): entry pointer (handoff spec) · lane
+builder→builder (#35 keeper→keeper and
 the archive move keeper, both run in-session) · effort second-tier medium,
 mid medium · dispatches 2 (tiers: mid×2, named, not inherited; turns 18
 and 22) · out-tokens second-tier 51.7k (main session, 61 messages) / mid
@@ -261,7 +262,8 @@ Prior update: 2026-07-06 (fifth update), **W5 shipped (v0.3.2)**: the
 compression-forward reframe: README opening and method-doc thesis now lead
 with context economics (cycle boundaries as compression points), with tier
 arithmetic presented as the first application of that idea; G5 closed.
-spend: lane flagship→flagship · dispatches 0 · single session, small diff
+spend: entry pointer (retro-tagged) · lane flagship→flagship · dispatches 0
+· single session, small diff
 (2 docs reframed + ledger) · out-tokens not extracted · cf-flagship omitted
 (no dated price table supplied).
 Prior update: 2026-07-06 (fourth update), **W4 shipped (v0.3.1)**: the
@@ -270,7 +272,8 @@ Layer 1 ("route down only as far as your gates reach"), and the standing
 escalation clause in the handoff template; W5–W7 queued from the same
 flagship review (compression-forward reframe; when-it-doesn't-pay; bootstrap
 salvage path).
-spend: lane flagship→flagship · dispatches 15 · out-tokens flagship ≈265k /
+spend: entry ad-hoc (retro-tagged) · lane flagship→flagship · dispatches 15
+· out-tokens flagship ≈265k /
 mid ≈9.4k / small ≈1.1k · cf-flagship omitted (no dated price table
 supplied), whole-session figures spanning v0.1→W4, approximate.
 Prior update: **spend ledger shipped, v0.3.0**:
@@ -340,6 +343,7 @@ orchestration lands, not less.
 | W14 | **Adopt recursive-spine tracking on this repo.** Run recursive-spine-bootstrap; migrate the open queue and gap register into issues verbatim per §The seam. Blocked on slopstopper/recursive-spine#133 (label reconcile) and #25 (lane names). | G10 (likely: Route becomes a live issue query, the claim marker becomes assignment) | mid (interview answers are the owner's) | 1 session | blocked |
 | W16 | **Routing axes (v0.5.0).** Lane = class of work: three questions (new ground, consequence, verification), count the yeses for four classes, veto (irreversible + unverifiable → class 1), re-score at every boundary. Spec: `docs/design/2026-10-03-routing-axes-design.md`. Classes named: pathfinder, navigator, builder, keeper; the person becomes **operator** family-wide first (rename lands before `lane:builder`). Tracked in #25. | G12 | flagship (spec, done); mid (implementation from spec) | multi-session | done in tokenomics — 2026-10-06 (#35 first; slice 1 core, slice 2 examples/adapters; code example archived). Spine labels and marketplace vocabulary are owner-scheduled |
 | W15 | **Boundary nudges (v0.5.0 headline).** When to clear, compact, or switch the session's tier, at the method's four boundaries; skill text first, then opt-in hooks, then a status-line recipe; works without other plugins. Tracked in #30; shapes #29. | G12 | flagship (design) | multi-session | open |
+| W17 | **Review the spend-ledger design (PR #4, 2026-07-06).** It merged 36 s after opening, with no review (G14, #39), yet the spend line, the cf-flagship ratio and the never-claim rules rest on it. Owner reads `docs/design/2026-07-06-spend-ledger-design.md` and the wiring #4 added (template, handoff skill Mode B, method doc Layer 2); findings filed as gaps or issues. Interacts with #26 (output-only unit vs cache reads) and the provisional fields. | G14 | navigator (judgment on a settled design; no gate reaches it); the reading is the owner's | <1 session | open (queued 2026-10-06, owner) |
 | W12 | **Orchestration axis at Route.** Add a decomposability hint to the queue, orthogonal to Lane, so Route can spawn a controller for known fan-out-shaped items instead of a session discovering it mid-item (or never). Design-first: how the hint is expressed in a queue row, how Route reads it, its interaction with Lane and the verification axis, and where the controller-vs-queue decomposition line sits — do not pre-decompose items into sub-items. Ranks below falsifiability work per the strategic frame; surfaced by the first orchestrated session. | G11 | flagship (method-design axis, expensive to get wrong) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
 | W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
@@ -360,6 +364,7 @@ orchestration lands, not less.
 | v0.2 | The cycle reframe: macro/meso/micro section, compression thesis, up-channel rule, scale-invariant handoff template | flagship | done: 2026-07-06 |
 | - | Repo protocols: branch + PR flow, CI gates workflow, main ruleset, CONTRIBUTING.md (owner-directed, unqueued) | mid-mechanics, flagship judgment on the gate set | done: 2026-07-06 |
 | W1 | Spend-ledger convention (v0.3): the spend line, the counterfactual-flagship ratio, and the never-claim rules, designed in `docs/design/2026-07-06-spend-ledger-design.md` and wired into the playbook template, the handoff skill's Mode B, and the method doc's Layer 2 and cycle section. First data point recorded in the design spec itself. | flagship (design) + mid (mechanical half) | done: 2026-07-06 |
+| — | Spend-line entry field (owner-directed 2026-07-06 as v0.3.3, unqueued; **lost**: #7 merged into an already-merged stacked branch and never reached `main`; **re-landed 2026-10-06**, #39): `entry <pointer|ad-hoc>` added to the spend-line convention so A2 (protocol-followed vs. lapsed) is computable from the ledger. **Do-not-re-derive — first paired observation (2026-07-06):** the ledger holds one `entry ad-hoc` line (whole-arc v0.1→W4, 15 dispatches, ≈265k flagship out-tokens) and one `entry pointer` line (W5, 0 dispatches, 4 files read at open, 32-line diff). Not comparable as costs — different scope — but the pointer session's entry overhead was one file read; a record, not a savings claim. Spend lines from 2026-07-06 to 2026-10-04 carry no entry field and are not retro-tagged. | flagship (convention design, 2026-07-06); keeper (re-land) | done — 2026-10-06 |
 | W5 | Compression-forward reframe (v0.3.2): README opening and method-doc thesis now lead with context economics (cycle boundaries as compression points, working context dies at the boundary, only the distilled artifact crosses) with tier arithmetic presented as the first application of that idea, not the idea itself. Closes the buried-thesis gap. | flagship (positioning) | done: 2026-07-06 |
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done: 2026-07-06 |
 | W8 | Switchpoint taxonomy (Route, Dispatch, Return, Close — trigger/rule/artifact contract) + Layer 4 controller contract (controller discipline, dispatch contract with worked micro brief, parallelism rule, surfacing rule). Do-not-re-derive: switchpoints are named rules, not new doctrine, and are not a fifth layer. | flagship | done — 2026-07-23 |

@@ -141,7 +141,7 @@ Assemble the standard line (see the spend-ledger design spec,
 `../../docs/design/2026-07-06-spend-ledger-design.md`):
 
 ```
-spend: lane <class planned>→<class ran> · dispatches <N> · out-tokens top <T> / second <S> / mid <M> / small <X> · cf-flagship <R> (prices <as-of date>)
+spend: entry <pointer|ad-hoc> · lane <class planned>→<class ran> · dispatches <N> · out-tokens top <T> / second <S> / mid <M> / small <X> · cf-flagship <R> (prices <as-of date>)
 ```
 
 - `T / S / M / X` are the per-tier sums from the roll-up (main loop

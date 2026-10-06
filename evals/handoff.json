@@ -95,6 +95,11 @@
     { "id": "quote-test-verbatim",
       "kind": "contains",
       "anchor": "quote the three questions verbatim when applying them",
-      "why": "re-anchored for #25 (was: the routing test): softened questions stop cutting against the reach-for-the-best-model instinct" }
+      "why": "re-anchored for #25 (was: the routing test): softened questions stop cutting against the reach-for-the-best-model instinct" },
+
+    { "id": "entry-field-first",
+      "kind": "contains",
+      "anchor": "record the entry field first: `pointer` if the session opened on the playbook pointer or a handoff spec",
+      "why": "A2 (protocol-followed vs. lapsed) is computable from the ledger only if every spend line says how the session opened; owner-directed 2026-07-06 (#7), re-landed 2026-10-06 (#39)" }
   ]
 }

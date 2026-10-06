@@ -32,8 +32,17 @@ One line, appended to the session's ledger entry at close (Mode B of the
 handoff skill):
 
 ```
-spend: lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
+spend: entry <pointer|ad-hoc> · lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
 ```
+
+- **entry pointer|ad-hoc** — how the session opened: `pointer` if it
+  entered on the playbook pointer (or a handoff spec) and took a queue
+  item; `ad-hoc` otherwise. This field is what makes analysis A2 (§below)
+  computable from the ledger alone, instead of relying on the operator
+  remembering which sessions lapsed. Old lines may be retro-tagged where
+  the entry mode is known, labeled `(retro-tagged)`. *(Re-landed
+  2026-10-06: owner-directed 2026-07-06 in #7, which merged into an
+  already-merged stacked branch and never reached `main`; #39.)*
 
 - **lane planned→ran**: the queue item's lane vs. what actually executed;
   a mismatch is a finding, not a footnote.
@@ -117,9 +126,10 @@ The ledger and any prose citing it may never:
   dispatch count per session before vs. after the playbook existed.
   Confound: work nature shifts over a project's life; report alongside the
   queue items' lanes, not raw.
-- **A2, protocol-followed vs. lapsed:** sessions where the ledger shows
-  the protocol held vs. sessions the builder marks as lapsed (the
-  feedback form's "what rotted first" is the adopter-side source).
+- **A2, protocol-followed vs. lapsed:** sessions the spend line marks
+  `entry pointer` vs. `entry ad-hoc` (the in-ledger source; the feedback
+  form's "what rotted first" is the adopter-side source). *(Re-landed
+  2026-10-06 from #7; #39.)*
   Direction of interest: lapsed sessions spend a higher flagship share for
   the same lane of work.
 - Both are descriptive comparisons with named confounds, no causal

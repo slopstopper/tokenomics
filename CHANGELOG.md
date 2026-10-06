@@ -80,6 +80,13 @@ the merged PRs, and are kept for the record, not as installable versions.
   mapping); the domain gallery, the micro-brief template and the
   orchestration recipe use the three questions; the recipe's spend
   roll-up sums output per tier through the operator's mapping.
+- **The spend line's entry field, re-landed**
+  ([#39](https://github.com/slopstopper/tokenomics/issues/39)). `entry
+  <pointer|ad-hoc>` leads the spend line and records how a session opened,
+  so "protocol followed vs. lapsed" is computable from the ledger. It was
+  directed on 2026-07-06 as v0.3.3 (#7), but #7 merged into an
+  already-merged stacked branch and never reached `main`; v0.3.3 was never
+  part of the shipped history.
 - **The code example is archived**, moved to
   `examples/archive/abstracted-playbook-v0.4/` unchanged. It abstracts a
   real project's playbook under the old lane names, and re-routing it
