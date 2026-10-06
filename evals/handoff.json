@@ -151,6 +151,11 @@
       "kind": "precedes",
       "anchor": "## boundary nudges: clear, compact, or switch tier",
       "before": "## mode b: session close",
-      "why": "structural: the nudge rules are stated before Mode B's step 7 points back to them" }
+      "why": "structural: the nudge rules are stated before Mode B's step 7 points back to them" },
+
+    { "id": "nudge-leaves-exploration-alone",
+      "kind": "contains",
+      "anchor": "don't nudge toward compacting or switching down mid-exploration; nudge at its exit",
+      "why": "owner 2026-10-06: the method must not crush exploration; while the work is new ground, staying is the default and the nudge waits for a decision" }
   ]
 }

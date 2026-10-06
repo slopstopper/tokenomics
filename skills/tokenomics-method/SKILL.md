@@ -84,7 +84,9 @@ points:
   long-cycle signs, without waiting to be asked; if the operator says not
   now, raise it again at the next boundary.
 - **Staying is a valid answer**, as long as it was decided. A decision
-  made is a reason to re-score, not a rule to drop a tier.
+  made is a reason to re-score, not a rule to drop a tier. While the work
+  is still exploration (new ground, nothing decided), staying is the
+  default: nudge at its exit, not in the middle of it.
 - **Write state down, then compact.** Compaction and clearing are safe only
   when state lives outside the context, so a nudge to clear or compact
   comes with an offer to write the handover file first.

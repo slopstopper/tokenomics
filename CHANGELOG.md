@@ -37,13 +37,14 @@ the merged PRs, and are kept for the record, not as installable versions.
   to the mapped tier itself, and gets the operator's own commands (clear,
   compact, switch model) ready so the operator only types them. If told
   not now, it raises it again at the next boundary. Staying is a valid
-  answer. A clear or compact comes after the state is written down, with
+  answer, and the default while the work is still exploration: the nudge
+  waits for a decision. A clear or compact comes after the state is written down, with
   an offer to write the handover as a file (written on yes; for a
   switch-tier nudge, the down-tier handoff spec). Nudges trigger on
   boundaries and observable signs, never on a context percentage.
   tokenomics-method teaches the four rules; the method doc's §Switchpoints
-  gains one anchoring paragraph, no new layer. 14 eval assertions added
-  (63 in all). Opt-in hooks and a status-line recipe are later steps.
+  gains one anchoring paragraph, no new layer. 15 eval assertions added
+  (64 in all). Opt-in hooks and a status-line recipe are later steps.
 
 ### Changed
 

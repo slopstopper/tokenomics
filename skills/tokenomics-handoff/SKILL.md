@@ -142,6 +142,12 @@ Rules for every nudge:
   keep this context. Then say nothing, or say so in one line. Staying is
   fine as long as it was decided. A decision made or a spec written does
   not mean "drop a tier" by rule.
+- **Leave exploration alone until it lands.** While the work is still new
+  ground (Q1 yes: options open, ideas being challenged, nothing decided),
+  staying is the default. Many turns and circling back are what exploring
+  looks like, not a long-cycle sign. Don't nudge toward compacting or
+  switching down mid-exploration; nudge at its exit, once a decision has
+  been made, and offer to write down what was considered and ruled out.
 - **Write state down, then compact.** Compacting or clearing is safe only
   when the state lives outside the context. Never suggest either until the
   state that matters is in a file, or you have offered to put it there.
@@ -163,7 +169,7 @@ Rules for every nudge:
 | **Dispatch** (a decision made) | the hard part is decided; the re-score dropped | dispatch the lower-class part yourself on its mapped tier; if the whole session should switch down, say so and offer the handoff spec as the handover |
 | **Return** (escalation) | the re-score rose | say the session should switch up for this, give the command, and say when to switch back (once it is decided) |
 | **Close** (unit done, ledger updated) | the session would go on to another item | say clear before the next item; offer the handover; on yes, write it and give the clear command and the re-entry line |
-| **Long cycle** (a sign, not a fifth switchpoint) | the turns multiply, settled ground is being re-read, or the operator resumes after a long gap (the prompt cache has likely expired, so resuming re-writes it) | write state down, then compact with a focus, or clear and re-enter from the file |
+| **Long cycle** (a sign, not a fifth switchpoint) | outside exploration: the turns multiply, settled ground is being re-read, or the operator resumes after a long gap (the prompt cache has likely expired, so resuming re-writes it) | write state down, then compact with a focus, or clear and re-enter from the file |
 
 ## Mode B: Session close (the Close switchpoint)
 
