@@ -410,8 +410,9 @@ re-scored when picked up.
 5. Branch before any change (`method/`, `skills/`, `docs/`, `fix/`,
    `protocol/` prefixes); one idea per branch; PR to protected `main`.
    Every PR has a human review before it merges; green gates are not
-   enough. The owner reviews and merges; a session never merges or
-   approves (owner, 2026-10-06, all slopstopper repos). Direct pushes to `main` ended with v0.2.
+   enough. A session never merges on its own or approves; it merges only
+   when the owner explicitly asks, via admin bypass (owner, 2026-10-06,
+   standing rule on all slopstopper repos). Direct pushes to `main` ended with v0.2.
 6. Gates run in CI (`.github/workflows/gates.yml`) and must be green to
    merge: relative links resolve; `jq`-valid manifests; versions agree
    across `plugin.json`, CHANGELOG, and README status; skill-text evals

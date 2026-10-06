@@ -11,8 +11,8 @@ In the PR that ships the change (or a small release PR after it):
    `## [X.Y.Z] — YYYY-MM-DD` section, and leave `[Unreleased]` empty.
 3. Make the README's `## Status` section name `**vX.Y.Z**` (bold; that is
    what the gate looks for).
-4. The owner reviews and merges to `main` (an agent session never
-   merges).
+4. The owner reviews; the PR merges to `main` (an agent session merges
+   only when the owner explicitly asks, via admin bypass).
 
 The `gates` check refuses a PR where those three disagree
 (`scripts/check-version-agreement.sh`), so a half-done bump cannot merge.
