@@ -49,8 +49,7 @@ and the method it follows in
 ## Releases
 
 Bump the version in `plugin.json` and, after human review, merge; the tag
-and GitHub release
-follow automatically. See [`RELEASING.md`](RELEASING.md).
+and GitHub release follow automatically. See [`RELEASING.md`](RELEASING.md).
 
 ## Constraints that are not up for PR
 
