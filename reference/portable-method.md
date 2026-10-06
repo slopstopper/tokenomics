@@ -127,6 +127,15 @@ cycle it runs beneath itself. Return's two paths — the verified exit
 and the early escalation — are the same crossing in opposite moods,
 and both land one level up, never further.
 
+The re-score at Dispatch, Return, and Close also covers the session the
+operator is in: whether to clear it, compact it, or switch its tier. Said
+to the operator as one suggestion, that re-score is a **boundary nudge**.
+It is a suggestion, never an action. It is rare: only at a boundary
+actually reached. Staying is a valid answer when it was decided. A clear or
+compact comes after the state is written down, because compression is safe
+only when the state lives outside the context. The tokenomics-handoff skill
+carries the nudges.
+
 ## Layer 1: Routing
 
 Work is routed to one of four lanes. A lane is a **class of work**, not a

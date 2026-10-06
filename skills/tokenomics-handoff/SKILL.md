@@ -1,6 +1,6 @@
 ---
 name: tokenomics-handoff
-description: "Use at the two moments the method targets token savings: when routing a task to a class of work and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the three routing questions, re-scores at each boundary, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation."
+description: "Use at the two moments the method targets token savings: when routing a task to a class of work and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the three routing questions, re-scores at each boundary, flags negative-list violations, produces handoff specs a cheaper tier can execute without re-derivation, and at Dispatch, Return, and Close suggests (never runs) clearing, compacting, or switching the session's tier, offering a written handover first."
 ---
 
 # Route, hand off, or close a tokenomics session
@@ -67,6 +67,10 @@ wants a spec written to send it down-tier.
      Deliverables, Gates, Out of scope) concretely: no section left as
      the template's angle-bracket placeholder text.
    - Write the spec to a new file; don't append it into the playbook.
+
+   The re-score here is also the Dispatch nudge (see Boundary nudges
+   below): if it says the session itself should switch down, suggest it,
+   with this spec as the handover.
 6. If, in the course of this, you notice the *current* tier is about to do
    work that scores below the class its tier serves, most commonly a
    top-tier session about to do negative-list work (UI polish, lint chores, status upkeep,
@@ -101,6 +105,52 @@ what decision is actually needed. It crosses the boundary the way every
 artifact does, one level up and never further: hand it to the tier that
 dispatched the work, not past it. An early return is cheap; pushing through
 is the method's invisible failure mode.
+
+When the operator's own session is the one whose score rose, the Return
+nudge applies (Boundary nudges below): switch up for this, then back.
+
+## Boundary nudges: clear, compact, or switch tier
+
+Dispatch, Return, and Close are also the moments to re-decide the session
+itself: whether to clear it, compact it, or switch its tier. A nudge is that
+re-score said out loud to the operator, as one suggestion. It is not new
+doctrine: each nudge is the re-score at a boundary
+(`reference/portable-method.md` §Switchpoints), applied to the session the
+operator is in. Tier inertia is what happens when nobody re-scores.
+
+Rules for every nudge:
+
+- **Suggest, never execute.** Clearing, compacting, and switching the model
+  are the operator's commands. You can suggest one; you cannot run it, and
+  you never say you will.
+- **Rare and right.** Nudge only at a boundary the session has actually
+  reached, at most once per boundary, and only when the re-score says
+  something should change. If the operator declines, don't repeat it at the
+  same boundary. Between boundaries, silence is the default: a nudge that
+  always fires stops being read.
+- **Staying is a valid answer.** The re-score may say keep this tier, or
+  keep this context. Then say nothing, or say so in one line. Staying is
+  fine as long as it was decided. A decision made or a spec written does
+  not mean "drop a tier" by rule.
+- **Write state down, then compact.** Compacting or clearing is safe only
+  when the state lives outside the context. Never suggest either until the
+  state that matters is in a file.
+- **Offer the handover.** When a nudge suggests clearing or compacting,
+  offer to write the re-entry brief first: a file the next session opens
+  on, in the handoff-spec shape (goal, context pointers, decisions already
+  made, what's next). At Close, the playbook update is that file when it
+  carries everything the next item needs; otherwise offer a handoff spec.
+  For a switch-tier nudge, the same file is the down-tier handoff spec
+  (Mode A, step 5). Chat text is not a handover: it dies with the context.
+- **Trigger on boundaries and observable signs, never on a context
+  percentage.** A skill cannot see how full the context is.
+
+| Boundary or sign | What you observe | Nudge |
+| ---------------- | ---------------- | ----- |
+| **Dispatch** (a decision made) | the hard part is decided; the re-score dropped | re-score: stay, or switch down? If down, the handoff spec is the handover |
+| **Return** (escalation) | the re-score rose | switch up for this, then back once it is decided |
+| **Close** (unit done, ledger updated) | the session would go on to another item | clear before the next item; re-enter from the playbook pointer |
+| **Long cycle** (a sign, not a fifth switchpoint) | the turns multiply, settled ground is being re-read, or the operator resumes after a long gap (the prompt cache has likely expired, so resuming re-writes it) | write state down, then compact with a focus, or clear and re-enter from the file |
 
 ## Mode B: Session close (the Close switchpoint)
 
@@ -142,9 +192,13 @@ Use when the operator wants to end a session and update the ledger.
    routine close).
 6. Leave the strategic frame, standing constraints, model routing section,
    and session protocol untouched: those are not close-time edits.
+7. Once the ledger is written, the Close nudge applies (Boundary nudges
+   above): if the session would go on to another item, suggest clearing
+   first and offer the handover.
 
-Read-only toward everything except the playbook itself in this mode. Do
-not touch source code, specs, or other docs while closing a session.
+Read-only toward everything except the playbook itself in this mode, and
+the handoff spec file if the operator accepts the handover offer. Do not
+touch source code, other specs, or other docs while closing a session.
 
 ## Shared constraints
 

@@ -28,6 +28,19 @@ the merged PRs, and are kept for the record, not as installable versions.
   v0.5.0 and the data. First extraction found that native subagent dispatch
   silently inherits the controller's tier, and that subagent output tokens
   are not recoverable from subagent transcripts (G12).
+- **Boundary nudges, skill text** (W15 step 1,
+  [#30](https://github.com/slopstopper/tokenomics/issues/30)): at Dispatch,
+  Return, and Close the tokenomics-handoff skill re-scores the operator's
+  own session and may suggest clearing it, compacting it, or switching its
+  tier. A nudge only suggests and never runs anything. It is rare: at most
+  once per boundary actually reached, and not repeated once declined.
+  Staying is a valid answer. A clear or compact comes after the state is
+  written down, and with an offer to write the handover as a file (for a
+  switch-tier nudge, the down-tier handoff spec). Nudges trigger on
+  boundaries and observable signs, never on a context percentage.
+  tokenomics-method teaches the four rules; the method doc's §Switchpoints
+  gains one anchoring paragraph, no new layer. 12 eval assertions added
+  (61 in all). Opt-in hooks and a status-line recipe are later steps.
 
 ### Changed
 

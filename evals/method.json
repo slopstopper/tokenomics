@@ -61,6 +61,26 @@
     { "id": "vocabulary-seam",
       "kind": "contains",
       "anchor": "same word, three different joints",
-      "why": "handoff/handover is a deliberate homograph across the family (marketplace shared-vocabulary.md); losing the warning invites conflation" }
+      "why": "handoff/handover is a deliberate homograph across the family (marketplace shared-vocabulary.md); losing the warning invites conflation" },
+
+    { "id": "nudge-suggest-never-execute",
+      "kind": "contains",
+      "anchor": "**suggest, never execute.** clear, compact, and switch-model are the operator's commands",
+      "why": "harness fact (#30): nudges can only suggest; teaching otherwise sets a false expectation" },
+
+    { "id": "nudge-rare-and-right",
+      "kind": "contains",
+      "anchor": "**rare and right.**",
+      "why": "owner (#30): nudge fatigue; rare and right beats frequent" },
+
+    { "id": "nudge-stay-is-valid",
+      "kind": "contains",
+      "anchor": "**staying is a valid answer**, as long as it was decided",
+      "why": "owner correction on #29: no drop-a-tier rule" },
+
+    { "id": "nudge-write-state-then-compact",
+      "kind": "contains",
+      "anchor": "compaction and clearing are safe only when state lives outside the context",
+      "why": "#30: write it down, then compact" }
   ]
 }

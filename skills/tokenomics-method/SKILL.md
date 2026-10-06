@@ -1,6 +1,6 @@
 ---
 name: tokenomics-method
-description: "Use when an operator wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through routing by class of work, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints, the three routing questions with scoring, veto and re-scoring, and the tier-scarcity rule. Pure knowledge; takes no actions."
+description: "Use when an operator wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through routing by class of work, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints and their boundary nudges, the three routing questions with scoring, veto and re-scoring, and the tier-scarcity rule. Pure knowledge; takes no actions."
 ---
 
 # The tokenomics method
@@ -66,6 +66,24 @@ the table: don't restate the table at length.
 Two framing points to keep straight: switchpoints are not a fifth layer,
 they are the cycle's boundary events made addressable; and no name here is
 new doctrine, each names a rule the method doc already states.
+
+## Boundary nudges
+
+At Dispatch, Return, and Close the re-score covers the session itself, not
+only the work: should the operator clear it, compact it, or switch its
+tier? A boundary nudge is that re-score said out loud as one suggestion
+(the tokenomics-handoff skill carries the full set). Teach four points:
+
+- **Suggest, never execute.** Clear, compact, and switch-model are the
+  operator's commands; a skill or hook can only suggest them.
+- **Rare and right.** Only at a boundary actually reached, once, and only
+  when the re-score says something should change. A nudge that always
+  fires stops being read, so silence is the default.
+- **Staying is a valid answer**, as long as it was decided. A decision
+  made is a reason to re-score, not a rule to drop a tier.
+- **Write state down, then compact.** Compaction and clearing are safe only
+  when state lives outside the context, so a nudge to clear or compact
+  comes with an offer to write the handover file first.
 
 Rules:
 - Take no actions. No files, no commands, no repo changes.
