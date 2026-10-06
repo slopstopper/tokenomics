@@ -37,7 +37,7 @@ whether auto-compaction is a boundary or an unplanned Close (doctrine,
 left open). Left on #30: delivery steps 2 (opt-in hooks) and 3
 (status-line recipe), and the superpowers note and `adapters/` phase
 mapping (separable; not done because the mapping would rest on that
-plugin's phase names, seen only second-hand). Next: owner review of this
+plugin's phase names, seen only second-hand). Next (at the time): owner review of this
 PR, then #29 minimal entry (navigator).
 spend (provisional format, snapshot at PR open 2026-10-06): entry pointer
 (handoff spec) · lane navigator→navigator · effort second-tier medium ·
@@ -46,6 +46,18 @@ extraction) / mid 0 / small 0 · in second-tier uncached <0.1k / cache-read
 2.8M / cache-write 0.09M · compactions 0 · cf-flagship omitted (no harness
 cost record read). One context, one item, cleared at entry: the shape the
 nudges ask for.
+Addendum (same day, after review): the owner's review of #41 made the
+nudges agent-led (supersedes "rare and right", #30), added the
+exploration guard, and logged G15 (#42: exploration gets crushed). #41
+merged. Next session starts from
+`docs/design/2026-10-06-exploration-handoff.md` (#42 with #29,
+pathfinder → top tier, exploration first). spend (review stretch, after
+the W15 PR opened): entry pointer · lane navigator→navigator · effort
+second-tier medium · dispatches 0 · out-tokens second-tier ≈29k (50
+messages) / mid 0 / small 0 · cache-read 20.5M / cache-write 0.10M ·
+compactions 0. This stretch ran on the long uncleared context, not the
+cleared W15 one (cache reads ≈720× output): the Close nudge's case, taken
+at this close.
 Prior update: 2026-10-06 (sixteenth update), **v0.5.0: #35 and W16
 done in tokenomics**. #35: the person is "operator" in live guidance
 (skills, method doc, eval rationales, current playbook sections); dated
