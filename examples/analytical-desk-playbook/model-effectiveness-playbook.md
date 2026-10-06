@@ -94,25 +94,26 @@ or published URL that resolved it. Reframe a gap → note why.
 | G3 | No coverage log: what was scanned vs. skipped is unrecorded; selection bias uncharacterizable after the fact | **closed**: W4 designed the coverage log + the non-coverage disclosure rule | high (honesty) |
 | G4 | External datasets are cited with no versioned crosswalk onto the desk's own categories | **closed**: W6 built the crosswalk doc + decision record, before any synthesis leaned on it | high (design-before-synthesis) |
 | G5 | Publishing cadence outruns verification: briefs get drafted faster than the fact-check pass clears them; the designed-but-unbuilt verification workflow is the one lever | open | critical (timeline/risk) |
-| G6 | No disciplined way to look at partial evidence: drawing an early conclusion from thin evidence is the likeliest analytical error | **design closed**: W5 spec written; implementation rides in the mid lane | medium now, rises with every published brief |
+| G6 | No disciplined way to look at partial evidence: drawing an early conclusion from thin evidence is the likeliest analytical error | **design closed**: W5 spec written; implementation rides in the builder class | medium now, rises with every published brief |
 
 ---
 
 ## Work queue
 
 Ordered. Each item is sized to fit one session where possible. "Lane" says
-which model class should do it (see Model routing below).
+which class of work it is, scored with the three questions (see Model
+routing below). Rows marked done keep the lane they were written with.
 
-> **Flagship availability window (day 21).** The analyst has only a few days
-> of flagship access; mid/small lanes remain available afterwards. For the
-> window, **lane scarcity dominates urgency**: anything a mid model can
-> execute from an existing or flagship-written spec is deferred past the
-> window, even when it is the more urgent item in the abstract (W10 is the
-> clearest case: the desk's top risk lever, but its design already landed,
-> so a mid can build it after). The window is spent exclusively on work only
-> the flagship can do: framework design, cross-sector synthesis, and the
-> definitional calls where wrong is expensive. Each such session leaves a
-> mid-executable spec behind.
+> **Top-tier availability window (day 21).** The analyst has only a few days
+> of top-tier access; the mid and small tiers remain available afterwards.
+> For the window, **tier scarcity dominates urgency**: anything a mid-tier
+> model can execute from an existing or top-tier-written spec is deferred
+> past the window, even when it is the more urgent item in the abstract (W10
+> is the clearest case: the desk's top risk lever, but its design already
+> landed, so a mid-tier model can build it after). The window is spent
+> exclusively on work only the top tier can do: framework design,
+> cross-sector synthesis, and the definitional calls where wrong is
+> expensive. Each such session leaves a builder-executable spec behind.
 
 ### Now (in order)
 
@@ -120,21 +121,21 @@ which model class should do it (see Model routing below).
 | -- | ---- | ------ | ---- | ---- | ------ |
 | W7 | **Evidence base, slice 1.** Implement the accepted framework spec: the classification codebook locked into the intake form; the evidence-log schema with full provenance fields (source snapshot, capture date, coverage tag); the coverage log wired in. No synthesis claims yet: logging discipline only. | - | flagship (spec-backed; mid could execute if window ends) | 1 session | **done** |
 | W8 | **Cross-sector synthesis + the one deliberate reframe.** Compose the per-sector findings into the aggregate thesis with per-sector contribution notes, confidence propagation, and explicit gaps; retire the provisional working taxonomy vs. keep it alongside: **decided: retire.** Exemplar case set re-pinned once, with a written explanation of exactly which classifications changed. Design-heavy: the synthesis boundary is where wrong is expensive. | - | flagship | 1–1.5 sessions | **done**: provisional taxonomy retired; exemplar set re-pinned once with written explanation. W9 ungated (needs an interactive session, analyst thesis sign-off). |
-| W9 | **Thesis revisit against the composed evidence.** Re-derive what the desk's headline claim *is* now that it rests on the full evidence base; the analyst reviews the framing before any brief publishes it. | - | flagship (framing needs analyst sign-off mid-session) | 1–1.5 sessions | open, gated on W8 |
+| W9 | **Thesis revisit against the composed evidence.** Re-derive what the desk's headline claim *is* now that it rests on the full evidence base; the analyst reviews the framing before any brief publishes it. | - | pathfinder (score 3; framing needs analyst sign-off mid-session) | 1–1.5 sessions | open, gated on W8 |
 
-### After the window (mid/small lanes, spec-backed; roughly in order)
+### After the window (builder and keeper classes, spec-backed; roughly in order)
 
 | ID | Work | Closes | Lane | Size | Status |
 | -- | ---- | ------ | ---- | ---- | ------ |
-| W10 | **The verification runner.** Implement the fact-check workflow that landed earlier (unbuilt): every drafted claim routed through source-trace + numbers-reconcile checks before publish, with a cleared/blocked outcome logged per claim. Still the desk's top-risk item, deferred past the window only because its design is done and a mid can execute it. | G5 | mid (escalate only if a claim needs a new codebook category decision) | 1–2 sessions | open |
-| W11 | **Partial-evidence guardrail: implementation** from the W5 spec: a checklist the desk runs before drawing any cumulative or comparative claim, refusing conclusions below the disclosed-coverage threshold. Must exist before enough briefs accrue to tempt an early cumulative claim. | G6 | mid | 1 session | open |
-| W12 | Citation-format + source-log normalization batch (house style) | - | small | batchable: fill spare small-model budget | open |
+| W10 | **The verification runner.** Implement the fact-check workflow that landed earlier (unbuilt): every drafted claim routed through source-trace + numbers-reconcile checks before publish, with a cleared/blocked outcome logged per claim. Still the desk's top-risk item, deferred past the window only because its design is done and a mid-tier model can execute it. | G5 | builder (score 1; re-score up if a claim needs a new codebook category decision) | 1–2 sessions | open |
+| W11 | **Partial-evidence guardrail: implementation** from the W5 spec: a checklist the desk runs before drawing any cumulative or comparative claim, refusing conclusions below the disclosed-coverage threshold. Must exist before enough briefs accrue to tempt an early cumulative claim. | G6 | builder (score 1) | 1 session | open |
+| W12 | Citation-format + source-log normalization batch (house style) | - | keeper (score 0) | batchable: fill spare small-tier budget | open |
 
 ### Later (evidence-gated)
 
 | ID | Work | Lane | Gate | Status |
 | -- | ---- | ---- | ---- | ------ |
-| W13 | Periodic longitudinal synthesis: cross-period trend claims, comparative sector ranking | flagship | **evidence-gated**: do not start before the coverage log can characterize the base | gated |
+| W13 | Periodic longitudinal synthesis: cross-period trend claims, comparative sector ranking | pathfinder (score 3) | **evidence-gated**: do not start before the coverage log can characterize the base | gated |
 
 ### Done (shipped queue items, ledger)
 
@@ -186,29 +187,52 @@ which model class should do it (see Model routing below).
 
 ## Model routing
 
-Three lanes. Route by the nature of the work, not by availability.
+Four classes of work, per `../../reference/portable-method.md` Layer 1.
+Route by the nature of the work, not by availability. The desk has three
+tiers (a time-boxed top tier, plus mid and small), so the operator's
+mapping puts two classes on the top tier (illustrative, in the example's own
+voice):
 
-### Flagship lane: spend the premium budget here
+| Class | Tier | Effort |
+| ----- | ---- | ------ |
+| 1 pathfinder | top tier | not established: spend-line data decides |
+| 2 navigator | top tier | not established: spend-line data decides |
+| 3 builder | mid tier | not established: spend-line data decides |
+| 4 keeper | small tier | not established: spend-line data decides |
 
-Use the flagship when the work is **framework-defining, analytically subtle,
-novel, or corpus-wide**. Its comparative advantages on this desk:
+### Pathfinder (frontier · uncharted): spend the top-tier budget here
+
+Use a pathfinder when the work is **framework-defining, analytically subtle,
+or new ground** with no precedent in the desk's own docs. Examples on this
+desk:
 
 - framework and method design: the classification codebook (W3), the
   coverage-honesty method (W4), the partial-evidence rules (W5)
-- cross-sector synthesis and formalization: composing per-sector findings into
-  one thesis (W8), the external-dataset crosswalk (W6)
-- anything touching the category boundary or the confidence conventions, where
-  a wrong call is expensive because it is already published under (W3)
-- whole-corpus consistency audits (a definition drifting across briefs is a
-  first-class error here)
-- assessments like the one that produced this playbook
+- composing per-sector findings into one thesis (W8), revisiting it
+  against the full evidence base (W9), the longitudinal synthesis (W13)
+- anything touching the category boundary or the confidence conventions
+  once the desk has published under them (W3): a wrong call cannot be
+  taken back and no cheap gate catches it, so the veto sends it here
 
-**Do not spend flagship budget on:** drafting a brief from an agreed outline,
-formatting citations, normalizing the source log, cross-posting, deadline and
-status upkeep, or executing an analysis spec another session already wrote.
-All of that is delegation material.
+**Do not spend top-tier budget on:** drafting a brief from an agreed
+outline, formatting citations, normalizing the source log, cross-posting,
+deadline and status upkeep, or executing an analysis spec another session
+already wrote. All of that is delegation material.
 
-### Mid lane: execution from an agreed spec
+### Navigator (judgment · charted): the top tier, on settled ground
+
+Use a navigator when the framework already exists but the call still has
+no cheap gate:
+
+- whole-corpus consistency audits (a definition drifting across briefs is
+  a first-class error here)
+- mapping outside categories onto the settled codebook, with a rationale
+  per mapping (the W6 crosswalk pattern)
+- assessments like the one that produced this playbook: disposable
+  exploration, passed up to pathfinder by escalation when it turns out to
+  be load-bearing
+
+### Builder (build · specified): execution from an agreed spec
 
 Use for work where the framing is already decided and written down:
 
@@ -217,11 +241,12 @@ Use for work where the framing is already decided and written down:
 - evidence-log expansion against the settled schema
 - brief updates that follow an established template
 
-The handoff pattern that maximizes the limits: **the flagship settles the
-thesis and writes the outline in one session → a mid model drafts and
-fact-checks it in the next.**
+The handoff pattern that maximizes the limits is re-scoring in action: a
+pathfinder session settles the thesis and writes the outline, which gives
+the drafting precedent (Q1 no) and a fact-check gate (Q3 no), so the score
+drops → a mid-tier model drafts and fact-checks it in the next session.
 
-### Small lane: mechanical batches
+### Keeper (routine · automatic): mechanical batches
 
 Use for high-volume, low-judgment work with a checkable gate:
 
@@ -230,23 +255,37 @@ Use for high-volume, low-judgment work with a checkable gate:
 - status refreshes after a brief publishes
 - archiving shipped briefs per the desk's filing convention
 
-### Routing rule of thumb, and the axis that matters most here
+### The three questions, and the axis that matters most here
 
-Ask: *"If this is done slightly wrong, is it expensive?"* A category
-boundary, a synthesis claim, a coverage-bias call → yes → flagship. Drafting
-against an agreed thesis with a fact-check gate → mid. Mechanical with a
-checkable gate → small.
+Before assigning a class, ask the three questions of the work, and ask them
+again at every boundary (Route, Dispatch, Return, Close):
 
-The second axis earns its keep on an analytical desk more than anywhere,
-because the desk's work splits cleanly by **whether a cheap gate exists.** A
+1. **Q1, new ground:** Is this new ground: no precedent, pattern, or spec
+   in the project to follow, or does it cross domains?
+2. **Q2, consequence:** If it is slightly wrong, is that expensive: costly
+   to fix, built on by other work, or impossible to undo?
+3. **Q3, verification:** Would checking it mean redoing it: no test,
+   contract, or gate that confirms it cheaply?
+
+Count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder, 0 → keeper.
+Veto: irreversible (Q2) and unverifiable (Q3) → pathfinder, whatever the
+count.
+
+Q3 earns its keep on an analytical desk more than anywhere, because the
+desk's work splits cleanly by **whether a cheap gate exists.** A
 *fact-checkable* claim has one (does this quote match the source, does this
-number reconcile) so it routes down safely to mid or small; the gate catches
-a wrong answer without anyone having to redo the judgment. A *framing* call
-(where the category boundary sits, whether the synthesis holds, what the
-coverage log is allowed to claim) has **no cheap gate**: checking it means
-re-doing the analysis, and the wrong version reads exactly as fluently as the
-right one. So it stays flagship even when it looks like "just writing one
-sentence." Route down only as far as your gates reach.
+number reconcile) so it routes down safely to the builder or keeper class;
+the gate catches a wrong answer without anyone having to redo the judgment.
+A *framing* call (where the category boundary sits, whether the synthesis
+holds, what the coverage log is allowed to claim) has **no cheap gate**:
+checking it means re-doing the analysis, and the wrong version reads exactly
+as fluently as the right one. So it scores a yes on Q3 even when it looks
+like "just writing one sentence." Route down only as far as your gates
+reach.
+
+Rows marked done and Done-ledger rows keep the lane names they were written
+with (flagship / mid / small); they stay as written. Open rows are scored
+with the three questions.
 
 ---
 
@@ -258,18 +297,20 @@ sentence." Route down only as far as your gates reach.
 2. **Open with the playbook pointer**, not "re-read the whole evidence base."
    The model should read this file, the specific docs the queue item names
    (the codebook, the relevant sector log), and nothing else up front.
-3. **Spec-first for anything flagship-framed but mid-executed.** The thesis +
-   outline goes in the desk's brief-spec folder per existing convention; the
-   next session's model drafts without re-deriving the framing.
+3. **Spec-first for anything designed in one class and executed in another.**
+   The thesis + outline goes in the desk's brief-spec folder per existing
+   convention; the next session's model drafts without re-deriving the
+   framing. Re-score at every boundary: a written spec is what drops the
+   score.
 4. **End-of-session ledger update** (status column, gap register, date line),
    under a minute of model time, saves a full re-assessment later. The
-   update also carries a spend line: lane planned vs. run, how many briefs or
-   passes ran, rough output by tier.
+   update also carries a spend line: class planned vs. class run after
+   re-scoring, how many briefs or passes ran, rough output by tier.
 5. **Existing desk standards always apply:** every published claim traces to a
    captured source, the fact-check pass clears before publish, numbers
    reconcile, house style holds. This playbook adds no exceptions.
-6. **Re-assessment cadence:** ask the flagship to re-run the full assessment
-   only when the "Now" queue is empty or the strategic frame feels wrong,
+6. **Re-assessment cadence:** ask for the full assessment to be re-run (top
+   tier) only when the "Now" queue is empty or the strategic frame feels wrong,
    not per session.
 
 ---

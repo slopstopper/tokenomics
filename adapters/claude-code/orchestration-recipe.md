@@ -14,17 +14,23 @@ its **own** spend line — dispatch count and out-tokens by tier roll *up*.
 
 ## The loop, switchpoint by switchpoint
 
-1. **Route.** For each unit of work, ask the routing test verbatim: **"If this
-   is done slightly wrong, is it expensive?"** Yes → flagship. Clear contract
-   with tests → mid. Mechanical with automated verification → small. Then the
-   second axis: route down only as far as your gates reach — work with no cheap
-   gate is flagship even when it looks mechanical. The crossing artifact is a
-   queue line carrying a lane.
+1. **Route.** For each unit of work, ask the three questions verbatim:
+   **Q1 "Is this new ground: no precedent, pattern, or spec in the project
+   to follow, or does it cross domains?"**, **Q2 "If it is slightly wrong,
+   is that expensive: costly to fix, built on by other work, or impossible
+   to undo?"**, **Q3 "Would checking it mean redoing it: no test, contract,
+   or gate that confirms it cheaply?"** Count the yeses: 3 → pathfinder,
+   2 → navigator, 1 → builder, 0 → keeper. Veto: irreversible AND
+   unverifiable → pathfinder, whatever the count. Route down only as far
+   as your gates reach: work with no cheap gate scores a yes on Q3 even
+   when it looks mechanical. Re-score at every boundary. The crossing
+   artifact is a queue line carrying a lane (class and score).
 2. **Dispatch.** For work routed below the controller's own lane, fill a
    [micro brief](micro-brief-template.md) and pass it as the subagent's prompt
-   (the Task / Agent tool). Set the subagent's model to the brief's target
-   lane. Parallelize only independent, down-lane-verifiable work; parallel
-   flagship dispatches are a smell. The crossing artifact is the brief.
+   (the Task / Agent tool). Set the subagent's model to the tier the
+   operator's mapping gives the brief's target lane. Parallelize only
+   independent, down-lane-verifiable work; parallel pathfinder dispatches
+   are a smell. The crossing artifact is the brief.
 3. **Return.** The subagent hands back a report and a reviewed diff when it
    meets its exit bar — or an early-return escalation artifact when it
    discovers the lane was wrong. Findings cross **inside the report**, never as
@@ -87,10 +93,10 @@ re-verified 2026-07-24 after a single non-JSON line broke `jq -rs` mid-file.
 The aggregation is otherwise identical.
 
 Output is one row per model id: `model  message-count  output-tokens`. Map
-each model id to its lane with the project's own lane mapping (the flagship /
-mid / small table in the method doc), then sum output-tokens per lane for the
-spend line. Ignore any non-model rows (e.g. a `<synthetic>` id carries no real
-usage and sums to zero).
+each model id to its tier with the operator's own class → tier mapping in
+their playbook, then sum output-tokens per tier for the spend line. Ignore
+any non-model rows (e.g. a `<synthetic>` id carries no real usage and sums
+to zero).
 
 Count **dispatches** as the number of subagent files (from whichever glob is
 populated — `subagents/agent-*.jsonl` or the `tasks/*.output` variant):
@@ -135,11 +141,12 @@ Assemble the standard line (see the spend-ledger design spec,
 `../../docs/design/2026-07-06-spend-ledger-design.md`):
 
 ```
-spend: lane <planned>→<ran> · dispatches <N> · out-tokens flagship <F> / mid <M> / small <S> · cf-flagship <R> (prices <as-of date>)
+spend: entry <pointer|ad-hoc> · lane <class planned>→<class ran> · dispatches <N> · out-tokens top <T> / second <S> / mid <M> / small <X> · cf-flagship <R> (prices <as-of date>)
 ```
 
-- `F / M / S` are the per-lane sums from the roll-up (main loop **plus** all
-  subagents — the controller's spend includes what it dispatched).
+- `T / S / M / X` are the per-tier sums from the roll-up (main loop
+  **plus** all subagents — the controller's spend includes what it
+  dispatched); list only the tiers the operator's mapping uses.
 - Omit `cf-flagship` unless a **dated** price table is supplied; never quote
   the ratio without its price-table date and the token-volume assumption.
 - **Records, not claims.** The roll-up never asserts savings against an

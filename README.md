@@ -13,7 +13,7 @@
 
 Most people who work with AI models reach for the strongest one for everything. Not because every task needs it, but because it is hard to tell which ones do. The brainstorm needs it. The formatting pass afterwards doesn't, but the session is already open on the expensive model, so the work carries on there. Spend leaks in quieter ways too: a subagent dispatched without naming a model inherits the most expensive one; a session that re-reads the repository to find its place pays again for work it already did; a context that grows for hours starts to drift, and the drift costs more turns to fix.
 
-tokenomics is a method for matching the model to the work, and a Claude Code plugin that applies it. Each task is routed before it starts, by what it would cost to get wrong and whether your checks would catch it. Work that moves from an expensive tier to a cheaper one moves on a written handoff spec, so the cheaper tier doesn't re-derive what was already decided. Between sessions, a living playbook carries what you worked out, instead of re-exploration. And at every boundary the working context is deliberately left behind: only the distilled result crosses, which keeps each context tighter, cheaper, and less prone to drift.
+tokenomics is a method for matching the model to the work, and a Claude Code plugin that applies it. Each task is routed before it starts, by whether it is new ground, what it would cost to get wrong, and whether your checks would catch it. Work that moves from an expensive tier to a cheaper one moves on a written handoff spec, so the cheaper tier doesn't re-derive what was already decided. Between sessions, a living playbook carries what you worked out, instead of re-exploration. And at every boundary the working context is deliberately left behind: only the distilled result crosses, which keeps each context tighter, cheaper, and less prone to drift.
 
 It's worth it if some of your model calls cost more than others and your work runs across more than one session.
 
@@ -32,15 +32,17 @@ Not using Claude Code? The [method](reference/portable-method.md) and the two te
 
 ## How work gets routed
 
-In v0.4, a task's lane comes from one question:
+A lane is a class of work, not a model tier. Four classes: **pathfinder** (frontier, uncharted), **navigator** (judgment, charted), **builder** (build, specified) and **keeper** (routine, automatic). A task's class comes from three questions:
 
-> **"If this is done slightly wrong, is it expensive?"** Yes → flagship. Clear contract with tests → mid. Mechanical with automated checks → small.
+> 1. **New ground?** No precedent, pattern or spec *in the project* to follow, or it crosses domains.
+> 2. **Expensive if slightly wrong?** Costly to fix, built on by other work, or impossible to undo.
+> 3. **Would checking it mean redoing it?** No test, contract or gate confirms it cheaply.
 
-And one limit on how far down is safe: **route down only as far as your gates reach.** If checking the work means redoing it, it belongs with the expensive model even when it looks easy, because the wrong version reads exactly like the right one.
+Count the yeses: 3 is a pathfinder, 2 a navigator, 1 a builder, 0 a keeper. One veto: work that is irreversible *and* unverifiable is pathfinder work whatever the count. The class is scored again at every boundary (route, dispatch, return, close), so work moves down once a decision is made and up when it turns out harder than it looked.
+
+Which model serves which class is your call: the method ships the classes and no default mapping, and bootstrap asks you for yours. And one limit on how far down is safe: **route down only as far as your gates reach.** If checking the work means redoing it, it belongs with the expensive model even when it looks easy, because the wrong version reads exactly like the right one.
 
 When a cheaper model finds it's out of its depth, it stops and hands back early with what it tried, rather than grinding on and quietly spending what the routing saved.
-
-v0.5 widens this to three questions and four classes of work (see [what's next](#whats-next)).
 
 ## What's in the box
 
@@ -68,7 +70,7 @@ The meter isn't neutral, either. Caps, premium windows and per-token bills are s
 
 ## What's next
 
-v0.5.0 is taking shape in the open: four classes of work, one per model tier (**pathfinder, navigator, builder, keeper**), scored by three quick questions and re-scored at every boundary ([spec](docs/design/2026-10-03-routing-axes-design.md)); well-timed nudges for when to clear, compact or switch tier ([#30](https://github.com/slopstopper/tokenomics/issues/30)); and a lighter way in for people who only want the essentials ([#29](https://github.com/slopstopper/tokenomics/issues/29)).
+v0.5.0 is taking shape in the open: four classes of work (**pathfinder, navigator, builder, keeper**), scored by three quick questions and re-scored at every boundary ([spec](docs/design/2026-10-03-routing-axes-design.md)); well-timed nudges for when to clear, compact or switch tier ([#30](https://github.com/slopstopper/tokenomics/issues/30)); and a lighter way in for people who only want the essentials ([#29](https://github.com/slopstopper/tokenomics/issues/29)).
 
 ## Feedback
 

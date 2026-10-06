@@ -10,7 +10,40 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-10-03 (fifteenth update), **session close: v0.4.0
+Last updated: 2026-10-06 (sixteenth update), **v0.5.0: #35 and W16
+done in tokenomics**. #35: the person is "operator" in live guidance
+(skills, method doc, eval rationales, current playbook sections); dated
+records left as written; no eval anchor held the word. W16 slice 1:
+method doc Layer 1, both templates, three skills, README routing section,
+CHANGELOG (6 eval anchors re-anchored, 13 added: 48, 0 unresolved).
+Slice 2: analytical-desk example re-routed, domain gallery, adapter brief
+and recipe, CONTRIBUTING. Owner decision 2026-10-06: the code example is
+archived unchanged (`examples/archive/abstracted-playbook-v0.4/`), since
+re-routing a real project's snapshot would invent its routing. Model
+routing now carries the owner's 1:1 mapping (class n → tier n), recorded
+2026-10-03 in the spec and #25 but not carried into the handoff's
+deliverables; this session first misread it as undecided. Logged G13
+(#37): the session skipped #26, #29 and #32 from the handoff's reading
+list; fix direction is a reading receipt at Route. W14 stays blocked on
+slopstopper/recursive-spine#133 alone (#25's names are settled). Left
+for the spine and marketplace repos (owner-scheduled): `lane:*` labels,
+vocabulary. W14 hold reconfirmed (owner, 2026-10-06). Next session
+starts from `docs/design/2026-10-06-w15-handoff.md` (W15 / #30, navigator),
+then #29.
+spend (provisional format): entry pointer (handoff spec) · lane
+builder→builder (#35 keeper→keeper and
+the archive move keeper, both run in-session) · effort second-tier medium,
+mid medium · dispatches 2 (tiers: mid×2, named, not inherited; turns 18
+and 22) · out-tokens second-tier 51.7k (main session, 61 messages) / mid
+not recoverable from transcripts (partials only, G12 b; the harness's
+completion notices report ≈118k and ≈110k all token types) / small 0 · in
+second-tier uncached 0.13k / cache-read 9.8M / cache-write 0.53M ·
+compactions 0; the session spanned three days without a clear, which is
+W15's case · cf-flagship omitted (no harness cost record in this
+container). Under the 1:1 mapping, keeper work and controller review ran
+two tiers above their class: tier inertia, in a session that cannot
+switch its own model.
+Prior update: 2026-10-03 (fifteenth update), **session close: v0.4.0
 follow-through and v0.5.0 handed off**. Shipped after the v0.4.0 tag:
 skill-text evals (#28); the six provisional spend fields and the
 API-list-price decision (#28); G12's recurrence correction and W15 (#31);
@@ -229,7 +262,8 @@ Prior update: 2026-07-06 (fifth update), **W5 shipped (v0.3.2)**: the
 compression-forward reframe: README opening and method-doc thesis now lead
 with context economics (cycle boundaries as compression points), with tier
 arithmetic presented as the first application of that idea; G5 closed.
-spend: lane flagship→flagship · dispatches 0 · single session, small diff
+spend: entry pointer (retro-tagged) · lane flagship→flagship · dispatches 0
+· single session, small diff
 (2 docs reframed + ledger) · out-tokens not extracted · cf-flagship omitted
 (no dated price table supplied).
 Prior update: 2026-07-06 (fourth update), **W4 shipped (v0.3.1)**: the
@@ -238,7 +272,8 @@ Layer 1 ("route down only as far as your gates reach"), and the standing
 escalation clause in the handoff template; W5–W7 queued from the same
 flagship review (compression-forward reframe; when-it-doesn't-pay; bootstrap
 salvage path).
-spend: lane flagship→flagship · dispatches 15 · out-tokens flagship ≈265k /
+spend: entry ad-hoc (retro-tagged) · lane flagship→flagship · dispatches 15
+· out-tokens flagship ≈265k /
 mid ≈9.4k / small ≈1.1k · cf-flagship omitted (no dated price table
 supplied), whole-session figures spanning v0.1→W4, approximate.
 Prior update: **spend ledger shipped, v0.3.0**:
@@ -280,7 +315,7 @@ orchestration lands, not less.
 | # | Gap | Status | Severity |
 | - | --- | ------ | -------- |
 | G1 | No spend record: the method claims savings but no session logs its lane, scale of work, or handoff count; the practice report is unfalsifiable against its own history | design closed + implementation shipped: spend line live in template/skill/method doc | high (credibility) |
-| G2 | Session-start discipline is manual: nothing injects the playbook pointer; every adopting project relies on the builder remembering the protocol | **closed** (#18): the Claude Code adapter ships an opt-in SessionStart playbook-pointer hook (W10 absorbed W2) | medium |
+| G2 | Session-start discipline is manual: nothing injects the playbook pointer; every adopting project relies on the operator remembering the protocol | **closed** (#18): the Claude Code adapter ships an opt-in SessionStart playbook-pointer hook (W10 absorbed W2) | medium |
 | G3 | Single-project validation: the method has one source project; a second adopter would test whether the lanes and playbook components transfer | open: **reframed 2026-07-06**: the repo has been shared and adopters are expected, so this is now actionable: collect adopter feedback and route findings into W3 | medium (maturity) |
 | G4 | Downward-only routing: the method said when to send work down but not when a receiving tier must stop and return; mis-routed work ground out down-tier burns savings invisibly (gates catch defective output, not expensive output) | **closed**: W4: escalation rule in §The cycle, verification axis in Layer 1, standing escalation clause in the handoff template | high (method semantics) |
 | G5 | Compression thesis buried: the method's most durable idea (context economics) lives in one paragraph mid-doc while the dating-prone idea (tier arithmetic) headlines | **closed**: W5: README opening and method-doc thesis lead with context economics; tier arithmetic framed as first application | medium (positioning) |
@@ -288,9 +323,11 @@ orchestration lands, not less.
 | G7 | Bootstrap assumes greenfield: no path from an existing mid-project notes pile to a playbook, though that is the likelier adopter entry | **closed**: W7: tokenomics-bootstrap Q4 invites an existing pile and the "Migrate, don't curate" rule carries it into the first Now queue verbatim (lanes unrouted, invents nothing) | medium (adoption) |
 | G8 | Orchestration mechanics undocumented — Layer 4 was four bullets and the micro cycle had no dispatch contract | **closed** — method-doc half shipped (W8); skills half shipped (W9): the three skills teach and apply the switchpoint taxonomy | high (method semantics) |
 | G9 | Orchestration claims lack orchestrated evidence — no ledger session yet records a verified, recipe-extracted multi-dispatch roll-up | **closed** (twelfth update): the first orchestrated session — a v0.4 doc-set audit, 7 dispatches (5 audit + 2 adversarial verify), recipe-extracted roll-up (flagship ≈36k / mid ≈31k) cross-checked against harness usage; it also found 3 confirmed doc defects and hardened the adapter recipe against transcript-path/parse drift | medium (credibility) |
-| G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the builder switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day; fix direction exercised manually 2026-07-24 (the W11 session fetched and routed from the origin/main playbook before claiming — builder-prompted, not yet doctrine) | high (spend integrity: the failure mode silently doubles session cost) |
+| G10 | Sessions route from stale playbook state. Tier-swapping is this method's normal mode — the operator switches terminals/checkouts to change models — and worktrees pin old branches, so the playbook copy a session reads at Route can predate the queue's true state. Observed 2026-07-24: W10 was done and recorded on main at 00:13 UTC, yet a session reading its worktree's playbook five minutes later saw "W10 open" and re-executed the whole item (#19, closed as duplicate — a full session's spend burned on shipped work). The SessionStart hook inherits the defect: it injects the checkout's playbook, not the default branch's. Fix direction: a freshness rule at the Route switchpoint — fetch and read the playbook at the default-branch tip before claiming an item — plus a claim marker for the genuinely-concurrent case | open — surfaced by the first multi-session day; fix direction exercised manually 2026-07-24 (the W11 session fetched and routed from the origin/main playbook before claiming — operator-prompted, not yet doctrine) | high (spend integrity: the failure mode silently doubles session cost) |
 | G11 | The queue routes by Lane (capability) and Size but not by decomposability — orchestration-shape is an orthogonal axis (a task can be mid+fan-out or flagship+solo). With no fan-out hint read at Route, a controller is spawned only when a session discovers the decomposition mid-item, or never, so orchestration surfaces as an exception (the twelfth-update audit was the repo's first) rather than a routed default. Fix direction: a lightweight fan-out hint on known-decomposable queue items, read at the Route switchpoint — **not** pre-decomposing items into queue sub-items, which would collapse the meso/micro boundary and manufacture the ceremony W6 names (the controller's within-session decomposition and its synthesis/verify-barrier role must stay). | open — surfaced by the first orchestrated session (twelfth update); design queued as W12 | low-medium (efficiency; not a falsifiability gap, so it ranks below claim-hardening work per the strategic frame) |
 | G12 | The method predates harness features that change cycle economics: per-call reasoning effort (a second dial inside a tier), prompt caching (a deliberate boundary now forfeits a warm cache), auto-compaction (an uncontrolled compression boundary), and native dispatch with per-subagent model choice. None is addressed in the method doc; the mapping table is dated 2026-07. **Observed 2026-10-03:** (a) *silent tier inheritance*: native subagent dispatch without a named model inherits the controller's tier and effort, so the expensive default is the silent one (this session's two read-only surveys ran flagship); (b) the spend-extraction recipe has broken again: subagent transcripts hold only streaming partials on Claude Code 2.1.288, so dispatched output is under-reported. This is a **recurrence**, not a new defect: the same under-reporting was recorded 2026-07-23 (sixth update, "transcript format drift") and fixed in W10. The finding is that the recipe drifts with every harness update, so it needs a re-verification step per harness version, not another patch; (c) cache reads were ~200× output by volume in one session. Six provisional spend-line fields are being gathered in this repo (`docs/design/2026-10-03-spend-line-gathering.md`). | open — v0.5.0 "routing axes"; lane semantics in #25, caching + compaction in #26 | high (method currency) |
+| G13 | Skipped context pointers are invisible. A handoff lists what to read; a receiving session can skip some and nothing shows it until a decision turns out missing. Observed 2026-10-04: the v0.5.0 session skipped #26, #29 and #32 from the handoff's reading list, and separately misread the owner's 1:1 mapping (on record in the spec and #25) as undecided; the owner surfaced both. Fix direction: a reading receipt at Route (each pointer read / not read, plus decisions taken). Related, undecided: a handoff's decisions section states where each decision applies, not only that it exists. Tracked in #37 | open (logged 2026-10-06, owner) | high (handoff integrity: the operator should never have to re-supply context) |
+| G14 | Session defaults recorded under owner attribution. A session's own choices can enter the record labelled as the owner's decisions. Observed 2026-10-06: PR #1 (2026-07-06) wrote "self-merge once gates are green" into session protocol rule 5 and CONTRIBUTING. The PR description did not mention it, and the Done-ledger row labelled the whole protocol set "owner-directed". The owner never set it; their standing rule is review required, merge only on explicit request via admin bypass. PRs #1, #2, #4, #5 and #8 merged 20–40 s after opening (inferred session merges, ~0.75). Related: PR #7 (owner-directed entry field, v0.3.3) merged into an already-merged stacked branch and never reached `main`. Fix direction: "owner-directed" only on the owner's specific decision; PR descriptions name every process change. Tracked in #39 | open (logged 2026-10-06, owner); rule 5 corrected on #38 | high (record integrity: the ledger is trusted as the owner's decisions) |
 
 ## Work queue
 
@@ -301,11 +338,12 @@ orchestration lands, not less.
 | W1 | **Spend-ledger convention (v0.3).** Design the minimal per-session spend line: what a session records (lane used, rough scale of work (turns or dispatches, not exact token counts unless cheaply available) and handoff count), where it lives (a column or sub-line in the playbook's ledger update, not a new file), and what it may never claim (no savings assertions, records only). Then: template gains the field, handoff skill's Mode B writes it, method doc's Layer 2 documents it. Design-heavy first half (what to record without turning the ledger into an essay is the expensive-to-get-wrong part); mechanical second half. | G1 | flagship (design), mid (the template/skill edits from the design) | 1 session | done |
 | W2 | **Session-start playbook-pointer hook.** A small installable hook (Claude Code `SessionStart`) that injects the playbook pointer automatically; ships as an optional extra with install notes, not a default. Spec-first: W1's design session should leave the spec behind if window time remains. | G2 | mid | 1 session | absorbed into W10 (the adapter ships the hook) |
 | W6 | **"When this doesn't pay" section.** Name the threshold below which the discipline is ceremony: single-session projects, no tier differential, throwaway work. Method doc section + README one-liner. | G6 | mid | <1 session | done — 2026-07-24 |
-| W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the builder's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | done — 2026-07-24 |
+| W7 | **Bootstrap salvage path.** Extend tokenomics-bootstrap with a mid-project entry: turn an existing TODO/notes pile into a playbook (interview asks what already exists; migration keeps the operator's items verbatim as the first queue; invents nothing). | G7 | mid (escalate if the interview needs new question design) | 1 session | done — 2026-07-24 |
 | W13 | **v0.4.0 release.** Align the version claims, reconstruct the CHANGELOG, transplant the version-triggered release harness, add the version-agreement gate. | (version drift) | flagship (release design), mid (writes) | 1 session | done — 2026-10-03 |
 | W14 | **Adopt recursive-spine tracking on this repo.** Run recursive-spine-bootstrap; migrate the open queue and gap register into issues verbatim per §The seam. Blocked on slopstopper/recursive-spine#133 (label reconcile) and #25 (lane names). | G10 (likely: Route becomes a live issue query, the claim marker becomes assignment) | mid (interview answers are the owner's) | 1 session | blocked |
-| W16 | **Routing axes (v0.5.0).** Lane = class of work: three questions (new ground, consequence, verification), count the yeses for four classes, veto (irreversible + unverifiable → class 1), re-score at every boundary. Spec: `docs/design/2026-10-03-routing-axes-design.md`. Classes named: pathfinder, navigator, builder, keeper; the person becomes **operator** family-wide first (rename lands before `lane:builder`). Tracked in #25. | G12 | flagship (spec, done); mid (implementation from spec) | multi-session | spec done; named; ready to implement |
+| W16 | **Routing axes (v0.5.0).** Lane = class of work: three questions (new ground, consequence, verification), count the yeses for four classes, veto (irreversible + unverifiable → class 1), re-score at every boundary. Spec: `docs/design/2026-10-03-routing-axes-design.md`. Classes named: pathfinder, navigator, builder, keeper; the person becomes **operator** family-wide first (rename lands before `lane:builder`). Tracked in #25. | G12 | flagship (spec, done); mid (implementation from spec) | multi-session | done in tokenomics — 2026-10-06 (#35 first; slice 1 core, slice 2 examples/adapters; code example archived). Spine labels and marketplace vocabulary are owner-scheduled |
 | W15 | **Boundary nudges (v0.5.0 headline).** When to clear, compact, or switch the session's tier, at the method's four boundaries; skill text first, then opt-in hooks, then a status-line recipe; works without other plugins. Tracked in #30; shapes #29. | G12 | flagship (design) | multi-session | open |
+| W17 | **Review the spend-ledger design (PR #4, 2026-07-06).** It merged 36 s after opening, with no review (G14, #39), yet the spend line, the cf-flagship ratio and the never-claim rules rest on it. Owner reads `docs/design/2026-07-06-spend-ledger-design.md` and the wiring #4 added (template, handoff skill Mode B, method doc Layer 2); findings filed as gaps or issues. Interacts with #26 (output-only unit vs cache reads) and the provisional fields. | G14 | navigator (judgment on a settled design; no gate reaches it); the reading is the owner's | <1 session | open (queued 2026-10-06, owner) |
 | W12 | **Orchestration axis at Route.** Add a decomposability hint to the queue, orthogonal to Lane, so Route can spawn a controller for known fan-out-shaped items instead of a session discovering it mid-item (or never). Design-first: how the hint is expressed in a queue row, how Route reads it, its interaction with Lane and the verification axis, and where the controller-vs-queue decomposition line sits — do not pre-decompose items into sub-items. Ranks below falsifiability work per the strategic frame; surfaced by the first orchestrated session. | G11 | flagship (method-design axis, expensive to get wrong) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
 | W9 | **Skills wiring.** Method skill teaches the four switchpoints; handoff skill reframes Mode A/B as Dispatch/Close and gains Return-side early-return guidance; bootstrap gains the orchestration interview section (interop mode excluded — W11). | G8 (with W8) | mid | 1 session | done — 2026-07-23 |
@@ -326,6 +364,7 @@ orchestration lands, not less.
 | v0.2 | The cycle reframe: macro/meso/micro section, compression thesis, up-channel rule, scale-invariant handoff template | flagship | done: 2026-07-06 |
 | - | Repo protocols: branch + PR flow, CI gates workflow, main ruleset, CONTRIBUTING.md (owner-directed, unqueued) | mid-mechanics, flagship judgment on the gate set | done: 2026-07-06 |
 | W1 | Spend-ledger convention (v0.3): the spend line, the counterfactual-flagship ratio, and the never-claim rules, designed in `docs/design/2026-07-06-spend-ledger-design.md` and wired into the playbook template, the handoff skill's Mode B, and the method doc's Layer 2 and cycle section. First data point recorded in the design spec itself. | flagship (design) + mid (mechanical half) | done: 2026-07-06 |
+| — | Spend-line entry field (owner-directed 2026-07-06 as v0.3.3, unqueued; **lost**: #7 merged into an already-merged stacked branch and never reached `main`; **re-landed 2026-10-06**, #39): `entry <pointer|ad-hoc>` added to the spend-line convention so A2 (protocol-followed vs. lapsed) is computable from the ledger. **Do-not-re-derive — first paired observation (2026-07-06):** the ledger holds one `entry ad-hoc` line (whole-arc v0.1→W4, 15 dispatches, ≈265k flagship out-tokens) and one `entry pointer` line (W5, 0 dispatches, 4 files read at open, 32-line diff). Not comparable as costs — different scope — but the pointer session's entry overhead was one file read; a record, not a savings claim. Spend lines from 2026-07-06 to 2026-10-04 carry no entry field and are not retro-tagged. | flagship (convention design, 2026-07-06); keeper (re-land) | done — 2026-10-06 |
 | W5 | Compression-forward reframe (v0.3.2): README opening and method-doc thesis now lead with context economics (cycle boundaries as compression points, working context dies at the boundary, only the distilled artifact crosses) with tier arithmetic presented as the first application of that idea, not the idea itself. Closes the buried-thesis gap. | flagship (positioning) | done: 2026-07-06 |
 | W4 | Escalation rule + verification axis (v0.3.1): a cycle that cannot meet its exit bar returns early (§The cycle, third saving property); route down only as far as your gates reach (Layer 1 second axis); standing escalation clause added to the handoff template and the handoff skill's Mode A. Closes the downward-only-routing gap. | flagship (method semantics) | done: 2026-07-06 |
 | W8 | Switchpoint taxonomy (Route, Dispatch, Return, Close — trigger/rule/artifact contract) + Layer 4 controller contract (controller discipline, dispatch contract with worked micro brief, parallelism rule, surfacing rule). Do-not-re-derive: switchpoints are named rules, not new doctrine, and are not a fifth layer. | flagship | done — 2026-07-23 |
@@ -338,13 +377,34 @@ orchestration lands, not less.
 
 ## Model routing
 
-Lanes per `reference/portable-method.md`. This repo is docs-only, so in
-practice: method-doc and template design → flagship; prose from a written
-content spec, and review passes → mid; transcription of fully-specified
-content, link checks, and sweeps → small.
+Classes per `reference/portable-method.md` Layer 1. The operator's
+mapping for this repo (owner, 2026-10-03: one class per tier; spec
+`docs/design/2026-10-03-routing-axes-design.md`, #25):
 
-Ask: **"If this is done slightly wrong, is it expensive?"** → flagship.
-Clear contract with tests → mid. Mechanical with automated verification → small.
+| Class | Tier | Effort |
+| ----- | ---- | ------ |
+| 1 pathfinder | top tier | not established: spend-line data decides (#25, #32) |
+| 2 navigator | second tier | not established: spend-line data decides (#25, #32) |
+| 3 builder | mid tier | not established: spend-line data decides (#25, #32) |
+| 4 keeper | small tier | not established: spend-line data decides (#25, #32) |
+
+Before assigning a class, ask the three questions of the work, and ask them
+again at every boundary (Route, Dispatch, Return, Close):
+
+1. **Q1, new ground:** Is this new ground: no precedent, pattern, or spec
+   in the project to follow, or does it cross domains?
+2. **Q2, consequence:** If it is slightly wrong, is that expensive: costly
+   to fix, built on by other work, or impossible to undo?
+3. **Q3, verification:** Would checking it mean redoing it: no test,
+   contract, or gate that confirms it cheaply?
+
+Count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder, 0 → keeper.
+Veto: irreversible (Q2) and unverifiable (Q3) → pathfinder, whatever the
+count.
+
+Queue rows and ledger lines written before 2026-10-04 use the old lane
+names (flagship / mid / small); they stay as written. Open rows are
+re-scored when picked up.
 
 ## Session protocol
 
@@ -354,8 +414,11 @@ Clear contract with tests → mid. Mechanical with automated verification → sm
    (specs live in `docs/design/`).
 4. End-of-session ledger update: status column, gap register, date line.
 5. Branch before any change (`method/`, `skills/`, `docs/`, `fix/`,
-   `protocol/` prefixes); one idea per branch; PR to protected `main`;
-   self-merge once gates are green. Direct pushes to `main` ended with v0.2.
+   `protocol/` prefixes); one idea per branch; PR to protected `main`.
+   Every PR has a human review before it merges; green gates are not
+   enough. A session never merges on its own or approves; it merges only
+   when the owner explicitly asks, via admin bypass (owner, 2026-10-06,
+   standing rule on all slopstopper repos). Direct pushes to `main` ended with v0.2.
 6. Gates run in CI (`.github/workflows/gates.yml`) and must be green to
    merge: relative links resolve; `jq`-valid manifests; versions agree
    across `plugin.json`, CHANGELOG, and README status; skill-text evals
@@ -371,7 +434,8 @@ Clear contract with tests → mid. Mechanical with automated verification → sm
   it is released, every public commit is swept for identifying terms.
 - The worked example is always labeled as an abstraction, never presented as
   the verbatim artifact.
-- Lanes are flagship/mid/small everywhere; concrete model names only in the
-  method doc's single as-of-dated mapping table.
+- Lanes are the four classes (pathfinder / navigator / builder / keeper)
+  everywhere; concrete model names only in the method doc's single
+  as-of-dated mapping table.
 - Maturity claims stay honest: practice report, one source project, no
   controlled comparison.

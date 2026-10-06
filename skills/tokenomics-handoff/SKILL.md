@@ -1,13 +1,13 @@
 ---
 name: tokenomics-handoff
-description: "Use at the two moments the method targets token savings: when routing a task to a lane and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the routing test, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation."
+description: "Use at the two moments the method targets token savings: when routing a task to a class of work and writing the down-tier handoff spec (session-to-session or controller-to-subagent), and when closing a session with the ledger update. Applies the three routing questions, re-scores at each boundary, flags negative-list violations, and produces handoff specs a cheaper tier can execute without re-derivation."
 ---
 
 # Route, hand off, or close a tokenomics session
 
 This skill operates at the cycle's switchpoints (see
 `reference/portable-method.md` §Switchpoints). Mode A is the downward pair:
-Route (assign the lane) then Dispatch (write the down-tier spec), meso→meso
+Route (assign the class) then Dispatch (write the down-tier spec), meso→meso
 (a handoff spec into a new session) or meso→micro (a controller dispatching a
 subagent). Mode B is Close: the meso cycle closing into the ledger. The
 fourth switchpoint, Return, the upward crossing when a receiving tier meets
@@ -15,31 +15,45 @@ its exit bar or discovers it cannot, is covered by the Return subsection
 below rather than by a mode of its own. The handoff contract is the same at
 either scale, sized to the cycle.
 
-Two modes. Pick the one the builder is actually asking for: don't run
+Two modes. Pick the one the operator is actually asking for: don't run
 both, and don't guess which one is wanted if the request is ambiguous, ask.
 
 ## Mode A: Route + hand off (the Dispatch switchpoint)
 
-Use when the builder wants to know which lane a task belongs in, or wants
-a spec written to send it down-tier.
+Use when the operator wants to know which class a task belongs in, or
+wants a spec written to send it down-tier.
 
 1. Read the project's playbook. Default path is
    `docs/model-effectiveness-playbook.md`; if it isn't there, ask the
-   builder for the real path rather than assuming the default applies.
+   operator for the real path rather than assuming the default applies.
 2. Read `reference/handoff-spec-template.md` (plugin root).
-3. Apply the routing test from `reference/portable-method.md` to the task
-   at hand: **"If this is done slightly wrong, is it expensive?"**
-   Yes → flagship. Clear contract with tests → mid. Mechanical with
-   automated verification → small. Then check the second axis: route down
-   only as far as the project's gates reach: a task with no cheap
-   verification routes up regardless of how mechanical it looks.
-4. State the lane and the reason in one sentence. Don't pad this with a
-   general opinion: the routing test is the reason, so cite it directly
-   (e.g. "Mid lane: this executes against the existing X contract with
-   tests, no novel judgment call.").
-5. If the work crosses tiers (the session doing the routing isn't the
-   session that will execute the work), produce the handoff spec from the
-   template:
+3. Route: apply the three questions from `reference/portable-method.md`
+   Layer 1 to the task at hand, and answer each yes or no:
+   - **Q1 (new ground):** Is this new ground: no precedent, pattern, or
+     spec in the project to follow, or does it cross domains? (Precedent
+     in the project, not in the person.)
+   - **Q2 (consequence):** If it is slightly wrong, is that expensive:
+     costly to fix, built on by other work, or impossible to undo?
+   - **Q3 (verification):** Would checking it mean redoing it: no test,
+     contract, or gate that confirms it cheaply?
+
+   Count the yeses: 3 → pathfinder, 2 → navigator, 1 → builder,
+   0 → keeper. Then apply the veto: irreversible (Q2) AND unverifiable
+   (Q3) → pathfinder, whatever the count. Route down only as far as the
+   project's gates reach: a task with no cheap verification scores a yes
+   on Q3 however mechanical it looks. The playbook's mapping says which
+   tier serves the class; never assume one.
+4. State the class, the score, and the reason in one sentence. Don't pad
+   this with a general opinion: the three questions are the reason, so
+   cite them directly (e.g. "Builder class, score 1: Q1 no and Q3 no, this
+   executes against the existing X contract with tests; Q2 yes.").
+5. Dispatch: re-score before writing anything down. A decision made or a
+   spec written changes the answers (precedent now exists, so Q1 is no,
+   and often Q3 is no), so the class the work is handed down as may be
+   lower than the class it was routed as; record the class and score in
+   the spec's header (and the veto, if it applied). If the work crosses
+   tiers (the session doing the routing isn't the session that will
+   execute the work), produce the handoff spec from the template:
    - Fill **Decisions already made** from the *current session's actual
      decisions*: real design choices this session paid for, each with a
      one-line rationale or a pointer to where it's recorded. This section
@@ -54,8 +68,8 @@ a spec written to send it down-tier.
      the template's angle-bracket placeholder text.
    - Write the spec to a new file; don't append it into the playbook.
 6. If, in the course of this, you notice the *current* tier is about to do
-   work that fails its own routing test, most commonly a flagship session
-   about to do negative-list work (UI polish, lint chores, status upkeep,
+   work that scores below the class its tier serves, most commonly a
+   top-tier session about to do negative-list work (UI polish, lint chores, status upkeep,
    branch hygiene, running CI, mechanical test additions, executing
    someone else's spec), say so inline, plainly, before proceeding. Don't
    silently let it happen and flag it only in a later report.
@@ -67,15 +81,17 @@ anything else as a side effect of routing.
 ## The Return switchpoint: early-return guidance
 
 This is not a third mode: it is guidance for the receiving tier, the tier
-that recognizes mid-cycle that its lane test is failing. Return is the
-upward crossing (`reference/portable-method.md` §Switchpoints). On the
-success path the receiving tier meets its exit bar and hands back a report
+that recognizes mid-cycle that its class score has risen. Return is the
+upward crossing (`reference/portable-method.md` §Switchpoints), and the
+class is re-scored here too. On the success path the receiving tier meets
+its exit bar and hands back a report
 and reviewed diff through the project's gates: ordinary, no special
 handling. This subsection is the failure path.
 
-Take the early-return path the moment the work fails the receiving lane's
-routing test: a task that turned out to need judgment the lane does not
-have, or that has no cheap gate to confirm it. Do not grind through. A
+Take the early-return path the moment re-scoring shows the work scores
+higher than the class it was routed as: a task that turned out to be new
+ground, to carry a cost of error nobody saw, or to have no cheap gate to
+confirm it. Do not grind through. A
 cheaper tier grinding out triple the turns on work it cannot do burns the
 savings the routing bought, and the gates will not show it, because gates
 catch defective output, not expensive output.
@@ -88,7 +104,7 @@ is the method's invisible failure mode.
 
 ## Mode B: Session close (the Close switchpoint)
 
-Use when the builder wants to end a session and update the ledger.
+Use when the operator wants to end a session and update the ledger.
 
 1. Read the playbook (same default/ask rule as Mode A, step 1).
 2. Update **only**:
@@ -99,23 +115,32 @@ Use when the builder wants to end a session and update the ledger.
      subagent report) that outlives the session; this is the up-channel,
      and findings climb one cycle level at a time),
    - the "Last updated" line.
-3. Run the spend-ledger extraction recipe from
-   `docs/design/2026-07-06-spend-ledger-design.md` (or accept the builder's
+3. Re-score at Close: ask the three questions once more of the work as it
+   actually turned out. The class it ran as after re-scoring may differ
+   from the class planned at Route; both go in the spend line.
+4. Run the spend-ledger extraction recipe from
+   `docs/design/2026-07-06-spend-ledger-design.md` (or accept the operator's
    own numbers if they supply them), then append the spend line to the
-   session's ledger entry. Refuse savings language per the design spec's
+   session's ledger entry. Record the entry field first: `pointer` if the
+   session opened on the playbook pointer or a handoff spec and took a
+   queue item, `ad-hoc` otherwise. It is a record of how the session
+   actually started, not a compliance grade, and it is what makes the
+   protocol-followed-vs-lapsed comparison computable later. The lane field
+   records the class planned at Route and the class it ran as after
+   re-scoring (`class planned→class ran`). Refuse savings language per the design spec's
    never-claim rules: never assert savings against an unmeasured baseline,
    never compare the counterfactual-flagship ratio across projects as a
    quality measure, never fold in a test/throwaway session unlabeled, and
    never quote the ratio without its price-table date and token-volume
    assumption.
-4. Refuse wholesale rewrites. If asked to restructure the strategic frame,
+5. Refuse wholesale rewrites. If asked to restructure the strategic frame,
    re-order the queue wholesale, or otherwise rewrite substantial sections
    mid-close, don't do it: note it instead as a re-assessment candidate
    (a line in the Gap register or your reply saying the frame may need a
    full re-assessment pass, per the method's rule that re-assessment is
    reserved for an empty queue or a wrong-feeling frame, not folded into a
    routine close).
-5. Leave the strategic frame, standing constraints, model routing section,
+6. Leave the strategic frame, standing constraints, model routing section,
    and session protocol untouched: those are not close-time edits.
 
 Read-only toward everything except the playbook itself in this mode. Do
@@ -124,8 +149,8 @@ not touch source code, specs, or other docs while closing a session.
 ## Shared constraints
 
 - Never invent a lane, a decision, or a gap that wasn't actually stated by
-  the builder or actually recorded in the current session.
-- If the playbook can't be found and the builder can't say where it is,
+  the operator or actually recorded in the current session.
+- If the playbook can't be found and the operator can't say where it is,
   stop and say so: don't proceed on a guessed path.
-- Quote the routing test verbatim when applying it; don't paraphrase it
-  into something softer.
+- Quote the three questions verbatim when applying them; don't paraphrase
+  them into something softer.

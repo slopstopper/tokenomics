@@ -13,15 +13,16 @@ controller anything and without re-deriving any decision. An empty "Decisions
 already made" means the brief is not ready — at any scale.*
 
 **Standing escalation clause (always in force):** if the work turns out to
-fail the receiving lane's routing test, stop and hand back early with what was
-learned. An early return is cheap; pushing through is not. The subagent
-returns its findings in its report, never as leaked context (the Surfacing
-rule, Layer 4).
+fail the receiving lane's three questions (re-score it), stop and hand
+back early with what was learned. An early return is cheap; pushing through
+is not. The subagent returns its findings in its report, never as leaked
+context (the Surfacing rule, Layer 4).
 
 ## Template
 
 ```
 Handoff: <ID + one-line title> · micro · <from-lane> → <to-lane>
+  (class <n>, score <s>[, veto])
 Goal: <one sentence: what exists when this is done>
 Context pointers: <the exact files/docs to read first, and nothing else>
 Decisions already made: <every choice the controller already paid for, each
@@ -36,7 +37,8 @@ Standing escalation clause applies.
 
 The whole brief, filled (from the method doc's Layer 4):
 
-> Handoff: Q-17 status-table refresh · micro · mid → small
+> Handoff: Q-17 status-table refresh · micro · builder → keeper
+> (class 4, score 0)
 > **Goal:** the six status rows in the catalog doc match the done ledger.
 > **Context pointers:** the catalog doc; the playbook's done ledger; nothing
 > else. **Decisions already made:** row order stays (readers link to
@@ -47,13 +49,14 @@ The whole brief, filled (from the method doc's Layer 4):
 
 ## Notes for Claude Code dispatch
 
-- **Route before you dispatch.** Assign the lane with the routing test first
-  ("If this is done slightly wrong, is it expensive?" — see the recipe's Route
-  step). The brief's `from-lane → to-lane` records that decision; a subagent
-  is a micro cycle running one lane below the controller.
+- **Route before you dispatch.** Assign the lane with the three questions
+  first (new ground, consequence, verification; count the yeses, then the
+  veto: see the recipe's Route step). The brief's `from-lane → to-lane`
+  records that decision, with the class and score; a subagent is a micro
+  cycle running one lane below the controller.
 - **One brief, one subagent, one queue-sized unit of work.** If a brief needs
   more than a couple of sentences per section, the unit is too big to dispatch
   — split it or keep it in the controller.
 - **Parallelize only independent, down-lane-verifiable work** (the Parallelism
-  rule). Parallel flagship-lane dispatches are a smell: work that needs
-  flagship judgment usually needs the one context that holds the frame.
+  rule). Parallel pathfinder dispatches are a smell: work that needs
+  pathfinder judgment usually needs the one context that holds the frame.

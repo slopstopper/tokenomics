@@ -8,13 +8,38 @@
 
     { "id": "routing-test-and-negative-list-verbatim",
       "kind": "contains",
-      "anchor": "quote the routing test and the negative list verbatim; do not soften them",
-      "why": "a paraphrased routing test drifts toward 'use the best model to be safe', the instinct the method exists to counter" },
+      "anchor": "quote the three questions and the negative list verbatim; do not soften them",
+      "why": "re-anchored for #25 (was: the routing test): paraphrased questions drift toward 'use the best model to be safe', the instinct the method exists to counter" },
+
+    { "id": "three-questions-verbatim",
+      "kind": "contains",
+      "anchor": "is this new ground: no precedent, pattern, or spec in the project to follow, or does it cross domains?",
+      "why": "Q1 taught verbatim; 'in the project, not in the person' is what stops a new operator making everything new ground" },
+
+    { "id": "count-the-yeses",
+      "kind": "contains",
+      "anchor": "(and, not or): 3 → pathfinder, 2 → navigator, 1 → builder, 0 → keeper",
+      "why": "scoring is a count of yeses, AND not OR, mapped to four classes" },
+
+    { "id": "veto-irreversible-and-unverifiable",
+      "kind": "contains",
+      "anchor": "irreversible (q2's yes is specifically irreversibility) and unverifiable (q3 yes) → pathfinder, whatever the count",
+      "why": "the veto overrides the count: irreversible and unverifiable work is the worst case whatever else scores" },
+
+    { "id": "rescore-at-every-boundary",
+      "kind": "contains",
+      "anchor": "re-score at every boundary",
+      "why": "passing down and passing up fall out of re-scoring; tier inertia is nobody re-scoring" },
+
+    { "id": "ship-no-default-mapping",
+      "kind": "contains",
+      "anchor": "ships classes and no default mapping",
+      "why": "the class-to-tier mapping is the operator's; concrete model names live only in the method doc's one dated table" },
 
     { "id": "answer-with-the-test",
       "kind": "contains",
-      "anchor": "answer with the routing test, not a general opinion",
-      "why": "'should this go to the expensive model?' is the method's core question; an opinion in place of the test is the failure it names" },
+      "anchor": "answer by scoring the three questions, not with a general opinion",
+      "why": "re-anchored for #25 (was: answer with the routing test): 'should this go to the expensive model?' is the method's core question; an opinion in place of the score is the failure it names" },
 
     { "id": "switchpoints-not-a-fifth-layer",
       "kind": "contains",

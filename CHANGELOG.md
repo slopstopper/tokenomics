@@ -15,7 +15,7 @@ the merged PRs, and are kept for the record, not as installable versions.
 ### Added
 
 - **Skill-text evals**: `scripts/skill-eval.sh` (transplanted from
-  recursive-spine's `spine-eval.sh`) checks 35 anchored assertions in
+  recursive-spine's `spine-eval.sh`) checks 48 anchored assertions in
   `evals/*.json` against the three skills on every PR: the verbatim routing
   test, the invent-nothing rules, the never-claim rules, early return, and
   the switchpoint order. Coverage is 3/3 skills and may not regress. These
@@ -28,6 +28,69 @@ the merged PRs, and are kept for the record, not as installable versions.
   v0.5.0 and the data. First extraction found that native subagent dispatch
   silently inherits the controller's tier, and that subagent output tokens
   are not recoverable from subagent transcripts (G12).
+
+### Changed
+
+- **The person using the method is now the "operator"**, not the
+  "builder" ([#35](https://github.com/slopstopper/tokenomics/issues/35),
+  part of the family rename in
+  [#34](https://github.com/slopstopper/tokenomics/issues/34)). "builder"
+  becomes the name of a v0.5.0 routing class. Live guidance changed (the
+  three skills, the method doc, eval rationales, the current playbook
+  sections); dated records (design specs, plans, ledger update lines, this
+  changelog's released entries) keep the word as written. Sibling repos
+  rename on their own schedules, so for a while they may still say
+  "builder" for the person.
+- **Routing axes: a lane is now a class of work, not a model tier**
+  ([#25](https://github.com/slopstopper/tokenomics/issues/25), spec in
+  `docs/design/2026-10-03-routing-axes-design.md`). This is a change of
+  meaning, not an addition. The three lanes flagship / mid / small were
+  tier names doing double duty; there are now four classes, named
+  **pathfinder, navigator, builder, keeper** (labels `lane:pathfinder` and
+  so on). The single routing question ("if this is done slightly wrong, is
+  it expensive?") becomes three: new ground, consequence, and
+  verification. The class is the count of yeses (3 pathfinder, 2
+  navigator, 1 builder, 0 keeper), with a veto: irreversible and
+  unverifiable work is pathfinder whatever the count. The class is
+  re-scored at every boundary (Route, Dispatch, Return, Close), so passing
+  work down after a decision is made, and passing it up on escalation,
+  follow from re-scoring rather than from separate rules. Which tier
+  serves which class is the operator's mapping, set in their playbook: the
+  method ships classes and no default mapping, and the bootstrap interview
+  now asks for it. The method doc keeps one dated example mapping, now
+  four rows. The "lane-scarcity rule" is renamed the tier-scarcity rule.
+  The spend line's lane field now records the class (planned at Route →
+  class it ran as after re-scoring). The eval anchors for the routing
+  test were re-anchored to the new wording, and 13 assertions were added.
+  - **Migration, if you used the three-lane names.** Your playbook's
+    queue, issue labels and spend lines may say flagship / mid / small as
+    lanes. Those were tier names; the work they described is now scored.
+    Re-score each open queue item with the three questions rather than
+    renaming one-for-one: most flagship items will land as pathfinder or
+    navigator, most mid items as builder, most small items as keeper, but
+    the count decides. Then fill in the class → tier mapping table in your
+    playbook's Model routing section (the template has it). With two
+    tiers, map four classes onto two. Rename labels to
+    `lane:pathfinder` / `lane:navigator` / `lane:builder` /
+    `lane:keeper`. The spend line's `cf-flagship` field keeps its name.
+    Dated records written under the old names stay as written.
+- **Examples and the Claude Code adapter follow the classes.** The
+  analytical-desk example is re-routed under the four classes (its open
+  queue re-scored, its Model routing rewritten with the desk's own
+  mapping); the domain gallery, the micro-brief template and the
+  orchestration recipe use the three questions; the recipe's spend
+  roll-up sums output per tier through the operator's mapping.
+- **The spend line's entry field, re-landed**
+  ([#39](https://github.com/slopstopper/tokenomics/issues/39)). `entry
+  <pointer|ad-hoc>` leads the spend line and records how a session opened,
+  so "protocol followed vs. lapsed" is computable from the ledger. It was
+  directed on 2026-07-06 as v0.3.3 (#7), but #7 merged into an
+  already-merged stacked branch and never reached `main`; v0.3.3 was never
+  part of the shipped history.
+- **The code example is archived**, moved to
+  `examples/archive/abstracted-playbook-v0.4/` unchanged. It abstracts a
+  real project's playbook under the old lane names, and re-routing it
+  would invent routing calls that project never made.
 
 ### Planned
 

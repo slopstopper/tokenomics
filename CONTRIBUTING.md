@@ -21,8 +21,13 @@ and the method it follows in
   templates), `skills/` (the three skills), `docs/`, `fix/`,
   `protocol/` (repo process itself).
 - One idea per branch; PR to `main`. `main` is protected: PRs only, and the
-  `gates` check must be green. Self-merge once green is the normal path,
-  this is a solo-maintained repo; review is welcome but not required.
+  `gates` check must be green.
+- **Every PR has a human review before it merges** (owner, 2026-10-06,
+  all slopstopper repos). Green gates are necessary, never sufficient.
+  `main` requires a review, as on every slopstopper repo. An agent session
+  opens PRs and answers review; it never merges on its own and never
+  approves. It merges only when the owner explicitly asks it to, using the
+  owner's admin bypass.
 
 ## Gates (CI, `.github/workflows/gates.yml`)
 
@@ -31,8 +36,8 @@ and the method it follows in
   README's Status section name the same version.
 - Every skill's frontmatter `name` matches its directory.
 - Skill-text evals (`scripts/skill-eval.sh`, assertions in `evals/*.json`):
-  the rules each skill must keep (verbatim routing test, invent-nothing,
-  never-claim) are still present and in order. An `UNRESOLVED` result means
+  the rules each skill must keep (the three routing questions verbatim,
+  invent-nothing, never-claim) are still present and in order. An `UNRESOLVED` result means
   guarded prose was edited: re-anchor the assertion to the new wording, or,
   if the rule was dropped on purpose, delete the assertion in the same
   commit and say why. Coverage may not fall below all three skills.
@@ -40,12 +45,13 @@ and the method it follows in
 - Privacy sweep: the method's source project stays unnamed and
   unidentifiable until it is released.
 - Concrete model names appear only in the method doc's single, dated
-  mapping table: lanes are flagship/mid/small everywhere else.
+  mapping table: elsewhere, work is routed by the four classes
+  (pathfinder, navigator, builder, keeper) and models by tier.
 
 ## Releases
 
-Bump the version in `plugin.json` and merge; the tag and GitHub release
-follow automatically. See [`RELEASING.md`](RELEASING.md).
+Bump the version in `plugin.json` and, after human review, merge; the tag
+and GitHub release follow automatically. See [`RELEASING.md`](RELEASING.md).
 
 ## Constraints that are not up for PR
 
