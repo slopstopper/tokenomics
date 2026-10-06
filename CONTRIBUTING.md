@@ -24,8 +24,11 @@ and the method it follows in
   `gates` check must be green.
 - **Every PR has a human review before it merges** (owner, 2026-10-06,
   all slopstopper repos). Green gates are necessary, never sufficient.
-  An agent session opens PRs and answers review; it never merges or
-  approves, and never self-merges.
+  The owner reviews and merges, including PRs opened under their own
+  account. An agent session opens PRs and answers review; it never merges
+  or approves. This is a process rule, not branch protection: with one
+  contributor, required approvals would lock the owner out of their own
+  PRs.
 
 ## Gates (CI, `.github/workflows/gates.yml`)
 
