@@ -35,14 +35,20 @@ pointer (handoff spec) · lane builder→builder (#35, the archive move, the
 #7 re-land and this handover keeper; G13/G14 investigation navigator;
 all run in-session) · effort second-tier medium, mid medium · dispatches
 2 (tiers: mid×2, named, not inherited; turns 18 and 22) · out-tokens
-second-tier 100k (main session, 140 messages) / mid not recoverable from
+second-tier ≈106k (main session, 155 messages) / mid not recoverable from
 transcripts (partials only, G12 b; completion notices ≈118k and ≈110k all
-token types) / small 0 · in second-tier uncached 0.3k / cache-read 32.2M /
-cache-write 0.62M · compactions 0; never cleared across three days (cache
-reads ≈320× output), which is W15's case · cf-flagship omitted (no harness
-cost record in this container). Keeper work and controller review ran two
-tiers above their class (tier inertia; the session cannot switch its own
-model). Merged as #38 after owner review. Next session starts from
+token types) / small 0 · in second-tier cache-read 37.4M / cache-write
+0.64M · compactions 0 · cf-flagship omitted (no harness cost record in
+this container). Two working days with a two-day idle gap between (owner):
+2026-10-04, 30 messages, out 25k, cache-read 3.7M, cache-write 0.15M;
+2026-10-06, 125 messages, out 81k, cache-read 33.7M, cache-write 0.49M.
+Resuming after the gap rewrote 149k tokens of cache in its first message
+(≈23% of all cache writes): the cost of resuming rather than clearing
+(#26, #30). The larger cost was carrying one growing context through
+125 turns (cache reads ≈415× output that day): the long-session case W15
+exists for. Keeper work and controller review ran two tiers above their
+class (tier inertia; the session cannot switch its own model). Merged as
+#38 after owner review. Next session starts from
 `docs/design/2026-10-06-w15-handoff.md` (updated at close).
 Prior update: 2026-10-03 (fifteenth update), **session close: v0.4.0
 follow-through and v0.5.0 handed off**. Shipped after the v0.4.0 tag:
