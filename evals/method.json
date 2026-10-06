@@ -61,6 +61,26 @@
     { "id": "vocabulary-seam",
       "kind": "contains",
       "anchor": "same word, three different joints",
-      "why": "handoff/handover is a deliberate homograph across the family (marketplace shared-vocabulary.md); losing the warning invites conflation" }
+      "why": "handoff/handover is a deliberate homograph across the family (marketplace shared-vocabulary.md); losing the warning invites conflation" },
+
+    { "id": "nudge-suggest-never-execute",
+      "kind": "contains",
+      "anchor": "**act where you can, prepare where you can't.**",
+      "why": "re-anchored 2026-10-06 (owner: the agent leads; was 'suggest, never execute'): the agent dispatches lower-class work itself and prepares the operator's commands" },
+
+    { "id": "nudge-rare-and-right",
+      "kind": "contains",
+      "anchor": "**speak up whenever the re-score says change**",
+      "why": "re-anchored 2026-10-06 (owner, superseding 'rare and right' on #30): the agent raises the moment because operators can't ask about a moment they don't know is there" },
+
+    { "id": "nudge-stay-is-valid",
+      "kind": "contains",
+      "anchor": "**staying is a valid answer**, as long as it was decided",
+      "why": "owner correction on #29: no drop-a-tier rule" },
+
+    { "id": "nudge-write-state-then-compact",
+      "kind": "contains",
+      "anchor": "compaction and clearing are safe only when state lives outside the context",
+      "why": "#30: write it down, then compact" }
   ]
 }

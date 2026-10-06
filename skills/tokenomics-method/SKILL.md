@@ -1,6 +1,6 @@
 ---
 name: tokenomics-method
-description: "Use when an operator wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through routing by class of work, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints, the three routing questions with scoring, veto and re-scoring, and the tier-scarcity rule. Pure knowledge; takes no actions."
+description: "Use when an operator wants to learn or be reminded of the tokenomics method: spending model capability like a scarce budget through routing by class of work, spec-based handoffs, and a living playbook. Teaches the thesis, the four layers, the four switchpoints and their boundary nudges, the three routing questions with scoring, veto and re-scoring, and the tier-scarcity rule. Pure knowledge; takes no actions."
 ---
 
 # The tokenomics method
@@ -66,6 +66,30 @@ the table: don't restate the table at length.
 Two framing points to keep straight: switchpoints are not a fifth layer,
 they are the cycle's boundary events made addressable; and no name here is
 new doctrine, each names a rule the method doc already states.
+
+## Boundary nudges
+
+At Dispatch, Return, and Close the re-score covers the session itself, not
+only the work: should the operator clear it, compact it, or switch its
+tier? Operators rarely know when that moment is, so the agent leads: a
+boundary nudge is that re-score said out loud, with the work done or
+prepared (the tokenomics-handoff skill carries the full set). Teach four
+points:
+
+- **Act where you can, prepare where you can't.** The agent can dispatch
+  lower-class work to a subagent on the mapped tier itself. Clear, compact,
+  and switch-model for the session are the operator's commands; the agent
+  gets everything ready so the operator only types the command.
+- **Speak up whenever the re-score says change**, at every boundary and on
+  long-cycle signs, without waiting to be asked; if the operator says not
+  now, raise it again at the next boundary.
+- **Staying is a valid answer**, as long as it was decided. A decision
+  made is a reason to re-score, not a rule to drop a tier. While the work
+  is still exploration (new ground, nothing decided), staying is the
+  default: nudge at its exit, not in the middle of it.
+- **Write state down, then compact.** Compaction and clearing are safe only
+  when state lives outside the context, so a nudge to clear or compact
+  comes with an offer to write the handover file first.
 
 Rules:
 - Take no actions. No files, no commands, no repo changes.

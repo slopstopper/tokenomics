@@ -100,6 +100,62 @@
     { "id": "entry-field-first",
       "kind": "contains",
       "anchor": "record the entry field first: `pointer` if the session opened on the playbook pointer or a handoff spec",
-      "why": "A2 (protocol-followed vs. lapsed) is computable from the ledger only if every spend line says how the session opened; owner-directed 2026-07-06 (#7), re-landed 2026-10-06 (#39)" }
+      "why": "A2 (protocol-followed vs. lapsed) is computable from the ledger only if every spend line says how the session opened; owner-directed 2026-07-06 (#7), re-landed 2026-10-06 (#39)" },
+
+    { "id": "nudge-suggest-never-execute",
+      "kind": "contains",
+      "anchor": "**act where you can, prepare where you can't.**",
+      "why": "re-anchored 2026-10-06 (owner: the agent leads; was 'suggest, never execute'). Harness fact kept inside the rule: clear, compact and the session's model switch are the operator's commands, so the agent prepares them and never claims to have run them" },
+
+    { "id": "nudge-agent-dispatches-lower-class",
+      "kind": "contains",
+      "anchor": "dispatch it yourself to a subagent on the tier the operator's mapping gives that class, naming the model",
+      "why": "owner 2026-10-06: the agent does the tier switch it can make itself (G12: a named model, never silent inheritance)" },
+
+    { "id": "nudge-rare-and-right",
+      "kind": "contains",
+      "anchor": "**speak up whenever the re-score says change.**",
+      "why": "re-anchored 2026-10-06 (owner, superseding 'rare and right' of 2026-10-03 on #30): operators don't know when the moment is, so the agent raises it at every boundary where the re-score says change, and again at the next boundary if told not now" },
+
+    { "id": "nudge-handover-written-on-yes",
+      "kind": "contains",
+      "anchor": "don't write it unasked. when the operator says yes, write it, then give them the command to type",
+      "why": "owner 2026-10-06: the handover is offered, written on yes, never unprompted; the operator's only act is typing the command" },
+
+    { "id": "nudge-stay-is-valid",
+      "kind": "contains",
+      "anchor": "**staying is a valid answer.**",
+      "why": "owner correction on #29: 'the spec is written, so drop a tier' is not a rule; staying is valid when decided" },
+
+    { "id": "nudge-write-state-then-compact",
+      "kind": "contains",
+      "anchor": "**write state down, then compact.**",
+      "why": "#30: compaction is safe only when state lives outside context; a compact without it is the G10 failure" },
+
+    { "id": "nudge-offers-handover-file",
+      "kind": "contains",
+      "anchor": "when a nudge suggests clearing or compacting, offer to write the re-entry brief first: a file the next session opens on",
+      "why": "owner decision (#30, 2026-10-03): a clear/compact nudge offers a ready-made handover, as a file, not chat text" },
+
+    { "id": "nudge-switch-tier-handover-is-spec",
+      "kind": "contains",
+      "anchor": "for a switch-tier nudge, the same file is the down-tier handoff spec",
+      "why": "owner decision (#30): the handover offer doubles as the down-tier spec" },
+
+    { "id": "nudge-no-context-percentage",
+      "kind": "contains",
+      "anchor": "never on a context percentage",
+      "why": "harness fact (#30): context % is visible only to the status line, so skill-text nudges trigger on boundaries and observable signs" },
+
+    { "id": "nudges-after-return-before-close",
+      "kind": "precedes",
+      "anchor": "## boundary nudges: clear, compact, or switch tier",
+      "before": "## mode b: session close",
+      "why": "structural: the nudge rules are stated before Mode B's step 7 points back to them" },
+
+    { "id": "nudge-leaves-exploration-alone",
+      "kind": "contains",
+      "anchor": "don't nudge toward compacting or switching down mid-exploration; nudge at its exit",
+      "why": "owner 2026-10-06: the method must not crush exploration; while the work is new ground, staying is the default and the nudge waits for a decision" }
   ]
 }

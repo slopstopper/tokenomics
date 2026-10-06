@@ -10,7 +10,43 @@ Status block:
 - Not canonical for: the method itself (`reference/portable-method.md`) or
   the v0.1/v0.2 design record (`docs/design/`).
 
-Last updated: 2026-10-06 (sixteenth update), **v0.5.0: #35 and W16
+Last updated: 2026-10-06 (seventeenth update), **W15 step 1 (boundary
+nudges, skill text) done, in review**. Entered on
+`docs/design/2026-10-06-w15-handoff.md` with a reading receipt (all seven
+pointers read; G13 practised, not written into the method). W15 re-scored
+at pickup: Q1 no, Q2 yes, Q3 yes → navigator, as handed over. Shipped: a
+Boundary nudges section in tokenomics-handoff (rules: suggest never
+execute; rare and right; staying is valid; write state down, then
+compact; offer the handover as a file; boundaries and signs, never a
+context percentage) with pointers from Mode A step 5, Return and Mode B
+step 7; a four-point teaching block in tokenomics-method; one anchoring
+paragraph in the method doc's §Switchpoints; 12 eval assertions (61, 0
+unresolved, 3/3). **Owner review, 2026-10-06:** confirmed: Mode B may write the
+handover file once accepted (a rule change); no slash-command names in
+skill text; the long-cycle row stays an observable sign, not a fifth
+switchpoint. Changed: the stance. The first draft said "suggest, never
+execute; rare and right; don't repeat once declined", which the owner
+found counter-productive, since operators don't know when the moment is.
+Now the agent leads: it speaks up whenever the re-score says change (at
+every boundary and on long-cycle signs; told "not now", it asks again at
+the next boundary), dispatches lower-class work to the mapped tier itself,
+and prepares the operator's own commands. The handover is offered and
+written on yes, never unprompted. This supersedes "rare and right"
+(2026-10-03, #30). 63 assertions. Not decided here: #26's question
+whether auto-compaction is a boundary or an unplanned Close (doctrine,
+left open). Left on #30: delivery steps 2 (opt-in hooks) and 3
+(status-line recipe), and the superpowers note and `adapters/` phase
+mapping (separable; not done because the mapping would rest on that
+plugin's phase names, seen only second-hand). Next: owner review of this
+PR, then #29 minimal entry (navigator).
+spend (provisional format, snapshot at PR open 2026-10-06): entry pointer
+(handoff spec) · lane navigator→navigator · effort second-tier medium ·
+dispatches 0 · out-tokens second-tier ≈17k (main session, 28 messages at
+extraction) / mid 0 / small 0 · in second-tier uncached <0.1k / cache-read
+2.8M / cache-write 0.09M · compactions 0 · cf-flagship omitted (no harness
+cost record read). One context, one item, cleared at entry: the shape the
+nudges ask for.
+Prior update: 2026-10-06 (sixteenth update), **v0.5.0: #35 and W16
 done in tokenomics**. #35: the person is "operator" in live guidance
 (skills, method doc, eval rationales, current playbook sections); dated
 records left as written; no eval anchor held the word. W16 slice 1:
@@ -335,6 +371,7 @@ orchestration lands, not less.
 | G12 | The method predates harness features that change cycle economics: per-call reasoning effort (a second dial inside a tier), prompt caching (a deliberate boundary now forfeits a warm cache), auto-compaction (an uncontrolled compression boundary), and native dispatch with per-subagent model choice. None is addressed in the method doc; the mapping table is dated 2026-07. **Observed 2026-10-03:** (a) *silent tier inheritance*: native subagent dispatch without a named model inherits the controller's tier and effort, so the expensive default is the silent one (this session's two read-only surveys ran flagship); (b) the spend-extraction recipe has broken again: subagent transcripts hold only streaming partials on Claude Code 2.1.288, so dispatched output is under-reported. This is a **recurrence**, not a new defect: the same under-reporting was recorded 2026-07-23 (sixth update, "transcript format drift") and fixed in W10. The finding is that the recipe drifts with every harness update, so it needs a re-verification step per harness version, not another patch; (c) cache reads were ~200× output by volume in one session. Six provisional spend-line fields are being gathered in this repo (`docs/design/2026-10-03-spend-line-gathering.md`). | open — v0.5.0 "routing axes"; lane semantics in #25, caching + compaction in #26 | high (method currency) |
 | G13 | Skipped context pointers are invisible. A handoff lists what to read; a receiving session can skip some and nothing shows it until a decision turns out missing. Observed 2026-10-04: the v0.5.0 session skipped #26, #29 and #32 from the handoff's reading list, and separately misread the owner's 1:1 mapping (on record in the spec and #25) as undecided; the owner surfaced both. Fix direction: a reading receipt at Route (each pointer read / not read, plus decisions taken). Related, undecided: a handoff's decisions section states where each decision applies, not only that it exists. Tracked in #37 | open (logged 2026-10-06, owner) | high (handoff integrity: the operator should never have to re-supply context) |
 | G14 | Session defaults recorded under owner attribution. A session's own choices can enter the record labelled as the owner's decisions. Observed 2026-10-06: PR #1 (2026-07-06) wrote "self-merge once gates are green" into session protocol rule 5 and CONTRIBUTING. The PR description did not mention it, and the Done-ledger row labelled the whole protocol set "owner-directed". The owner never set it; their standing rule is review required, merge only on explicit request via admin bypass. PRs #1, #2, #4, #5 and #8 merged 20–40 s after opening (inferred session merges, ~0.75). Related: PR #7 (owner-directed entry field, v0.3.3) merged into an already-merged stacked branch and never reached `main`. Fix direction: "owner-directed" only on the owner's specific decision; PR descriptions name every process change. Tracked in #39 | open (logged 2026-10-06, owner); rule 5 corrected on #38 | high (record integrity: the ledger is trusted as the owner's decisions) |
+| G15 | Exploration gets crushed. The method has no legitimate place to explore, challenge a decision, or amend a spec. "Do not re-derive" suppresses challenge as well as re-derivation; the only upward channel is failure (escalation); the spend frame reads exploration as waste; routing and nudges pull toward closure. Observed by the owner across use, 2026-10-06; in that session the questioning came from the owner, not the agent (the mapping contradiction resolved silently; W15's first draft). Directions (undecided): a challenge line in the reading receipt, an amendment route beside escalation, exploration as a phase with a considered-and-ruled-out exit artifact, W6 revisited. A first guard shipped on #41 (nudges leave exploration alone until it lands). Tracked in #42 | open (logged 2026-10-06, owner) | high (method semantics: the method can starve the judgment it exists to spend well) |
 
 ## Work queue
 
@@ -349,7 +386,7 @@ orchestration lands, not less.
 | W13 | **v0.4.0 release.** Align the version claims, reconstruct the CHANGELOG, transplant the version-triggered release harness, add the version-agreement gate. | (version drift) | flagship (release design), mid (writes) | 1 session | done — 2026-10-03 |
 | W14 | **Adopt recursive-spine tracking on this repo.** Run recursive-spine-bootstrap; migrate the open queue and gap register into issues verbatim per §The seam. Blocked on slopstopper/recursive-spine#133 (label reconcile) and #25 (lane names). | G10 (likely: Route becomes a live issue query, the claim marker becomes assignment) | mid (interview answers are the owner's) | 1 session | blocked |
 | W16 | **Routing axes (v0.5.0).** Lane = class of work: three questions (new ground, consequence, verification), count the yeses for four classes, veto (irreversible + unverifiable → class 1), re-score at every boundary. Spec: `docs/design/2026-10-03-routing-axes-design.md`. Classes named: pathfinder, navigator, builder, keeper; the person becomes **operator** family-wide first (rename lands before `lane:builder`). Tracked in #25. | G12 | flagship (spec, done); mid (implementation from spec) | multi-session | done in tokenomics — 2026-10-06 (#35 first; slice 1 core, slice 2 examples/adapters; code example archived). Spine labels and marketplace vocabulary are owner-scheduled |
-| W15 | **Boundary nudges (v0.5.0 headline).** When to clear, compact, or switch the session's tier, at the method's four boundaries; skill text first, then opt-in hooks, then a status-line recipe; works without other plugins. Tracked in #30; shapes #29. | G12 | flagship (design) | multi-session | open |
+| W15 | **Boundary nudges (v0.5.0 headline).** When to clear, compact, or switch the session's tier, at the method's four boundaries; skill text first, then opt-in hooks, then a status-line recipe; works without other plugins. Tracked in #30; shapes #29. | G12 | flagship (design) | multi-session | step 1 (skill text) done — 2026-10-06, in owner review; re-scored navigator at pickup. Steps 2 (opt-in hooks) and 3 (status-line recipe) and the superpowers note open on #30 |
 | W17 | **Review the spend-ledger design (PR #4, 2026-07-06).** It merged 36 s after opening, with no review (G14, #39), yet the spend line, the cf-flagship ratio and the never-claim rules rest on it. Owner reads `docs/design/2026-07-06-spend-ledger-design.md` and the wiring #4 added (template, handoff skill Mode B, method doc Layer 2); findings filed as gaps or issues. Interacts with #26 (output-only unit vs cache reads) and the provisional fields. | G14 | navigator (judgment on a settled design; no gate reaches it); the reading is the owner's | <1 session | open (queued 2026-10-06, owner) |
 | W12 | **Orchestration axis at Route.** Add a decomposability hint to the queue, orthogonal to Lane, so Route can spawn a controller for known fan-out-shaped items instead of a session discovering it mid-item (or never). Design-first: how the hint is expressed in a queue row, how Route reads it, its interaction with Lane and the verification axis, and where the controller-vs-queue decomposition line sits — do not pre-decompose items into sub-items. Ranks below falsifiability work per the strategic frame; surfaced by the first orchestrated session. | G11 | flagship (method-design axis, expensive to get wrong) | 1 session | open |
 | W8 | **Switchpoint taxonomy + Layer 4 controller contract.** Rings 1a–1b of `docs/design/2026-07-23-switchpoints-design.md`. | G8 (with W9) | flagship | 1 session | done — 2026-07-23 |
