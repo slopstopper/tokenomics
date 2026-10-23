@@ -10,21 +10,28 @@ on:
     branches: [main]
     paths: [".claude-plugin/plugin.json"]
 
-permissions:
-  contents: write   # create tags + releases
+# Nothing by default; each job asks for what it needs. Previously a top-level
+# `contents: write` was inherited by the reusable gates call too.
+permissions: {}
 
 jobs:
   gates:
     # A release must not pass a narrower gate than a PR.
     uses: ./.github/workflows/gates.yml
+    permissions:
+      contents: read
 
   release:
     needs: gates
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # create tags + releases
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
         with:
           fetch-depth: 0
+          # Writes go through `gh` with GH_TOKEN; nothing runs `git push`.
+          persist-credentials: false
 
       - name: Read version + idempotency guard
         id: guard
