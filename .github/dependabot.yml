@@ -13,7 +13,8 @@ updates:
     # skip the cooldown and open immediately. That fast lane only exists while
     # Dependabot alerts + security updates are on in Settings → Advanced
     # Security. Turn those off and this cooldown delays emergency fixes too.
-    # 7 days matches the maintainer's local package hold, so one rule covers both.
+    # 7 days matches the cooldown the maintainer's other projects already use
+    # (security updates exempt there too), so one rule covers every repo.
     cooldown:
       default-days: 7
     groups:
