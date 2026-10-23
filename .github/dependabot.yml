@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # Keeps the SHA-pinned actions current. A pin without an updater goes stale,
+  # and a stale pin is its own risk.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Hold every new release for 7 days before proposing it. Hijacked releases
+    # (Shai-Hulud, LiteLLM 1.107.0, OVHcloud CLI) were caught and pulled
+    # within hours to days, so a short wait skips most of them.
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
